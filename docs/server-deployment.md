@@ -7,13 +7,13 @@
 ```text
 /srv/weishuangyun/
   brands/
-    zjb2.fkw.com/
+    wsy.fkw.com/
       repo/
       .env.production
-    brand-a.com/
+    brand-a.example/
       repo/
       .env.production
-    brand-b.com/
+    brand-b.example/
       repo/
       .env.production
   shared/
@@ -24,15 +24,15 @@
 ## 推荐端口
 
 ```text
-zjb2.fkw.com   -> 3100
-brand-a.com    -> 3101
-brand-b.com    -> 3102
+wsy.fkw.com   -> 3100
+brand-a.example    -> 3101
+brand-b.example    -> 3102
 ```
 
 ## 单品牌启动命令
 
 ```bash
-cd /srv/weishuangyun/brands/zjb2.fkw.com/repo
+cd /srv/weishuangyun/brands/wsy.fkw.com/repo
 pnpm install --frozen-lockfile
 pnpm build
 PORT=3100 pnpm start
@@ -45,7 +45,7 @@ PORT=3100 pnpm start
 ```nginx
 server {
   listen 80;
-  server_name zjb2.fkw.com;
+  server_name wsy.fkw.com;
 
   location / {
     proxy_pass http://127.0.0.1:3100;

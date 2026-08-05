@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   description:
     "查看维双云服务的真实客户案例，涵盖餐饮连锁、在线教育、电商零售、专业服务等行业，了解企业如何借助维双云实现数字化转型与业绩增长。",
   keywords: ["维双云案例", "建站案例", "私域商城案例", "企业官网案例", "客户案例"],
-  alternates: { canonical: "https://weishuangyun.fkw.com/cases" },
+  alternates: { canonical: "https://wsy.fkw.com/cases" },
   openGraph: {
-    url: "https://weishuangyun.fkw.com/cases",
+    url: "https://wsy.fkw.com/cases",
     title: "成功案例 - 维双云 5 万+ 企业客户的数字化增长故事",
     description: "餐饮、教育、零售、服务业真实案例，看企业如何通过维双云实现业绩增长。",
   },

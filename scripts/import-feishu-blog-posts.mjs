@@ -14,7 +14,7 @@ const rowEnd = Number(getArg("--row-end") ?? Number.MAX_SAFE_INTEGER)
 const spreadsheetToken = getArg("--spreadsheet-token") ?? parseSpreadsheetToken(process.env.FEISHU_SHEET_URL)
 const sheetId = getArg("--sheet-id") ?? process.env.FEISHU_SHEET_ID ?? "28f2dd"
 const range = getArg("--range") ?? process.env.FEISHU_SHEET_RANGE ?? "A1:T500"
-const siteBaseUrl = (process.env.SITE_BASE_URL ?? "https://weishuangyun.fkw.com").replace(/\/$/, "")
+const siteBaseUrl = (process.env.SITE_BASE_URL ?? "https://wsy.fkw.com").replace(/\/$/, "")
 
 if (!process.env.FEISHU_APP_ID || !process.env.FEISHU_APP_SECRET) {
   fail("Missing FEISHU_APP_ID or FEISHU_APP_SECRET.")

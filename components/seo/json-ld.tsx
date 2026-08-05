@@ -8,12 +8,12 @@ export function OrganizationJsonLd() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://weishuangyun.fkw.com/#organization",
+        "@id": "https://wsy.fkw.com/#organization",
         name: "维双云",
-        url: "https://weishuangyun.fkw.com",
+        url: "https://wsy.fkw.com",
         logo: {
           "@type": "ImageObject",
-          url: "https://weishuangyun.fkw.com/logo.png",
+          url: "https://wsy.fkw.com/logo.png",
           width: 180,
           height: 60,
         },
@@ -27,18 +27,18 @@ export function OrganizationJsonLd() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://weishuangyun.fkw.com/#website",
-        url: "https://weishuangyun.fkw.com",
+        "@id": "https://wsy.fkw.com/#website",
+        url: "https://wsy.fkw.com",
         name: "维双云",
         description: "AI 时代一站式企业数字化建站与营销工具平台",
         publisher: {
-          "@id": "https://weishuangyun.fkw.com/#organization",
+          "@id": "https://wsy.fkw.com/#organization",
         },
         potentialAction: {
           "@type": "SearchAction",
           target: {
             "@type": "EntryPoint",
-            urlTemplate: "https://weishuangyun.fkw.com/blog?q={search_term_string}",
+            urlTemplate: "https://wsy.fkw.com/blog?q={search_term_string}",
           },
           "query-input": "required name=search_term_string",
         },
@@ -53,37 +53,37 @@ export function OrganizationJsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "AI 营销私域商城",
-            url: "https://weishuangyun.fkw.com/products/mall",
+            url: "https://wsy.fkw.com/products/mall",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "企业官网 AI 建站",
-            url: "https://weishuangyun.fkw.com/products/website",
+            url: "https://wsy.fkw.com/products/website",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "AI 题库教育系统",
-            url: "https://weishuangyun.fkw.com/products/education",
+            url: "https://wsy.fkw.com/products/education",
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "AI 轻应用 / 服务预约",
-            url: "https://weishuangyun.fkw.com/products/booking",
+            url: "https://wsy.fkw.com/products/booking",
           },
           {
             "@type": "ListItem",
             position: 5,
             name: "AI 辅助门店系统",
-            url: "https://weishuangyun.fkw.com/products/store",
+            url: "https://wsy.fkw.com/products/store",
           },
           {
             "@type": "ListItem",
             position: 6,
             name: "GEO 优化系统",
-            url: "https://weishuangyun.fkw.com/products/geo",
+            url: "https://wsy.fkw.com/products/geo",
           },
         ],
       },
@@ -154,13 +154,13 @@ export function SoftwareProductJsonLd({
       seller: {
         "@type": "Organization",
         name: "维双云",
-        url: "https://weishuangyun.fkw.com",
+        url: "https://wsy.fkw.com",
       },
     },
     provider: {
       "@type": "Organization",
       name: "维双云",
-      url: "https://weishuangyun.fkw.com",
+      url: "https://wsy.fkw.com",
     },
   }
 

@@ -14,7 +14,7 @@ const sheetId = getArg("--sheet-id") ?? process.env.LARK_SHEET_ID
 const range = getArg("--range") ?? process.env.LARK_SHEET_RANGE ?? "A1:Q500"
 const reviewedStatus = process.env.LARK_REVIEWED_STATUS ?? "已审核"
 const publishedStatus = process.env.LARK_PUBLISHED_STATUS ?? "已发布"
-const siteBaseUrl = (process.env.SITE_BASE_URL ?? "https://weishuangyun.fkw.com").replace(/\/$/, "")
+const siteBaseUrl = (process.env.SITE_BASE_URL ?? "https://wsy.fkw.com").replace(/\/$/, "")
 const skippedStatus = process.env.LARK_SKIPPED_STATUS ?? publishedStatus
 const shouldCheckSite = process.env.LARK_CHECK_SITE !== "0" && Boolean(process.env.SITE_BASE_URL)
 

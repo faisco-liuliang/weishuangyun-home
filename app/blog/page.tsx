@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   description:
     "维双云博客，分享 AI 建站、SEO/GEO 优化、私域运营、AI 营销工具、数字化转型案例等实战干货，帮助中小企业掌握增长方法论。",
   keywords: ["AI 建站", "SEO 教程", "GEO 优化", "私域运营", "企业数字化", "建站教程", "营销干货"],
-  alternates: { canonical: "https://weishuangyun.fkw.com/blog" },
+  alternates: { canonical: "https://wsy.fkw.com/blog" },
   openGraph: {
-    url: "https://weishuangyun.fkw.com/blog",
+    url: "https://wsy.fkw.com/blog",
     title: "博客 - 维双云 AI 企业数字化增长干货",
     description: "AI 建站、SEO/GEO 优化、私域运营实战干货，每周更新，助力企业掌握数字化增长方法论。",
   },

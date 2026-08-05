@@ -9,7 +9,7 @@ import { getBlogPost, getBlogSlugs, getBlogUrlSlug } from "@/lib/blog-data"
 import { defaultRegisterUrl } from "@/lib/product-links"
 import { ArrowLeft, Clock, User, Tag, Calendar } from "lucide-react"
 
-const BASE_URL = "https://weishuangyun.fkw.com"
+const BASE_URL = "https://wsy.fkw.com"
 
 type Props = { params: Promise<{ slug: string }> }
 

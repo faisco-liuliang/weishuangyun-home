@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 import { getBlogPosts, getBlogUrlSlug } from "@/lib/blog-data"
 
-const BASE_URL = "https://weishuangyun.fkw.com"
+const BASE_URL = "https://wsy.fkw.com"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()

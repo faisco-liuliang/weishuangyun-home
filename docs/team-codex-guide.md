@@ -297,7 +297,7 @@ git push origin main
 当前主域名：
 
 ```text
-zjb2.fkw.com
+wsy.fkw.com
 ```
 
 服务器建议：
@@ -309,14 +309,14 @@ zjb2.fkw.com
 示例：
 
 ```text
-/srv/weishuangyun/brands/zjb2.fkw.com/repo
+/srv/weishuangyun/brands/wsy.fkw.com/repo
 ```
 
 如果以后新增品牌，就创建：
 
 ```text
-/srv/weishuangyun/brands/brand-a.com/repo
-/srv/weishuangyun/brands/brand-b.com/repo
+/srv/weishuangyun/brands/brand-a.example/repo
+/srv/weishuangyun/brands/brand-b.example/repo
 ```
 
 ## 十、出问题怎么办

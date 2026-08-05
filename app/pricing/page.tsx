@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   description:
     "维双云价格中心，覆盖 AI 建站、私域商城、门店系统、AI 题库教育系统、服务预约、AI 营销工具、GEO 优化等产品套餐。",
   keywords: ["维双云价格", "AI 建站价格", "商城小程序价格", "企业官网套餐", "GEO 优化价格", "门店系统价格"],
-  alternates: { canonical: "https://weishuangyun.fkw.com/pricing" },
+  alternates: { canonical: "https://wsy.fkw.com/pricing" },
   openGraph: {
-    url: "https://weishuangyun.fkw.com/pricing",
+    url: "https://wsy.fkw.com/pricing",
     title: "价格中心 - 维双云 AI 赋能全产品套餐",
     description: "多产品线清晰报价，支持多年优惠与渠道特惠，适合 AI 建站、商城、门店、教育和营销增长场景。",
   },
