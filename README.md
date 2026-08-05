@@ -6,16 +6,17 @@
 
 如果你是第一次参与，请按顺序看这几份文档：
 
-1. [Windows 同事用 Codex 协作 SOP](./docs/windows-codex-sop.md)
-2. [GitHub SSH Key 配置教程](./docs/github-ssh-key-setup.md)
-3. [团队使用指南：用 GitHub + Codex 修改官网](./docs/team-codex-guide.md)
-4. [飞书文章同步发布说明](./docs/lark-publishing.md)
-5. [多品牌服务器部署建议](./docs/server-deployment.md)
+1. [Codex 项目交接总文档](./docs/codex-handoff.md)
+2. [Windows 同事用 Codex 协作 SOP](./docs/windows-codex-sop.md)
+3. [GitHub SSH Key 配置教程](./docs/github-ssh-key-setup.md)
+4. [团队使用指南：用 GitHub + Codex 修改官网](./docs/team-codex-guide.md)
+5. [飞书文章同步发布说明](./docs/lark-publishing.md)
+6. [多品牌服务器部署建议](./docs/server-deployment.md)
 
 你也可以直接把下面这段话发给 Codex：
 
 ```text
-请先阅读 README.md、docs/windows-codex-sop.md、docs/team-codex-guide.md 和 docs/github-ssh-key-setup.md。这个项目是维双云官网项目，我主要用 Windows + Codex 协作修改。请先帮我检查环境、拉取最新代码、安装依赖并运行本地预览。修改前必须先执行 git status --short，改完后运行 pnpm exec tsc --noEmit 和 pnpm build。没有我的确认，不要直接部署线上。
+请先阅读 docs/codex-handoff.md 和 README.md，再阅读与任务相关的专题文档。这个项目是维双云官网项目，我主要用 Windows + Codex 协作修改。请先帮我检查环境、拉取最新代码、安装依赖并运行本地预览。修改前必须先执行 git status --short，改完后运行 pnpm exec tsc --noEmit 和 pnpm build。没有我的确认，不要直接部署线上，也不要执行飞书写回。
 ```
 
 ## 项目地址
@@ -128,4 +129,3 @@ components/seo/json-ld.tsx
 - 新同学默认只做本地修改和 push，不直接部署线上。
 - 涉及价格、域名、客服二维码、SEO 标题和产品卖点时，改完要重点检查。
 - 多品牌建议一个品牌一个仓库，一个域名一个部署目录。
-
