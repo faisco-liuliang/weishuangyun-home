@@ -85,6 +85,13 @@ const products = [
         note: "适合外贸展示和跨境询盘",
         features: ["皇冠版全部功能", "全球 CDN 动态加速", "50 种语言版本", "AI 翻译 10 万 AI 豆", "PayPal 支付/产品询盘", "保证谷歌收录"],
       },
+      {
+        name: "网站海外旗舰版",
+        originalPrice: "4,998",
+        price: "2,499",
+        note: "适合海外分销和长期经营增长",
+        features: ["海外版全部功能", "海外多语言和多区域运营", "品牌独立站增长支持", "精品线路加速", "邮件营销", "更高容量支持"],
+      },
     ],
   },
   {
@@ -92,11 +99,18 @@ const products = [
     name: "私域商城",
     icon: ShoppingBag,
     summary: "单商户/多商户商城，交易、会员、分销和高阶营销玩法。",
-    startPrice: "¥999/年起",
+    startPrice: "¥998/年起",
     bestFor: "商品销售 / 会员运营 / 分销活动",
     promo: "买2年送2年",
     source: "渠道特惠价可叠加",
     plans: [
+      {
+        name: "商城特惠版",
+        originalPrice: "",
+        price: "998",
+        note: "适合低成本试水电商",
+        features: ["小程序商城", "会员体系", "订单处理", "常用营销玩法", "不参与买2年送2年"],
+      },
       {
         name: "商城基础版",
         originalPrice: "1,998",
@@ -119,6 +133,27 @@ const products = [
         note: "适合一站 3 端和高阶玩法",
         features: ["旗舰版全部功能", "一站 3 端多端铺货", "推广获客/成交转化/复购", "N 元 M 件/礼品卡", "2T 资源空间", "AI 试衣/AI 销售按需扩展"],
       },
+      {
+        name: "多商户直营版",
+        originalPrice: "6,998",
+        price: "3,499",
+        note: "适合多门店直营网点统一线上经营",
+        features: ["总部统一管理", "门店推荐", "智能派单", "买2年送2年"],
+      },
+      {
+        name: "多商户招商版",
+        originalPrice: "9,998",
+        price: "4,999",
+        note: "适合商家入驻和平台运营",
+        features: ["子商户独立管理", "统一对账", "商户页面展示", "买2年送2年"],
+      },
+      {
+        name: "多商户至尊版",
+        originalPrice: "14,998",
+        price: "7,499",
+        note: "适合同时做直营网和招商的平台型商家",
+        features: ["多端经营", "独立收款", "配送", "裂变", "超大容量", "买2年送2年"],
+      },
     ],
   },
   {
@@ -140,8 +175,8 @@ const products = [
       },
       {
         name: "门店基础版",
-        originalPrice: "698",
-        price: "349",
+        originalPrice: "998",
+        price: "499",
         note: "适合基础收银、预约和会员沉淀",
         features: ["海量模板 3 分钟建店", "20 个产品/服务", "在线预约与销售", "进销存/开单收银/记账", "支持 10 位会员", "AI 店推助手"],
       },
@@ -193,6 +228,13 @@ const products = [
         price: "1,999",
         note: "适合精细化运营和实物售卖",
         features: ["专业版全部功能", "老带新转介绍", "会员储值 + 赠送金额", "1T 容量/单文件 5G", "20 万题库 + 高级刷题", "学习积分/积分商城/实物商品"],
+      },
+      {
+        name: "教育至尊版",
+        originalPrice: "5,998",
+        price: "2,999",
+        note: "适合规模化增长和高容量运营",
+        features: ["超高清课程", "题库", "商品", "空间和文件承载", "买2年送2年"],
       },
     ],
   },
@@ -273,6 +315,9 @@ const products = [
   },
 ]
 
+const productDisplayOrder = ["store", "mall", "booking", "education", "website", "geo"]
+const orderedProducts = productDisplayOrder.map((id) => products.find((product) => product.id === id)!)
+
 const comparisonRows = [
   ["建站与装修", "模板装修", "高级页面", "定制页面/专题"],
   ["营销能力", "基础活动", "裂变活动", "组合活动策划"],
@@ -294,7 +339,7 @@ export default function PricingPage() {
                 产品价格
               </div>
               <nav className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
-                {products.map(({ id, name, summary, icon: Icon }) => (
+                {orderedProducts.map(({ id, name, summary, icon: Icon }) => (
                   <Link
                     key={id}
                     href={`#${id}`}
@@ -372,23 +417,38 @@ export default function PricingPage() {
 
         <section id="pricing-quotes" className="scroll-mt-24 px-4 py-12 sm:px-6">
           <div className="mx-auto max-w-7xl">
-            <div className="mb-8 rounded-lg border border-border bg-white p-3 shadow-sm">
-              <div className="flex flex-wrap gap-2">
-                {products.map(({ id, name, icon: Icon }) => (
+            <div className="mb-8 rounded-xl border-2 border-primary/25 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_58%,#f5f3ff_100%)] p-4 shadow-md shadow-primary/10 sm:p-5">
+              <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="flex size-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground shadow-sm">1</span>
+                  <div>
+                    <h2 className="font-bold text-foreground">选择产品，快速查看对应报价</h2>
+                    <p className="mt-0.5 text-sm text-muted-foreground">点击下方产品，页面会自动跳转到该产品的套餐和价格。</p>
+                  </div>
+                </div>
+                <div className="flex w-fit items-center gap-1.5 rounded-full border border-primary/15 bg-white px-3 py-1.5 text-xs font-semibold text-primary shadow-sm">
+                  <ArrowDown className="size-3.5" />
+                  共 {orderedProducts.length} 类产品
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {orderedProducts.map(({ id, name, icon: Icon }) => (
                   <Link
                     key={id}
                     href={`#${id}`}
-                    className="inline-flex h-10 items-center gap-2 rounded-md px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+                    aria-label={`查看${name}套餐报价`}
+                    className="inline-flex min-h-12 items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                   >
-                    <Icon className="size-4" />
+                    <Icon className="size-4 shrink-0" />
                     {name}
+                    <ArrowDown className="size-3.5 opacity-60" />
                   </Link>
                 ))}
               </div>
             </div>
 
             <div className="space-y-12">
-              {products.map((product) => {
+              {orderedProducts.map((product) => {
                 const Icon = product.icon
                 return (
                   <section key={product.id} id={product.id} className="scroll-mt-24">
@@ -408,7 +468,7 @@ export default function PricingPage() {
                       </div>
                     </div>
 
-                    <div className={cn("grid gap-5", product.plans.length > 3 ? "lg:grid-cols-2 xl:grid-cols-4" : "lg:grid-cols-3")}>
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {product.plans.map((plan) => (
                         <Card
                           key={plan.name}
@@ -422,34 +482,34 @@ export default function PricingPage() {
                               <Badge className="bg-primary text-primary-foreground">推荐</Badge>
                             </div>
                           )}
-                          <CardHeader className="pb-3 pr-20">
-                            <CardTitle className="text-lg">{plan.name}</CardTitle>
+                          <CardHeader className="p-4 pb-2.5 pr-16">
+                            <CardTitle className="text-base">{plan.name}</CardTitle>
                             <p className="text-sm text-muted-foreground">{plan.note}</p>
                           </CardHeader>
-                          <CardContent className="flex flex-1 flex-col gap-5">
+                          <CardContent className="flex flex-1 flex-col gap-3.5 p-4 pt-0">
                             <div>
                               <div className="flex items-end gap-1">
-                                <span className="text-4xl font-bold tracking-tight text-foreground">¥{plan.price}</span>
+                                <span className="text-3xl font-bold tracking-tight text-foreground">¥{plan.price}</span>
                                 <span className="pb-1 text-sm text-muted-foreground">/年</span>
                               </div>
                               <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
-                                <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">活动折算价</span>
-                                {plan.originalPrice !== "0" ? (
+                                <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">{plan.originalPrice ? "活动折算价" : "标准年价"}</span>
+                                {plan.originalPrice ? (
                                   <span className="text-muted-foreground">
                                     参考原价 <span className="line-through">¥{plan.originalPrice}/年</span>
                                   </span>
                                 ) : (
-                                  <span className="text-muted-foreground">永久免费起步</span>
+                                  <span className="text-muted-foreground">不参与买2年送2年</span>
                                 )}
                               </div>
-                              <p className="mt-3 rounded-md bg-blue-50 px-3 py-2 text-xs font-medium leading-5 text-primary">
-                                {product.promo} · {product.source}
+                              <p className="mt-2.5 rounded-md bg-blue-50 px-3 py-1.5 text-xs font-medium leading-5 text-primary">
+                                {product.id === "mall" && !plan.originalPrice ? "不参与买2年送2年" : product.promo} · {product.source}
                               </p>
                             </div>
                             <Separator />
-                            <ul className="flex flex-col gap-2.5">
+                            <ul className="flex flex-col gap-2">
                               {plan.features.map((feature) => (
-                                <li key={feature} className="flex gap-2 text-sm leading-5 text-foreground">
+                                <li key={feature} className="flex gap-2 text-[13px] leading-5 text-foreground">
                                   <CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
                                   <span>{feature}</span>
                                 </li>

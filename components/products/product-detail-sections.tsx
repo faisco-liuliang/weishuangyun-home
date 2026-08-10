@@ -17,6 +17,8 @@ type ProductPlan = {
   name: string
   price: string
   originalPrice?: string
+  priceLabel?: string
+  priceNote?: string
   note?: string
   popular?: boolean
   highlight?: boolean
@@ -180,13 +182,13 @@ export function ProductDetailSections({
                           <span className="pb-1 text-sm text-muted-foreground">/年</span>
                         </div>
                         <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
-                          <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">优惠价</span>
+                          <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">{plan.priceLabel ?? "优惠价"}</span>
                           {plan.originalPrice && plan.originalPrice !== "0" ? (
                             <span className="text-muted-foreground">
                               原价 <span className="line-through">¥{plan.originalPrice}/年</span>
                             </span>
                           ) : (
-                            <span className="text-muted-foreground">免费起步</span>
+                            <span className="text-muted-foreground">{plan.priceNote ?? "免费起步"}</span>
                           )}
                         </div>
                       </div>
