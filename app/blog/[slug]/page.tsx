@@ -136,11 +136,17 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Content */}
           <div className="prose prose-lg max-w-none text-foreground leading-relaxed">
             {lines.map((line, i) => {
+              if (line.startsWith("# ")) {
+                return <h2 key={i} className="text-2xl font-bold text-foreground mt-10 mb-4">{line.slice(2)}</h2>
+              }
               if (line.startsWith("## ")) {
                 return <h2 key={i} className="text-2xl font-bold text-foreground mt-10 mb-4">{line.slice(3)}</h2>
               }
               if (line.startsWith("### ")) {
                 return <h3 key={i} className="text-xl font-semibold text-foreground mt-7 mb-3">{line.slice(4)}</h3>
+              }
+              if (line.startsWith("#### ")) {
+                return <h4 key={i} className="text-lg font-semibold text-foreground mt-6 mb-3">{line.slice(5)}</h4>
               }
               const imageMatch = line.match(/^!\[(.*)\]\((.*)\)$/)
               if (imageMatch) {

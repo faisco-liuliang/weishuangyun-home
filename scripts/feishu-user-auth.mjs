@@ -3,12 +3,14 @@ import http from "node:http"
 import { mkdirSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { execFile } from "node:child_process"
+import { randomBytes } from "node:crypto"
 
 const FEISHU_APP_ID = process.env.FEISHU_APP_ID
 const FEISHU_APP_SECRET = process.env.FEISHU_APP_SECRET
 const PORT = Number(process.env.FEISHU_OAUTH_PORT ?? 8765)
 const REDIRECT_URI = process.env.FEISHU_REDIRECT_URI ?? `http://127.0.0.1:${PORT}/callback`
 const TOKEN_PATH = resolve(process.cwd(), ".feishu", "user-token.json")
+const oauthState = randomBytes(24).toString("hex")
 
 if (!FEISHU_APP_ID || !FEISHU_APP_SECRET) {
   fail("Missing FEISHU_APP_ID or FEISHU_APP_SECRET in the current environment.")
@@ -18,7 +20,7 @@ const authUrl = new URL("https://open.feishu.cn/open-apis/authen/v1/index")
 authUrl.searchParams.set("app_id", FEISHU_APP_ID)
 authUrl.searchParams.set("redirect_uri", REDIRECT_URI)
 authUrl.searchParams.set("scope", "offline_access docx:document:readonly sheets:spreadsheet:readonly")
-authUrl.searchParams.set("state", String(Date.now()))
+authUrl.searchParams.set("state", oauthState)
 
 const server = http.createServer(async (request, response) => {
   const url = new URL(request.url ?? "/", REDIRECT_URI)
@@ -30,6 +32,7 @@ const server = http.createServer(async (request, response) => {
 
   const code = url.searchParams.get("code")
   const error = url.searchParams.get("error")
+  const returnedState = url.searchParams.get("state")
   if (error) {
     response.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" })
     response.end(`Authorization failed: ${error}`)
@@ -40,6 +43,13 @@ const server = http.createServer(async (request, response) => {
   if (!code) {
     response.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" })
     response.end("Missing code")
+    closeServer(1)
+    return
+  }
+
+  if (returnedState !== oauthState) {
+    response.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" })
+    response.end("Authorization failed: invalid OAuth state")
     closeServer(1)
     return
   }
