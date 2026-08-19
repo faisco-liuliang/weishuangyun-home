@@ -100,21 +100,6 @@ const cases = [
     logo: "发",
     logoColor: "bg-emerald-100 text-emerald-600",
   },
-  {
-    company: "某机械制造企业",
-    industry: "制造企业",
-    product: "企业官网 + GEO",
-    result: "外贸询盘量增长 180%",
-    duration: "4 个月",
-    quote: "没想到 GEO 优化这么有效，现在在 ChatGPT 里搜我们的行业关键词，我们公司排在前列，海外询盘明显增多。",
-    metrics: [
-      { label: "外贸询盘", value: "+180%" },
-      { label: "AI 搜索曝光", value: "10+ 平台" },
-      { label: "海外流量", value: "+240%" },
-    ],
-    logo: "机",
-    logoColor: "bg-slate-100 text-slate-600",
-  },
 ]
 
 export default function CasesPage() {
@@ -132,6 +117,14 @@ export default function CasesPage() {
             <p className="text-lg text-muted-foreground max-w-xl mx-auto text-pretty leading-relaxed">
               从餐饮连锁到在线教育，从电商零售到专业服务，各行业企业都在用维双云实现数字化增长。
             </p>
+            <a
+              href="https://www.fkw.com/excellentCase.html?_ta=9611"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ size: "lg" }), "mt-8 h-11 px-7")}
+            >
+              查看更多 <ArrowRight className="size-4 ml-2" />
+            </a>
           </div>
         </section>
 

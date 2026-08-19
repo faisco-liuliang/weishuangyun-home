@@ -6,7 +6,6 @@ import {
   GraduationCap,
   CalendarCheck,
   Store,
-  Zap,
 } from "lucide-react"
 
 const productLinks = [
@@ -15,7 +14,6 @@ const productLinks = [
   { name: "AI 题库 / 知识付费", href: "/products/education", icon: GraduationCap },
   { name: "AI 轻应用 / 服务预约", href: "/products/booking", icon: CalendarCheck },
   { name: "AI 辅助门店系统", href: "/products/store", icon: Store },
-  { name: "GEO 优化系统", href: "/products/geo", icon: Zap },
 ]
 
 const supportLinks = [
@@ -46,9 +44,6 @@ const seoKeywords = [
   { name: "门店管理系统", href: "/products/store" },
   { name: "教育小程序", href: "/products/education" },
   { name: "知识付费系统", href: "/products/education" },
-  { name: "GEO 优化", href: "/products/geo" },
-  { name: "AI 搜索优化", href: "/products/geo" },
-  { name: "AI 推荐品牌优化", href: "/products/geo" },
   { name: "企业获客系统", href: "/" },
 ]
 

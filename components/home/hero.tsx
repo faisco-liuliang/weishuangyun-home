@@ -1,18 +1,19 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
 import { ContactQrButton } from "@/components/contact/contact-qr-button"
+import { OtherProductsMenu } from "@/components/products/other-products-menu"
 import { cn } from "@/lib/utils"
 import {
   ArrowRight,
   BadgeCheck,
-  BarChart3,
   Calendar,
-  Globe,
   GraduationCap,
   Layers3,
   Share2,
   ShoppingBag,
-  Sparkles,
   Store,
   Users,
 } from "lucide-react"
@@ -23,12 +24,6 @@ const productLinks = [
     icon: ShoppingBag,
     title: "私域商城",
     tags: "AI 营销商城，小程序+会员+分销闭环",
-  },
-  {
-    href: "/products/website",
-    icon: Globe,
-    title: "企业官网",
-    tags: "AI 建站+SEO/GEO，官网内容自动增长",
   },
   {
     href: "/products/booking",
@@ -48,56 +43,39 @@ const productLinks = [
     title: "门店系统",
     tags: "AI 经营分析，多门店会员一体化",
   },
-  {
-    href: "/products/geo",
-    icon: Sparkles,
-    title: "GEO 优化系统",
-    tags: "让 DeepSeek、豆包等大模型推荐品牌",
-    badge: "新品上线",
-  },
 ]
 
-const serviceProofs = [
-  {
-    icon: BadgeCheck,
-    title: "顾问式梳理",
-    desc: "先梳理业务、关键词和转化路径",
-  },
-  {
-    icon: BarChart3,
-    title: "搜索与 AI 曝光",
-    desc: "兼顾百度收录和 AI 问答引用",
-  },
-  {
-    icon: Layers3,
-    title: "获客闭环",
-    desc: "官网、小程序、内容和咨询承接",
-  },
-]
+const primaryProductLinks = ["门店系统", "私域商城", "轻应用", "教育系统"].map(
+  (title) => productLinks.find((product) => product.title === title)!
+)
 
 const heroSlides = [
   {
-    eyebrow: "官网 + 小程序 + GEO 获客解决方案",
-    title: "维双云",
-    accent: "让企业官网和小程序成为 AI 时代的获客入口",
-    subtitle: "不只搭建页面，更帮企业被搜索、被 AI 推荐、被客户找到",
-    desc: "维双云为中小企业提供官网建设、小程序搭建、SEO/GEO 内容布局和私域转化方案，帮助品牌在百度、豆包、元宝、DeepSeek 等搜索与 AI 问答场景中获得更多曝光。",
-    primary: "规划获客入口",
-    secondary: "查看 GEO 方案",
+    eyebrow: "轻应用小程序 · 预约、表单、内容发布多端同步",
+    title: "轻应用",
+    accent: "服务更好成交",
+    subtitle: "10分钟做小程序，把预约、留资和服务展示放在一起",
+    desc: "适合美业、家政、医疗、活动和本地服务商家，支持服务预约、万能表单、到店核销及微信、抖音等多端发布。",
+    primary: "咨询轻应用方案",
+    secondary: "点击注册",
     href: "/contact",
-    secondaryHref: "/products/geo",
-    proofs: serviceProofs,
+    secondaryHref: "/products/booking",
+    proofs: [
+      { icon: Calendar, title: "预约表单", desc: "预约报名、咨询留资一次完成" },
+      { icon: Layers3, title: "多端发布", desc: "微信、百度、抖音、快手多端覆盖" },
+      { icon: BadgeCheck, title: "到店核销", desc: "服务订单和到店体验更好管理" },
+    ],
   },
   {
-    eyebrow: "99 元/年做小程序 · 买2年送2年",
-    title: "99 元/年做小程序",
+    eyebrow: "198 元/年做小程序 · 买2年送2年",
+    title: "198 元/年做小程序",
     accent: "低成本上线",
     subtitle: "10分钟轻松做小程序，门店、预约、表单、会员都能低成本上线",
-    desc: "适合先把门店展示、预约留资、服务项目和基础会员沉淀起来。入门版 99 元/年起，支持买2年送2年，再叠加渠道特惠更划算。",
-    primary: "领取 99 元方案",
-    secondary: "查看小程序价格",
+    desc: "适合先把门店展示、预约留资、服务项目和基础会员沉淀起来。入门版 198 元/年起，支持买2年送2年，再叠加渠道特惠更划算。",
+    primary: "领取 198 元方案",
+    secondary: "点击注册",
     href: "/contact",
-    secondaryHref: "/pricing#store",
+    secondaryHref: "/products/store",
     proofs: [
       { icon: Calendar, title: "预约表单", desc: "服务预约、报名咨询、线索收集" },
       { icon: Store, title: "门店展示", desc: "项目、地址、活动一页展示" },
@@ -105,19 +83,19 @@ const heroSlides = [
     ],
   },
   {
-    eyebrow: "10分钟轻松做网站 · 30 天启动 GEO 内容布局",
-    title: "官网建设",
-    accent: "从上线到持续获客",
-    subtitle: "10分钟轻松做网站，先搭建能承接咨询的官网",
-    desc: "适合预算有限但希望长期获客的企业：先上线基础官网、核心产品页、案例页和 FAQ，再围绕行业关键词持续布局 GEO 文章和专题内容。",
-    primary: "获取官网方案",
-    secondary: "查看官网产品",
+    eyebrow: "教育小程序 · 课程、教务、题库、直播教学",
+    title: "教育系统",
+    accent: "招生教学一体化",
+    subtitle: "从课程展示到学员管理，用一套系统承接教学经营",
+    desc: "适合培训机构与知识付费商家，支持课程售卖、报名约课、题库作业、直播录播、学员管理和招生推广。",
+    primary: "咨询教育方案",
+    secondary: "点击注册",
     href: "/contact",
-    secondaryHref: "/products/website",
+    secondaryHref: "/products/education",
     proofs: [
-      { icon: Globe, title: "营销型官网", desc: "产品页、案例页、FAQ 和表单承接" },
-      { icon: BarChart3, title: "内容布局", desc: "关键词、专题页和 GEO 文章规划" },
-      { icon: BadgeCheck, title: "30 天启动", desc: "从上线到内容曝光逐步推进" },
+      { icon: GraduationCap, title: "课程教务", desc: "课程、班级、学员和排课统一管理" },
+      { icon: Users, title: "招生转化", desc: "报名约课、会员和推广员协同招生" },
+      { icon: BadgeCheck, title: "直播题库", desc: "直播录播、作业答题和知识付费" },
     ],
   },
   {
@@ -127,7 +105,7 @@ const heroSlides = [
     subtitle: "把商品、会员、直播和分销放进同一套系统",
     desc: "适合有商品、有复购、有社群资源的商家，用商城小程序承接内容流量，再通过会员、优惠券、拼团和分销持续转化。",
     primary: "咨询商城方案",
-    secondary: "查看商城功能",
+    secondary: "点击注册",
     href: "/contact",
     secondaryHref: "/products/mall",
     proofs: [
@@ -138,82 +116,91 @@ const heroSlides = [
   },
 ]
 
-export function Hero() {
-  return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fbff_0%,#eef5ff_100%)] pt-16">
-      <style>
-        {`
-          @keyframes weishuangyunHeroSlide {
-            0%, 21% { opacity: 1; transform: translateY(0); pointer-events: auto; }
-            25%, 96% { opacity: 0; transform: translateY(14px); pointer-events: none; }
-            100% { opacity: 1; transform: translateY(0); pointer-events: auto; }
-          }
-        `}
-      </style>
-      <div
-        className="absolute inset-0 opacity-60"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(37,99,235,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.08) 1px, transparent 1px)",
-          backgroundSize: "54px 54px",
-        }}
-      />
+const orderedHeroSlides = [heroSlides[1], heroSlides[0], ...heroSlides.slice(2)]
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:py-8">
-        <div className="grid gap-5 lg:grid-cols-[280px_minmax(0,1fr)] lg:items-stretch">
-          <aside className="rounded-lg bg-primary p-4 text-primary-foreground shadow-xl shadow-primary/15">
-            <nav className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
-              {productLinks.map(({ href, icon: Icon, title, tags, badge }) => (
+export function Hero() {
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % orderedHeroSlides.length)
+    }, 6000)
+
+    return () => window.clearInterval(timer)
+  }, [])
+
+  return (
+    <section className="relative overflow-hidden bg-[#f7f9fd] pt-16">
+      <div className="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(circle_at_76%_18%,rgba(77,139,255,0.18),transparent_29%),radial-gradient(circle_at_22%_30%,rgba(147,197,253,0.22),transparent_25%)]" />
+      <div className="absolute left-1/2 top-24 size-96 -translate-x-1/2 rounded-full bg-blue-200/20 blur-3xl" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-7 sm:px-6 lg:py-10">
+        <div className="grid gap-5 lg:grid-cols-[252px_minmax(0,1fr)] lg:items-stretch">
+          <aside className="hidden rounded-[26px] bg-slate-950 p-3 text-primary-foreground shadow-[0_24px_70px_-28px_rgba(15,23,42,0.65)] lg:block">
+            <div className="rounded-[18px] border border-white/10 bg-white/[0.06] px-4 py-4">
+              <p className="text-xs font-medium tracking-[0.16em] text-blue-300">PRODUCT SUITE</p>
+              <p className="mt-1.5 text-lg font-bold text-white">一站式增长工具</p>
+              <p className="mt-1 text-xs leading-5 text-slate-400">从获客到复购，匹配每个业务阶段</p>
+            </div>
+              <nav className="mt-3 grid gap-1">
+              {primaryProductLinks.map(({ href, icon: Icon, title, tags }) => (
                 <Link
                   key={title}
                   href={href}
-                  className="group flex items-start gap-3 rounded-md px-3 py-2.5 transition-colors hover:bg-white/12"
+                  className="group flex items-start gap-3 rounded-2xl px-3 py-3 transition-all hover:bg-white/[0.1]"
                 >
-                  <Icon className="mt-0.5 size-4 shrink-0 text-white" />
+                  <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-xl bg-white/[0.09] text-blue-200 transition-colors group-hover:bg-blue-500 group-hover:text-white">
+                    <Icon className="size-4" />
+                  </span>
                   <span className="min-w-0">
-                    <span className="flex flex-wrap items-center gap-2 text-base font-bold tracking-tight">
+                    <span className="flex flex-wrap items-center gap-1.5 text-[15px] font-bold tracking-tight text-white">
                       {title}
-                      {badge && <span className="rounded-full bg-white/18 px-2 py-0.5 text-[10px] font-semibold text-white">{badge}</span>}
                     </span>
-                    <span className="mt-0.5 block text-xs font-medium leading-5 text-blue-100/85">{tags}</span>
+                    <span className="mt-1 block text-[11px] font-medium leading-4 text-slate-400 transition-colors group-hover:text-slate-300">{tags}</span>
                   </span>
                 </Link>
               ))}
             </nav>
+            <OtherProductsMenu />
+            <div className="mx-2 mt-3 border-t border-white/10 pt-3 text-center text-[11px] text-slate-500">专业顾问，陪您从 0 到 1 搭建</div>
           </aside>
 
-          <div className="relative overflow-hidden rounded-lg bg-white/80 shadow-sm ring-1 ring-blue-100 backdrop-blur">
+          <div className="relative overflow-hidden rounded-[26px] bg-white shadow-[0_24px_65px_-30px_rgba(30,64,175,0.35)] ring-1 ring-slate-200/80">
+            <div className="absolute right-0 top-0 h-72 w-2/3 bg-[radial-gradient(ellipse_at_top_right,rgba(219,234,254,0.92),transparent_70%)]" />
+            <div className="absolute bottom-0 right-8 size-40 rounded-full border-[22px] border-blue-50/80" />
             <div className="h-full">
-              <div className="flex flex-col justify-center px-6 py-10 sm:px-10 lg:px-16">
-                <div className="relative min-h-[560px] sm:min-h-[520px]">
-                  {heroSlides.map((slide, index) => (
+              <div className="relative flex flex-col justify-center px-6 py-9 sm:px-10 lg:px-14">
+                <div className="relative min-h-[500px] sm:min-h-[470px] lg:min-h-[510px]">
+                  {orderedHeroSlides.map((slide, index) => (
                     <div
                       key={slide.eyebrow}
-                      className="absolute inset-0 flex flex-col justify-center opacity-0"
-                      style={{ animation: "weishuangyunHeroSlide 20s infinite", animationDelay: `${index * 5}s` }}
+                      className={cn(
+                        "absolute inset-0 flex flex-col justify-center transition-all duration-500 ease-out",
+                        index === activeSlide ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
+                      )}
                     >
-                      <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-                        <span className="size-2 rounded-full bg-primary" />
+                      <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-blue-50/80 px-3.5 py-2 text-xs font-semibold text-primary shadow-sm">
+                        <span className="size-1.5 rounded-full bg-primary shadow-[0_0_0_4px_rgba(37,99,235,0.1)]" />
                         {slide.eyebrow}
                       </div>
 
-                      <h1 className="max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-950 sm:text-5xl xl:text-[56px]">
+                      <h1 className="max-w-4xl text-4xl font-bold leading-[1.24] tracking-[0.015em] text-slate-950 sm:text-5xl xl:text-[58px]">
                         {slide.title}
-                        <span className="text-primary"> {slide.accent}</span>
+                        <span className="bg-gradient-to-r from-blue-600 to-[#4f8cff] bg-clip-text text-transparent"> {slide.accent}</span>
                       </h1>
-                      <p className="mt-3 text-xl font-semibold text-slate-500 sm:text-2xl">{slide.subtitle}</p>
-                      <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">{slide.desc}</p>
+                      <p className="mt-5 text-lg font-semibold leading-[1.4] tracking-[0.01em] text-slate-600 sm:text-xl">{slide.subtitle}</p>
+                      <p className="mt-5 max-w-[680px] text-[15px] leading-7 text-slate-500 sm:text-base">{slide.desc}</p>
 
-                      <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                         {slide.href === "/contact" ? (
-                          <ContactQrButton size="lg" className="h-12 rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90">
+                          <ContactQrButton size="lg" className="h-12 rounded-xl bg-primary px-7 text-primary-foreground shadow-lg shadow-blue-600/20 hover:bg-primary/90">
                             {slide.primary}
                             <ArrowRight className="ml-2 size-5" />
                           </ContactQrButton>
                         ) : (
                           <Link
                             href={slide.href}
-                            className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90")}
+                            className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-xl bg-primary px-7 text-primary-foreground shadow-lg shadow-blue-600/20 hover:bg-primary/90")}
                           >
                             {slide.primary}
                             <ArrowRight className="ml-2 size-5" />
@@ -221,30 +208,41 @@ export function Hero() {
                         )}
                         <Link
                           href={slide.secondaryHref}
-                          className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 rounded-full border-primary/30 bg-white px-8 text-primary hover:bg-primary/5")}
+                          className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 rounded-xl border-slate-200 bg-white/80 px-7 text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-primary")}
                         >
                           {slide.secondary}
                         </Link>
                       </div>
 
-                      <div className="mt-10 grid gap-3 sm:grid-cols-3">
+                      <div className="mt-10 mb-10 grid gap-3 sm:grid-cols-3">
                         {slide.proofs.map(({ icon: Icon, title, desc }) => (
-                          <div key={title} className="flex gap-3 rounded-lg bg-white/65 p-3 ring-1 ring-blue-100">
-                            <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-primary">
+                          <div key={title} className="flex gap-3 rounded-2xl border border-slate-100 bg-white/85 p-3.5 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.55)]">
+                            <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-primary">
                               <Icon className="size-4" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-900">{title}</p>
-                              <p className="mt-1 text-sm leading-5 text-slate-500">{desc}</p>
+                              <p className="text-sm font-semibold text-slate-900">{title}</p>
+                              <p className="mt-0.5 text-xs leading-5 text-slate-500">{desc}</p>
                             </div>
                           </div>
                         ))}
                       </div>
                     </div>
                   ))}
-                  <div className="absolute bottom-0 left-0 flex gap-2">
-                    {heroSlides.map((slide, index) => (
-                      <span key={slide.eyebrow} className={cn("h-1.5 rounded-full bg-primary/25", index === 0 ? "w-10 bg-primary" : "w-5")} />
+                  <div className="absolute bottom-0 left-0 flex items-center gap-2">
+                    <span className="mr-1 text-[10px] font-semibold tracking-[0.14em] text-slate-400">FEATURED</span>
+                    {orderedHeroSlides.map((slide, index) => (
+                      <button
+                        key={slide.eyebrow}
+                        type="button"
+                        onClick={() => setActiveSlide(index)}
+                        aria-label={`切换到第 ${index + 1} 张轮播图`}
+                        aria-current={index === activeSlide}
+                        className={cn(
+                          "h-1.5 rounded-full bg-slate-200 transition-all hover:bg-primary/60",
+                          index === activeSlide ? "w-9 bg-primary" : "w-4"
+                        )}
+                      />
                     ))}
                   </div>
                 </div>

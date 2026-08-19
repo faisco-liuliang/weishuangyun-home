@@ -6,7 +6,6 @@ import { Footer } from "@/components/layout/footer"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { getBlogPost, getBlogSlugs, getBlogUrlSlug } from "@/lib/blog-data"
-import { defaultRegisterUrl } from "@/lib/product-links"
 import { ArrowLeft, Clock, User, Tag, Calendar } from "lucide-react"
 
 const BASE_URL = "https://wsy.fkw.com"
@@ -188,7 +187,7 @@ export default async function BlogPostPage({ params }: Props) {
             <h2 className="text-2xl font-bold text-foreground mb-3">准备好开始了吗？</h2>
             <p className="text-muted-foreground mb-8">免费试用维双云，专属顾问一对一指导您快速上线。</p>
             <a
-              href={defaultRegisterUrl}
+              href="https://i.fkw.com/?_ta=9611"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"

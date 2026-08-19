@@ -7,13 +7,13 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { ContactQrButton } from "@/components/contact/contact-qr-button"
 import { cn } from "@/lib/utils"
-import { ArrowRight, ShoppingCart, Globe, GraduationCap, CalendarCheck, Store, Zap, Wrench } from "lucide-react"
+import { ArrowRight, ShoppingCart, Globe, GraduationCap, CalendarCheck, Store, Wrench } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "产品中心 - AI 赋能 7 大产品线，覆盖企业全业务场景",
+  title: "产品中心 - AI 赋能 6 大产品线，覆盖企业全业务场景",
   description:
-    "维双云产品中心，提供 AI 建站、私域商城、教育系统、轻应用预约、门店管理、GEO 优化、AI 营销内容工具等 7 大产品线，一站式满足中小企业数字化增长需求。",
-  keywords: ["维双云产品", "AI 建站", "私域商城", "企业官网", "教育系统", "门店管理", "GEO 优化"],
+    "维双云产品中心，提供 AI 建站、私域商城、教育系统、轻应用预约、门店管理、AI 营销内容工具等 6 大产品线，一站式满足中小企业数字化增长需求。",
+  keywords: ["维双云产品", "AI 建站", "私域商城", "企业官网", "教育系统", "门店管理"],
 }
 
 const products = [
@@ -27,19 +27,19 @@ const products = [
     bg: "bg-blue-50",
     badge: "热门",
     highlights: ["1站3端商城", "分销裂变", "直播电商", "拼团砍价"],
-    priceFrom: "1,599",
+    priceFrom: "998",
   },
   {
     name: "企业官网",
-    tagline: "AI 建站 + SEO/GEO，官网内容自动增长",
+    tagline: "AI 建站 + SEO，官网内容持续增长",
     desc: "AI 辅助生成页面、栏目和内容，兼顾百度 SEO 与 AI 搜索可见度，让客户主动找到你。",
     href: "/products/website",
     icon: Globe,
     color: "text-sky-600",
     bg: "bg-sky-50",
     badge: "SEO 必备",
-    highlights: ["AI 建站", "百度精准收录", "GEO 内容", "表单线索收集"],
-    priceFrom: "698",
+    highlights: ["AI 建站", "百度精准收录", "内容运营", "表单线索收集"],
+    priceFrom: "349",
   },
   {
     name: "教育系统",
@@ -51,7 +51,7 @@ const products = [
     bg: "bg-violet-50",
     badge: "新品",
     highlights: ["AI 题库导入", "智能组卷", "直播课堂", "知识付费"],
-    priceFrom: "1,599",
+    priceFrom: "999",
   },
   {
     name: "轻应用",
@@ -63,7 +63,7 @@ const products = [
     bg: "bg-emerald-50",
     badge: "服务行业",
     highlights: ["多端发布", "在线预约", "万能表单", "自动提醒"],
-    priceFrom: "999",
+    priceFrom: "349",
   },
   {
     name: "门店系统",
@@ -75,19 +75,7 @@ const products = [
     bg: "bg-orange-50",
     badge: "连锁推荐",
     highlights: ["AI 经营分析", "多门店管理", "会员体系", "经营报表"],
-    priceFrom: "1,299",
-  },
-  {
-    name: "GEO 优化系统",
-    tagline: "AI 搜索品牌增长系统",
-    desc: "深度适配 DeepSeek、豆包、通义、百度 AI 等大模型，让品牌更容易成为 AI 推荐答案。",
-    href: "/products/geo",
-    icon: Zap,
-    color: "text-amber-600",
-    bg: "bg-amber-50",
-    badge: "新品上线",
-    highlights: ["AI 可见度诊断", "品牌智库", "内容创作", "竞品监控"],
-    priceFrom: "2,999",
+    priceFrom: "99",
   },
   {
     name: "营销工具",
@@ -99,7 +87,7 @@ const products = [
     bg: "bg-rose-50",
     badge: "多合一",
     highlights: ["AI 海报", "AI 短视频", "H5 活动页", "有奖投票"],
-    priceFrom: "699",
+    priceFrom: "按需购买",
   },
 ]
 
@@ -112,10 +100,10 @@ export default function ProductsPage() {
         <section className="py-20 px-4 sm:px-6 section-blue-bg border-b border-border">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">产品中心</p>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
-              AI 赋能 7 大产品线，覆盖企业全业务场景
+            <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-foreground mb-5 text-balance">
+              AI 赋能 6 大产品线，覆盖企业全业务场景
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-[1.8] tracking-[0.01em]">
               无论您是实体门店、教育机构、电商品牌还是服务业，维双云都能把 AI 获客、线上交易、会员复购和经营管理串成一套完整体系。
             </p>
           </div>
@@ -124,23 +112,23 @@ export default function ProductsPage() {
         {/* Products */}
         <section className="py-16 px-4 sm:px-6 bg-background">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col gap-6">
-              {products.map((product, index) => (
-                <Card key={product.name} className="border-border card-hover overflow-hidden">
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {products.map((product) => (
+                <Card key={product.name} className="border-border card-hover flex h-full overflow-hidden">
                   <CardContent className="p-0">
-                    <div className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-0`}>
+                    <div className="flex h-full flex-col">
                       {/* Visual side */}
-                      <div className={`lg:w-64 flex items-center justify-center p-12 ${product.bg} shrink-0`}>
-                        <product.icon className={`size-16 ${product.color}`} />
+                      <div className={`flex items-center justify-center p-7 ${product.bg}`}>
+                        <product.icon className={`size-12 ${product.color}`} />
                       </div>
                       {/* Content side */}
-                      <div className="flex-1 p-8 flex flex-col gap-4">
-                        <div className="flex flex-wrap items-center gap-3">
-                          <h2 className="text-2xl font-bold text-foreground">{product.name}</h2>
+                      <div className="flex flex-1 flex-col gap-4 p-6">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h2 className="text-xl font-bold text-foreground">{product.name}</h2>
                           <Badge className="bg-accent text-accent-foreground text-xs">{product.badge}</Badge>
-                          <span className="text-sm text-muted-foreground">{product.tagline}</span>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">{product.desc}</p>
+                        <p className="text-sm font-medium text-foreground">{product.tagline}</p>
+                        <p className="text-sm leading-6 text-muted-foreground">{product.desc}</p>
                         <div className="flex flex-wrap gap-2">
                           {product.highlights.map((h) => (
                             <span key={h} className="text-sm bg-secondary text-secondary-foreground px-3 py-1 rounded-md">
@@ -148,7 +136,7 @@ export default function ProductsPage() {
                             </span>
                           ))}
                         </div>
-                        <div className="flex items-center gap-6 mt-2">
+                        <div className="mt-auto flex flex-col gap-4 border-t border-border pt-4">
                           <div>
                             <span className="text-xs text-muted-foreground">起售价</span>
                             <div className="flex items-baseline gap-1">

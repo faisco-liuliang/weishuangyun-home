@@ -60,12 +60,12 @@ export default function ToolsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <Badge className="mb-5 bg-rose-900/60 text-rose-300 border-rose-700/50">AI 内容营销工具箱</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 text-balance">
+              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 AI 营销工具全家桶
                 <br />
                 <span className="text-rose-400">低成本高效营销</span>
               </h1>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl text-pretty">
+              <p className="text-lg text-slate-300 mb-8 leading-[1.8] tracking-[0.01em] max-w-xl text-pretty">
                 AI 海报、AI 短视频、商品图处理、H5 活动页、投票活动、问卷调查……无需技术，快速创作，轻松实现品牌传播与线索收集。
               </p>
               <div className="flex flex-col sm:flex-row gap-3">

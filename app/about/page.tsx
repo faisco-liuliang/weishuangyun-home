@@ -1,14 +1,14 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { buttonVariants } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 import { defaultRegisterUrl } from "@/lib/product-links"
-import { ArrowRight, Users, Target, Heart, Award, Mail, MapPin } from "lucide-react"
+import { ArrowRight, Users, Target, Heart, Award } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "关于维双云 - 专注企业数字化增长的 SaaS 服务商",
@@ -22,16 +22,6 @@ export const metadata: Metadata = {
     description: "5 万+ 企业信赖，专属顾问一对一服务，助力企业实现数字化转型。",
   },
 }
-
-const milestones = [
-  { year: "2018", event: "维双云成立，聚焦中小企业数字化服务" },
-  { year: "2019", event: "服务企业客户突破 5,000 家" },
-  { year: "2020", event: "推出私域商城解决方案，帮助 1,000+ 商家转型" },
-  { year: "2021", event: "教育系统上线，服务 200+ 教育机构" },
-  { year: "2022", event: "服务企业累计突破 30,000 家" },
-  { year: "2023", event: "推出 GEO 优化系统，布局 AI 搜索新赛道" },
-  { year: "2024", event: "服务企业突破 50,000 家，覆盖全国 30+ 城市" },
-]
 
 const values = [
   { icon: Target, title: "结果导向", desc: "我们以客户业务增长为最终目标，不卖功能，卖结果。每一个方案都基于客户的实际业务需求量身定制。" },
@@ -57,13 +47,12 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <Badge className="mb-5 bg-blue-900/60 text-blue-300 border-blue-700/50">关于维双云</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 text-balance">
-                我们专注于帮助
-                <br />
-                <span className="text-blue-400">中小企业数字化增长</span>
+              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.16] text-white mb-6 text-balance">
+                广州本地的小程序与
+                <span className="mt-2 block text-blue-400 sm:mt-3">线上经营服务品牌</span>
               </h1>
-              <p className="text-lg text-slate-300 leading-relaxed max-w-xl text-pretty">
-                维双云成立于 2018 年，专注为中小企业提供数字化工具和顾问式交付服务。我们深信，每一家中小企业都值得拥有专业的数字化能力和贴心的服务支持，这是我们每天坚持的使命。
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300 text-pretty">
+                面向本地中小企业、个体户和门店，提供小程序、网站建设与线上经营工具，以更低门槛开启数字化经营。
               </p>
             </div>
 
@@ -91,14 +80,14 @@ export default function AboutPage() {
               <div>
                 <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">我们的使命</p>
                 <h2 className="text-3xl font-bold text-foreground mb-4 text-balance">
-                  让每家中小企业都能享受专业级数字化服务
+                  用更低门槛，搭建线上经营入口
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  我们看到太多中小企业在数字化转型中迷路：要么因高昂费用望而却步，要么因缺乏专业指导白花了冤枉钱。维双云的存在，就是要打破这个困局。
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  基于成熟的 SaaS 技术底座，结合我们对本地市场的深度理解，我们为客户提供的不只是软件工具，更是从建设到运营的全程陪伴式服务。
-                </p>
+                <div className="space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  <p>维双云是广州本地的小程序与线上经营服务品牌，主要面向中小企业、个体户、本地门店、教培机构和轻量电商商家，提供商城小程序、门店小程序、教育小程序、餐饮小程序、企业展示小程序、网站建设以及 H5 营销工具等产品。</p>
+                  <p>维双云小程序价格 198 元/年起，平台可提供品牌与产品展示、商品管理、在线下单、订单处理、服务预约、点餐、到店核销、会员管理、课程展示、报名约课、优惠券、拼团、分销等功能。</p>
+                  <p>用户可以套用行业模板，通过零代码、可视化拖拽方式修改页面、图片、文字和业务内容，不需要从头进行开发。商家可先根据展示、下单或预约等实际需求选择基础版本，再随业务发展逐步升级或增加相应功能。</p>
+                  <p>维双云不是一开始投入高成本搭建复杂系统，而是先上线、先经营、先验证，再按业务发展逐步升级。具体价格和功能以实际选择的产品版本及服务说明为准。</p>
+                </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {values.map((v) => (
@@ -111,32 +100,6 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Timeline */}
-        <section className="py-20 px-4 sm:px-6 section-blue-bg">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-3">发展历程</h2>
-              <p className="text-muted-foreground">六年专注，持续成长</p>
-            </div>
-            <div className="flex flex-col gap-0">
-              {milestones.map((m, i) => (
-                <div key={m.year} className="flex gap-4">
-                  <div className="flex flex-col items-center">
-                    <div className="size-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-xs font-bold shrink-0">
-                      {m.year.slice(2)}
-                    </div>
-                    {i < milestones.length - 1 && <div className="w-0.5 flex-1 bg-border mt-1 mb-1 min-h-8" />}
-                  </div>
-                  <div className="pb-8 pt-2">
-                    <span className="text-sm font-semibold text-primary">{m.year}</span>
-                    <p className="text-sm text-foreground mt-0.5 leading-relaxed">{m.event}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
@@ -174,25 +137,21 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-foreground mb-3">联系我们</h2>
               <p className="text-muted-foreground">无论您有任何问题，我们都乐于解答</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { icon: Mail, label: "邮件咨询", value: "hello@weishuangyun.com", sub: "24 小时内回复" },
-                { icon: MapPin, label: "公司地址", value: "广州市天河区科技园", sub: "欢迎预约上门拜访" },
-              ].map((contact) => (
-                <Card key={contact.label} className="border-border">
-                  <CardContent className="p-6 flex flex-col items-center text-center gap-3">
-                    <div className="size-12 rounded-xl bg-accent flex items-center justify-center">
-                      <contact.icon className="size-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground">{contact.label}</p>
-                      <p className="text-base font-bold text-primary mt-1">{contact.value}</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{contact.sub}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <Card className="max-w-3xl mx-auto overflow-hidden border-blue-100 bg-white shadow-sm">
+              <CardContent className="p-5 sm:p-8 text-center">
+                <p className="text-lg font-bold text-foreground">扫码添加企业微信</p>
+                <p className="mt-1 text-sm text-muted-foreground">添加专属顾问，获取产品咨询与解决方案</p>
+                <Image
+                  src="/home-service-qr.jpg"
+                  alt="维双云企业微信客服二维码"
+                  width={1030}
+                  height={415}
+                  className="mt-5 h-auto w-full"
+                  priority
+                />
+                <p className="mt-4 text-xs text-muted-foreground">工作日 9:30–18:00，周末请留言，我们会尽快回复</p>
+              </CardContent>
+            </Card>
           </div>
         </section>
 

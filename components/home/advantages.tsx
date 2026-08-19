@@ -6,14 +6,14 @@ const advantages = [
     iconColor: "text-blue-600",
     iconBg: "bg-blue-50",
     title: "低成本启动，持续获客",
-    desc: "可以先上线基础官网、小程序和核心内容页，再逐步扩展行业专题、案例和 GEO 内容矩阵。",
+    desc: "可以先上线基础官网、小程序和核心内容页，再逐步扩展行业专题、案例和内容矩阵。",
   },
   {
     icon: TrendingUp,
     iconColor: "text-emerald-600",
     iconBg: "bg-emerald-50",
-    title: "SEO & GEO 双引擎",
-    desc: "传统 SEO 负责搜索收录，GEO 负责 AI 问答曝光，让官网内容更容易被客户和大模型找到。",
+    title: "SEO 内容增长",
+    desc: "围绕搜索收录、关键词与高质量内容持续优化，让官网更容易被客户找到。",
   },
   {
     icon: Headphones,
@@ -27,7 +27,7 @@ const advantages = [
     iconColor: "text-orange-600",
     iconBg: "bg-orange-50",
     title: "7 天上线，30 天启动内容布局",
-    desc: "基础官网和小程序可快速上线，随后围绕行业词、案例页、FAQ 和 GEO 文章持续扩展。",
+    desc: "基础官网和小程序可快速上线，随后围绕行业词、案例页、FAQ 和文章持续扩展。",
   },
   {
     icon: Users,
@@ -41,7 +41,7 @@ const advantages = [
     iconColor: "text-sky-600",
     iconBg: "bg-sky-50",
     title: "预算有限也能分阶段做",
-    desc: "先做启动方案，验证咨询和曝光后再升级商城、门店、教育系统或 GEO 托管服务。",
+    desc: "先做启动方案，验证咨询和曝光后再升级商城、门店、教育系统或运营服务。",
   },
 ]
 

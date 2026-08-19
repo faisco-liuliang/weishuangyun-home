@@ -5,7 +5,6 @@ import { getBlogPosts, getBlogUrlSlug } from "@/lib/blog-data"
 import { ArrowRight, Clock, User } from "lucide-react"
 
 const categoryColors: Record<string, string> = {
-  "GEO 优化": "bg-amber-100 text-amber-700 border-amber-200",
   "SEO 优化": "bg-green-100 text-green-700 border-green-200",
   私域运营: "bg-violet-100 text-violet-700 border-violet-200",
   产品教程: "bg-blue-100 text-blue-700 border-blue-200",
@@ -28,7 +27,7 @@ export function BlogPreview() {
               AI 企业数字化增长实战指南
             </h2>
             <p className="text-muted-foreground mt-3 text-base max-w-xl text-pretty">
-              AI 建站、SEO/GEO 优化、私域运营、AI 营销工具……每周更新，帮助您掌握最新的数字化增长方法论。
+              AI 建站、SEO 优化、私域运营、AI 营销工具……每周更新，帮助您掌握最新的数字化增长方法论。
             </p>
           </div>
           <Link

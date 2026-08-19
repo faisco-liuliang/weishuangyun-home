@@ -18,7 +18,7 @@ export function OrganizationJsonLd() {
           height: 60,
         },
         description:
-          "维双云提供 AI 建站、私域商城、AI 题库教育系统、门店管理、GEO 优化、AI 营销工具等一站式企业数字化解决方案，助力中小企业快速搭建线上业务，实现业绩增长。",
+          "维双云提供 AI 建站、私域商城、AI 题库教育系统、门店管理、AI 营销工具等一站式企业数字化解决方案，助力中小企业快速搭建线上业务，实现业绩增长。",
         address: {
           "@type": "PostalAddress",
           addressCountry: "CN",
@@ -78,12 +78,6 @@ export function OrganizationJsonLd() {
             position: 5,
             name: "AI 辅助门店系统",
             url: "https://wsy.fkw.com/products/store",
-          },
-          {
-            "@type": "ListItem",
-            position: 6,
-            name: "GEO 优化系统",
-            url: "https://wsy.fkw.com/products/geo",
           },
         ],
       },

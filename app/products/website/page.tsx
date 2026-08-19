@@ -12,16 +12,16 @@ import { productRegisterUrls } from "@/lib/product-links"
 import { ArrowRight, Search, Globe, FileText, BarChart3, Link2, Smartphone, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "企业官网 AI 建站 - SEO/GEO 双引擎获客官网",
+  title: "企业官网 AI 建站 - SEO 搜索优化获客官网",
   description:
-    "维双云企业官网 AI 建站服务，支持 AI 辅助生成页面、栏目和内容，内置 SEO/GEO 优化工具，帮助企业官网获得搜索流量和 AI 推荐曝光。",
-  keywords: ["企业官网", "AI 建站", "SEO 建站", "GEO 优化", "网站建设", "百度优化", "企业网站"],
+    "维双云企业官网 AI 建站服务，支持 AI 辅助生成页面、栏目和内容，内置 SEO 优化工具，帮助企业官网获得搜索流量和更多曝光。",
+  keywords: ["企业官网", "AI 建站", "SEO 建站", "网站建设", "百度优化", "企业网站"],
 }
 
 const features = [
   { icon: Sparkles, title: "AI 建站与写作", desc: "支持 AI 建站、AI 智能写作、批量写作和文章配图，降低官网内容生产成本。" },
   { icon: Search, title: "AI 生成 TDK", desc: "可围绕全站、页面、文章、产品和图册生成标题、描述和关键词，提升搜索理解效率。" },
-  { icon: Globe, title: "SEO/GEO 双优化", desc: "兼顾百度收录、传统搜索排名和 AI 搜索引用，让官网更容易被客户和大模型找到。" },
+  { icon: Globe, title: "SEO 搜索优化", desc: "兼顾百度收录、关键词布局和内容更新，让官网更容易被客户找到。" },
   { icon: FileText, title: "内容与文章系统", desc: "支持新闻、案例、服务介绍和问答内容沉淀，适合持续做行业关键词和长尾内容。" },
   { icon: Link2, title: "表单与线索收集", desc: "留言板、表单、在线查询和预约支付等能力，把官网访问转成可跟进的客户线索。" },
   { icon: BarChart3, title: "统计与经营看板", desc: "跟踪访问来源、页面表现和线索转化，方便持续判断哪些内容真正带来客户。" },
@@ -48,8 +48,8 @@ const plans = [
     name: "网站皇冠版",
     originalPrice: "1,498",
     price: "749",
-    note: "适合内容、支付和 GEO 增长",
-    features: ["推广版全部功能", "支持在线支付", "SEO + GEO 双优化", "知识付费系统", "AI 文章配图与 TDK", "资源库 2T 空间"],
+    note: "适合内容、支付和持续增长",
+    features: ["推广版全部功能", "支持在线支付", "SEO 搜索优化", "知识付费系统", "AI 文章配图与 TDK", "资源库 2T 空间"],
   },
   {
     name: "网站海外版",
@@ -71,18 +71,18 @@ const detailCapabilities = [
   { title: "10分钟轻松搭建，3天快速上线", desc: "先搭好首页、栏目、产品案例、表单和基础 SEO，让企业官网更快成为可访问、可咨询的线上入口。" },
   { title: "AI 建站与全站 TDK", desc: "围绕行业、产品和关键词生成页面结构、文章标题描述和产品 TDK，降低内容初始化成本。" },
   { title: "PC + 手机 + 微网站", desc: "官网一次搭建，多端自适应，适合企业展示、案例沉淀、服务介绍和线索收集。" },
-  { title: "SEO/GEO 内容增长", desc: "传统搜索做百度收录和关键词布局，AI 搜索做问答内容、品牌实体和可引用素材。" },
+  { title: "SEO 内容增长", desc: "围绕百度收录、关键词布局、问答内容和案例素材，持续提升官网的搜索表现。" },
   { title: "表单、留言和在线查询", desc: "把官网从展示页升级成获客工具，咨询、报价、预约、资料下载都能沉淀为线索。" },
 ]
 
 const detailScenarios = [
   { title: "刚起步的本地服务商", desc: "需要快速上线官网、绑定域名、做基础 SEO，让客户搜索时能找到可靠入口。" },
   { title: "想做内容获客的企业", desc: "适合持续发布案例、行业知识、解决方案，用文章和问答覆盖长尾搜索需求。" },
-  { title: "需要 AI 搜索曝光的品牌", desc: "官网内容可以作为 GEO 的底层信源，让 DeepSeek、豆包等模型更容易理解和引用品牌。" },
+  { title: "需要持续搜索曝光的品牌", desc: "通过稳定更新案例、服务介绍和常见问答，让客户更容易了解品牌与业务能力。" },
 ]
 
 const websiteSpecs = [
-  { name: "适用定位", values: ["展示型官网快速上线", "搜索收录与内容获客", "内容、支付和 GEO 增长", "外贸展示和跨境询盘"] },
+  { name: "适用定位", values: ["展示型官网快速上线", "搜索收录与内容获客", "内容、支付和持续增长", "外贸展示和跨境询盘"] },
   { name: "版本信息", values: [], section: true },
   { name: "建站端口", values: ["电脑站 + 手机站 + 微网站", "电脑站 + 手机站 + 微网站", "多端官网 + 知识付费", "多端官网 + 外贸端能力"] },
   { name: "访客流量", values: ["不限", "不限", "不限", "不限"] },
@@ -106,7 +106,7 @@ const websiteSpecs = [
   { name: "AI 能力", values: ["AI 页面初稿", "AI 写作、TDK、文章标题", "AI 配图、批量内容建议", "AI 翻译与多语言内容"] },
   { name: "获客组件", values: ["留言表单、在线咨询", "表单、预约、资料下载", "表单、支付、知识付费", "产品询盘、PayPal 支付"] },
   { name: "搜索与营销", values: [], section: true },
-  { name: "SEO/GEO", values: ["基础 SEO 设置", "搜索收录优化与统计", "SEO + GEO 双优化", "海外搜索收录与多语言优化"] },
+  { name: "SEO", values: ["基础 SEO 设置", "搜索收录优化与统计", "SEO 搜索优化与内容运营", "海外搜索收录与多语言优化"] },
   { name: "多语言", values: ["按需配置", "支持", "支持", "50 种语言版本"] },
   { name: "网站统计", values: ["基础统计", "高级统计", "高级统计 + 转化复盘", "海外访问与询盘分析"] },
   { name: "安全与服务", values: [], section: true },
@@ -123,14 +123,14 @@ export default function WebsitePage() {
         <section className="hero-dark-bg py-24 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
-              <Badge className="mb-5 bg-sky-900/60 text-sky-300 border-sky-700/50">10分钟轻松做网站 · AI 建站 + SEO/GEO</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 text-balance">
+              <Badge className="mb-5 bg-sky-900/60 text-sky-300 border-sky-700/50">10分钟轻松做网站 · AI 建站 + SEO</Badge>
+              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 10分钟轻松做网站
                 <br />
                 <span className="text-sky-400">让企业官网成为获客入口</span>
               </h1>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl text-pretty">
-                AI 辅助生成页面、栏目和内容，小白也能快速搭建企业网站；内置专业 SEO/GEO 优化工具，帮助企业官网稳步提升搜索排名和 AI 搜索可见度。
+              <p className="text-lg text-slate-300 mb-8 leading-[1.8] tracking-[0.01em] max-w-xl text-pretty">
+                AI 辅助生成页面、栏目和内容，小白也能快速搭建企业网站；内置专业 SEO 优化工具，帮助企业官网稳步提升搜索排名与内容曝光。
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <ContactQrButton size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-8">
@@ -162,7 +162,7 @@ export default function WebsitePage() {
         <section className="py-20 px-4 sm:px-6 bg-background">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-3 text-balance">AI 建站 + SEO/GEO，全面提升搜索可见度</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-3 text-balance">AI 建站 + SEO，全面提升搜索可见度</h2>
               <p className="text-muted-foreground text-lg max-w-xl mx-auto">从页面结构、内容生产到线索转化，每一个建站细节都围绕获客设计</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -184,7 +184,7 @@ export default function WebsitePage() {
         <section className="py-16 px-4 sm:px-6 bg-primary">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 text-balance">开始打造您的 AI 获客官网</h2>
-            <p className="text-blue-100 mb-8">免费 SEO/GEO 诊断，专属顾问为您制定建站方案</p>
+            <p className="text-blue-100 mb-8">免费 SEO 诊断，专属顾问为您制定建站方案</p>
             <ContactQrButton size="lg" className="bg-white text-primary hover:bg-blue-50 h-12 px-10">
               免费 SEO 诊断 <ArrowRight className="size-4 ml-2" />
             </ContactQrButton>

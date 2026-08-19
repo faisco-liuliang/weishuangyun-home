@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, ShoppingCart, Globe, GraduationCap, CalendarCheck, Store, Zap } from "lucide-react"
+import { ArrowRight, ShoppingCart, Globe, GraduationCap, CalendarCheck, Store } from "lucide-react"
 
 const products = [
   {
@@ -18,7 +18,7 @@ const products = [
   },
   {
     name: "企业官网",
-    tagline: "营销型官网 + SEO/GEO",
+    tagline: "营销型官网 + SEO",
     desc: "不只搭建页面，而是围绕关键词、案例、FAQ 和表单转化，做一个能被搜索和 AI 理解的获客入口。",
     href: "/products/website",
     icon: Globe,
@@ -26,7 +26,7 @@ const products = [
     iconBg: "bg-sky-50",
     badge: "SEO 必备",
     badgeColor: "bg-sky-100 text-sky-700",
-    features: ["AI 建站", "SEO 优化", "GEO 内容", "表单线索"],
+    features: ["AI 建站", "SEO 优化", "内容运营", "表单线索"],
   },
   {
     name: "教育系统",
@@ -64,18 +64,6 @@ const products = [
     badgeColor: "bg-orange-100 text-orange-700",
     features: ["AI 经营分析", "多门店管理", "会员体系", "数据报表"],
   },
-  {
-    name: "GEO 优化系统",
-    tagline: "AI 搜索品牌曝光",
-    desc: "围绕豆包、元宝、DeepSeek 等 AI 问答场景布局品牌内容，让企业更容易被模型理解和推荐。",
-    href: "/products/geo",
-    icon: Zap,
-    iconColor: "text-amber-600",
-    iconBg: "bg-amber-50",
-    badge: "新品上线",
-    badgeColor: "bg-amber-100 text-amber-700",
-    features: ["AI 可见度", "品牌智库", "内容创作", "竞品监控"],
-  },
 ]
 
 export function ProductsGrid() {
@@ -87,7 +75,7 @@ export function ProductsGrid() {
             产品中心
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance">
-            官网、小程序与 GEO 内容布局，形成线上获客闭环
+            官网、小程序与内容运营，形成线上获客闭环
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
             企业不只是需要一个网站，更需要一个能被客户找到、被 AI 理解、能承接咨询的线上入口。

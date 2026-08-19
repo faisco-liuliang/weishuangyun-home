@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { ContactQrButton } from "@/components/contact/contact-qr-button"
 import { cn } from "@/lib/utils"
 import { defaultRegisterUrl } from "@/lib/product-links"
-import { ArrowRight, BadgeCheck, CheckCircle, Clock3, Gift } from "lucide-react"
+import { ArrowDown, ArrowRight, BadgeCheck, CheckCircle, Clock3, Gift } from "lucide-react"
 
 type SpecRow = {
   name: string
@@ -19,6 +19,7 @@ type ProductPlan = {
   originalPrice?: string
   priceLabel?: string
   priceNote?: string
+  promoBanner?: string
   note?: string
   popular?: boolean
   highlight?: boolean
@@ -160,8 +161,17 @@ export function ProductDetailSections({
         </div>
 
         {plans.length > 0 && (
-          <div className="mt-12">
-            <div className={cn("grid gap-4", plans.length > 3 ? "lg:grid-cols-2 xl:grid-cols-4" : "lg:grid-cols-3")}>
+          <div id="price-plans" className="mt-10 scroll-mt-24">
+            <div className="mb-6 flex justify-start">
+              <a
+                href="#price-plans"
+                className={cn(buttonVariants({ variant: "outline" }), "h-11 rounded-full border-primary/25 bg-white px-6 text-primary shadow-sm hover:border-primary hover:bg-primary hover:text-primary-foreground")}
+              >
+                查看价格
+                <ArrowDown className="ml-2 size-4" />
+              </a>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {plans.map((plan) => {
                 const emphasized = plan.popular ?? plan.highlight
                 return (
@@ -193,7 +203,7 @@ export function ProductDetailSections({
                         </div>
                       </div>
                       <div className="rounded-md bg-blue-50 px-3 py-2 text-xs font-medium leading-5 text-primary">
-                        {promoTitle} · 渠道特惠可叠加
+                        {plan.promoBanner ?? `${promoTitle} · 渠道特惠可叠加`}
                       </div>
                       <ul className="mt-auto grid gap-2">
                         {plan.features.slice(0, 6).map((feature) => (

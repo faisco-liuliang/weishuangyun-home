@@ -11,13 +11,13 @@ import { ArrowRight, Clock, User, Tag, Search } from "lucide-react"
 export const metadata: Metadata = {
   title: "博客 - AI 企业数字化增长干货资讯",
   description:
-    "维双云博客，分享 AI 建站、SEO/GEO 优化、私域运营、AI 营销工具、数字化转型案例等实战干货，帮助中小企业掌握增长方法论。",
-  keywords: ["AI 建站", "SEO 教程", "GEO 优化", "私域运营", "企业数字化", "建站教程", "营销干货"],
+    "维双云博客，分享 AI 建站、SEO 优化、私域运营、AI 营销工具、数字化转型案例等实战干货，帮助中小企业掌握增长方法论。",
+  keywords: ["AI 建站", "SEO 教程", "私域运营", "企业数字化", "建站教程", "营销干货"],
   alternates: { canonical: "https://wsy.fkw.com/blog" },
   openGraph: {
     url: "https://wsy.fkw.com/blog",
     title: "博客 - 维双云 AI 企业数字化增长干货",
-    description: "AI 建站、SEO/GEO 优化、私域运营实战干货，每周更新，助力企业掌握数字化增长方法论。",
+    description: "AI 建站、SEO 优化、私域运营实战干货，每周更新，助力企业掌握数字化增长方法论。",
   },
 }
 
@@ -38,7 +38,7 @@ export default function BlogPage() {
                 AI 企业数字化增长干货
               </h1>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto text-pretty leading-relaxed">
-                AI 建站、SEO/GEO 优化、私域运营、AI 营销工具……每周更新实战干货，助力企业掌握数字化增长方法论。
+                AI 建站、SEO 优化、私域运营、AI 营销工具……每周更新实战干货，助力企业掌握数字化增长方法论。
               </p>
             </div>
 
@@ -159,26 +159,6 @@ export default function BlogPage() {
           </div>
         </section>
 
-        {/* Newsletter */}
-        <section className="py-16 px-4 sm:px-6 section-blue-bg">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-3">订阅每周干货</h2>
-            <p className="text-muted-foreground mb-8 text-pretty">
-              每周一篇精选文章，SEO、GEO、私域运营实战干货，直接发送到您的邮箱。
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
-              <input
-                type="email"
-                placeholder="输入您的邮箱地址"
-                className="flex-1 px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
-              />
-              <button className="bg-primary text-primary-foreground px-6 py-3 rounded-xl text-sm font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
-                立即订阅
-              </button>
-            </div>
-            <p className="text-xs text-muted-foreground mt-3">不发垃圾邮件，随时可取消订阅</p>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

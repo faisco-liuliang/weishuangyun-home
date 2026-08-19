@@ -7,6 +7,8 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { ContactQrButton } from "@/components/contact/contact-qr-button"
+import { PricingHeroCarousel } from "@/components/pricing/pricing-hero-carousel"
+import { OtherProductsMenu } from "@/components/products/other-products-menu"
 import { cn } from "@/lib/utils"
 import { productRegisterUrls } from "@/lib/product-links"
 import {
@@ -18,19 +20,16 @@ import {
   Clock3,
   GraduationCap,
   LayoutTemplate,
-  Megaphone,
-  SearchCheck,
   ShieldCheck,
   ShoppingBag,
-  Sparkles,
   Store,
 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "价格中心 - 维双云 AI 赋能全产品套餐",
   description:
-    "维双云价格中心，覆盖 AI 建站、私域商城、门店系统、AI 题库教育系统、服务预约、AI 营销工具、GEO 优化等产品套餐。",
-  keywords: ["维双云价格", "AI 建站价格", "商城小程序价格", "企业官网套餐", "GEO 优化价格", "门店系统价格"],
+    "维双云价格中心，覆盖 AI 建站、私域商城、门店系统、AI 题库教育系统、服务预约、AI 营销工具等产品套餐。",
+  keywords: ["维双云价格", "AI 建站价格", "商城小程序价格", "企业官网套餐", "门店系统价格"],
   alternates: { canonical: "https://wsy.fkw.com/pricing" },
   openGraph: {
     url: "https://wsy.fkw.com/pricing",
@@ -39,18 +38,12 @@ export const metadata: Metadata = {
   },
 }
 
-const promoStats = [
-  { label: "入门小程序", value: "¥99/年起" },
-  { label: "买2年送2年", value: "4 年权益" },
-  { label: "渠道特惠", value: "可叠加优惠" },
-]
-
 const products = [
   {
     id: "website",
     name: "企业官网",
     icon: LayoutTemplate,
-    summary: "10分钟轻松做网站，AI 建站、SEO/GEO 双优化。",
+    summary: "10分钟轻松做网站，AI 建站与 SEO 优化。",
     startPrice: "¥349/年起",
     bestFor: "品牌展示 / 百度收录 / 表单获客",
     promo: "买三年送三年",
@@ -75,8 +68,8 @@ const products = [
         name: "网站皇冠版",
         originalPrice: "1,498",
         price: "749",
-        note: "适合内容、支付和 GEO 增长",
-        features: ["推广版全部功能", "支持在线支付", "SEO + GEO 双优化", "知识付费系统", "AI 文章配图与 TDK", "资源库 2T 空间"],
+        note: "适合内容、支付和持续增长",
+        features: ["推广版全部功能", "支持在线支付", "SEO 搜索优化", "知识付费系统", "AI 文章配图与 TDK", "资源库 2T 空间"],
       },
       {
         name: "网站海外版",
@@ -279,44 +272,11 @@ const products = [
       },
     ],
   },
-  {
-    id: "geo",
-    name: "GEO 优化",
-    icon: SearchCheck,
-    summary: "AI 可见度诊断、品牌监控、内容创作和多平台自动发文。",
-    startPrice: "¥1,998/年起",
-    bestFor: "AI 推荐 / 内容结构 / 品牌实体",
-    promo: "按点数与权益报价",
-    source: "渠道特惠价可叠加",
-    plans: [
-      {
-        name: "GEO 基础版",
-        originalPrice: "3,996",
-        price: "1,998",
-        note: "适合精准布局 AI 回答关键位",
-        features: ["20 万点数/年", "最多 50 份可见度报告", "每份报告 30 个提问词", "1 个品牌监控", "最多创作 5000 篇文章", "20 个自媒体账号"],
-      },
-      {
-        name: "GEO 专业版",
-        originalPrice: "7,996",
-        price: "3,998",
-        note: "适合全域覆盖品牌 AI 竞争力",
-        popular: true,
-        features: ["40 万点数/年", "最多 100 份可见度报告", "每份报告 50 个提问词", "3 个品牌监控", "最多创作 10000 篇文章", "50 个自媒体账号"],
-      },
-      {
-        name: "GEO 旗舰版",
-        originalPrice: "10,996",
-        price: "5,998",
-        note: "适合锁定品牌 AI 声量领先位",
-        features: ["80 万点数/年", "最多 200 份可见度报告", "最多 5 个品牌监控", "竞品追踪最多 20 个", "最多创作 20000 篇文章", "200 个自媒体账号"],
-      },
-    ],
-  },
 ]
 
-const productDisplayOrder = ["store", "mall", "booking", "education", "website", "geo"]
+const productDisplayOrder = ["store", "mall", "booking", "education", "website"]
 const orderedProducts = productDisplayOrder.map((id) => products.find((product) => product.id === id)!)
+const primaryPricingProducts = orderedProducts.slice(0, 4)
 
 const comparisonRows = [
   ["建站与装修", "模板装修", "高级页面", "定制页面/专题"],
@@ -331,87 +291,38 @@ export default function PricingPage() {
     <>
       <Header />
       <main className="pt-16 bg-background">
-        <section className="border-b border-border bg-[linear-gradient(180deg,#f8fbff_0%,#eef5ff_100%)] px-4 py-8 sm:px-6">
-          <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-[280px_minmax(0,1fr)]">
-            <aside className="rounded-lg bg-primary p-4 text-primary-foreground shadow-xl shadow-primary/15">
-              <div className="mb-3 flex items-center gap-2 px-1 text-sm font-semibold text-white/80">
-                <Megaphone className="size-4" />
-                产品价格
+        <section className="relative overflow-hidden border-b border-border bg-[#f7f9fd] px-4 py-7 sm:px-6 lg:py-10">
+          <div className="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(circle_at_76%_18%,rgba(77,139,255,0.18),transparent_29%),radial-gradient(circle_at_22%_30%,rgba(147,197,253,0.22),transparent_25%)]" />
+          <div className="absolute left-1/2 top-24 size-96 -translate-x-1/2 rounded-full bg-blue-200/20 blur-3xl" />
+          <div className="relative z-10 mx-auto grid max-w-7xl gap-5 lg:grid-cols-[252px_minmax(0,1fr)] lg:items-stretch">
+            <aside className="hidden rounded-[26px] bg-slate-950 p-3 text-primary-foreground shadow-[0_24px_70px_-28px_rgba(15,23,42,0.65)] lg:block">
+              <div className="rounded-[18px] border border-white/10 bg-white/[0.06] px-4 py-4">
+                <p className="text-xs font-medium tracking-[0.16em] text-blue-300">PRICE GUIDE</p>
+                <p className="mt-1.5 text-lg font-bold text-white">产品报价导航</p>
+                <p className="mt-1 text-xs leading-5 text-slate-400">按产品快速查看套餐与活动权益</p>
               </div>
-              <nav className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
-                {orderedProducts.map(({ id, name, summary, icon: Icon }) => (
+              <nav className="mt-3 grid gap-1">
+                {primaryPricingProducts.map(({ id, name, summary, icon: Icon }) => (
                   <Link
                     key={id}
                     href={`#${id}`}
-                    className="group flex items-start gap-3 rounded-md px-3 py-2.5 transition-colors hover:bg-white/12"
+                    className="group flex items-start gap-3 rounded-2xl px-3 py-3 transition-all hover:bg-white/[0.1]"
                   >
-                    <Icon className="mt-0.5 size-4 shrink-0 text-white" />
+                    <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-xl bg-white/[0.09] text-blue-200 transition-colors group-hover:bg-blue-500 group-hover:text-white">
+                      <Icon className="size-4" />
+                    </span>
                     <span className="min-w-0">
-                      <span className="block text-base font-bold tracking-tight">{name}</span>
-                      <span className="mt-0.5 block text-xs font-medium leading-5 text-blue-100/85">{summary}</span>
+                      <span className="block text-[15px] font-bold tracking-tight text-white">{name}</span>
+                      <span className="mt-1 block text-[11px] font-medium leading-4 text-slate-400 transition-colors group-hover:text-slate-300">{summary}</span>
                     </span>
                   </Link>
                 ))}
               </nav>
+              <OtherProductsMenu />
+              <div className="mx-2 mt-3 border-t border-white/10 pt-3 text-center text-[11px] text-slate-500">价格透明，顾问协助选对版本</div>
             </aside>
 
-            <div className="overflow-hidden rounded-lg border border-blue-100 bg-white shadow-sm">
-              <div className="min-h-[440px]">
-                <div className="flex min-h-[440px] flex-col justify-center px-6 py-10 sm:px-10 lg:px-14">
-                  <Badge className="mb-5 w-fit border-primary/20 bg-white text-primary shadow-sm">
-                    <Sparkles className="size-3" />
-                    99 元/年做小程序 · 多产品线可参与
-                  </Badge>
-                  <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                    价格中心
-                  </h1>
-                  <p className="mt-4 text-2xl font-semibold text-primary">99 元/年做小程序，支持买2年送2年</p>
-                  <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
-                    多年优惠、渠道特惠价和顾问服务可叠加享受。按企业官网、商城小程序、门店系统、教育系统、轻应用和 GEO 优化拆分报价，版本功能清晰透明。
-                  </p>
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <Link
-                      href="#pricing-quotes"
-                      className={cn(
-                        buttonVariants({ size: "lg" }),
-                        "h-12 rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90",
-                      )}
-                    >
-                      下拉查看报价
-                      <ArrowDown className="ml-2 size-4" />
-                    </Link>
-                    <a
-                      href={productRegisterUrls.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        buttonVariants({ variant: "outline", size: "lg" }),
-                        "h-12 rounded-full border-primary/30 bg-white px-8 text-primary hover:bg-primary/5",
-                      )}
-                    >
-                      免费试用
-                      <ArrowRight className="ml-2 size-4" />
-                    </a>
-                  </div>
-                  <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                    {promoStats.map((item) => (
-                      <div key={item.label} className="rounded-lg border border-blue-100 bg-blue-50/60 p-4">
-                        <p className="text-xs text-muted-foreground">{item.label}</p>
-                        <p className="mt-1 text-sm font-semibold text-foreground">{item.value}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                    {["多年活动年限", "渠道特惠价", "顾问陪跑上线"].map((text) => (
-                      <div key={text} className="flex items-center gap-3 rounded-lg bg-white px-3 py-3 text-sm text-slate-700 shadow-sm ring-1 ring-blue-100">
-                        <CheckCircle className="size-4 text-primary" />
-                        {text}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <PricingHeroCarousel />
           </div>
         </section>
 

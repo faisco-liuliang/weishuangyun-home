@@ -91,12 +91,12 @@ export default function EducationPage() {
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <Badge className="mb-5 bg-violet-900/60 text-violet-300 border-violet-700/50">AI 题库 + 知识付费解决方案</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 text-balance">
+              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 教育系统 / AI 题库
                 <br />
                 <span className="text-violet-400">让教学资产持续变现</span>
               </h1>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl text-pretty">
+              <p className="text-lg text-slate-300 mb-8 leading-[1.8] tracking-[0.01em] max-w-xl text-pretty">
                 整合 AI 题库导入、智能组卷、直播课堂、录播点播、付费订阅和学员管理，帮助教育机构快速搭建可招生、可交付、可复购的在线学校。
               </p>
               <div className="flex flex-col sm:flex-row gap-3">

@@ -93,12 +93,12 @@ export default function BookingPage() {
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <Badge className="mb-5 bg-emerald-900/60 text-emerald-300 border-emerald-700/50">10分钟轻松做小程序 · AI 表单 + 服务预约</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 text-balance">
+              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 10分钟轻松做小程序
                 <br />
                 <span className="text-emerald-400">让预约、表单和内容发布更简单</span>
               </h1>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl text-pretty">
+              <p className="text-lg text-slate-300 mb-8 leading-[1.8] tracking-[0.01em] max-w-xl text-pretty">
                 专为美业、医疗、教培、家政等服务行业设计，AI 表单、在线预约、智能排班、自动提醒和线索摘要，帮助服务型企业快速制作小程序并提升运营效率。
               </p>
               <div className="flex flex-col sm:flex-row gap-3">

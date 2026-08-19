@@ -10,7 +10,7 @@ export function CTA() {
           <span className="text-blue-400">AI 时代的获客入口</span>
         </h2>
         <p className="text-lg text-slate-300 mb-10 max-w-xl mx-auto text-pretty leading-relaxed">
-          从官网建设、小程序搭建到 SEO/GEO 内容布局，专属顾问帮您梳理可落地的获客闭环。
+          从官网建设、小程序搭建到 SEO 与内容布局，专属顾问帮您梳理可落地的获客闭环。
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

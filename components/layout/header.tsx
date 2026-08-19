@@ -10,7 +10,6 @@ import {
   GraduationCap,
   CalendarCheck,
   Store,
-  Zap,
   ChevronDown,
   Menu,
   X,
@@ -27,7 +26,7 @@ const products = [
   },
   {
     name: "企业官网",
-    desc: "AI 建站+SEO/GEO，官网内容自动增长",
+    desc: "AI 建站+SEO，官网内容持续增长",
     href: "/products/website",
     icon: Globe,
     color: "text-sky-600",
@@ -56,15 +55,6 @@ const products = [
     icon: Store,
     color: "text-orange-600",
     bg: "bg-orange-50",
-  },
-  {
-    name: "GEO 优化系统",
-    desc: "让 DeepSeek、豆包等大模型推荐品牌",
-    href: "/products/geo",
-    icon: Zap,
-    color: "text-amber-600",
-    bg: "bg-amber-50",
-    badge: "新品上线",
   },
 ]
 
@@ -169,7 +159,6 @@ export function Header() {
                           <div>
                             <p className="flex flex-wrap items-center gap-2 text-sm font-semibold text-foreground transition-colors group-hover:text-primary">
                               {product.name}
-                              {product.badge && <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-700">{product.badge}</span>}
                             </p>
                             <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
                               {product.desc}

@@ -82,12 +82,12 @@ export default function StorePage() {
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <Badge className="mb-5 bg-orange-900/60 text-orange-300 border-orange-700/50">AI 辅助门店经营解决方案</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 text-balance">
+              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 门店系统 / AI 经营
                 <br />
                 <span className="text-orange-400">统一管理，高效运营</span>
               </h1>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl text-pretty">
+              <p className="text-lg text-slate-300 mb-8 leading-[1.8] tracking-[0.01em] max-w-xl text-pretty">
                 专为连锁零售和服务企业设计，AI 经营分析、多门店统一管理、会员分层、储值核销和数据实时汇总，帮助连锁品牌提升运营效率和客户粘性。
               </p>
               <div className="flex flex-col sm:flex-row gap-3">

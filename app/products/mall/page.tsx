@@ -61,6 +61,7 @@ const plans = [
     price: "998",
     priceLabel: "标准年价",
     priceNote: "不参与买2年送2年",
+    promoBanner: "标准年价 · 不参与买2年送2年",
     note: "适合低成本试水电商，不参与买2年送2年",
     features: ["小程序商城", "会员体系", "订单处理", "常用营销玩法"],
   },
@@ -183,12 +184,12 @@ export default function MallPage() {
               <Badge className="mb-5 bg-blue-900/60 text-blue-300 border-blue-700/50">
                 私域电商解决方案
               </Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 text-balance">
+              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 AI 私域商城系统
                 <br />
                 <span className="text-blue-400">从获客到复购</span>
               </h1>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl text-pretty">
+              <p className="text-lg text-slate-300 mb-8 leading-[1.8] tracking-[0.01em] max-w-xl text-pretty">
                 整合 AI 商品文案、小程序商城、会员运营、分销裂变和直播带货，打造属于企业自己的私域电商阵地，让每一位用户都成为增长引擎。
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
