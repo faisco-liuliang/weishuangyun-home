@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, ShoppingCart, Globe, GraduationCap, CalendarCheck, Store } from "lucide-react"
+import { ArrowRight, ShoppingCart, GraduationCap, CalendarCheck, Store } from "lucide-react"
 
 const products = [
   {
@@ -15,18 +15,6 @@ const products = [
     badge: "热门",
     badgeColor: "bg-blue-100 text-blue-700",
     features: ["AI 商品文案", "小程序商城", "分销体系", "私域运营"],
-  },
-  {
-    name: "企业官网",
-    tagline: "营销型官网 + SEO",
-    desc: "不只搭建页面，而是围绕关键词、案例、FAQ 和表单转化，做一个能被搜索和 AI 理解的获客入口。",
-    href: "/products/website",
-    icon: Globe,
-    iconColor: "text-sky-600",
-    iconBg: "bg-sky-50",
-    badge: "SEO 必备",
-    badgeColor: "bg-sky-100 text-sky-700",
-    features: ["AI 建站", "SEO 优化", "内容运营", "表单线索"],
   },
   {
     name: "教育系统",

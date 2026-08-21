@@ -5,9 +5,9 @@ import { Hero } from "@/components/home/hero"
 import { ProductsGrid } from "@/components/home/products-grid"
 import { TemplateRegistration } from "@/components/home/template-registration"
 import { Advantages } from "@/components/home/advantages"
-import { CasesPreview } from "@/components/home/cases-preview"
+import { AboutProductsOverview } from "@/components/home/about-products-overview"
 import { BlogPreview } from "@/components/home/blog-preview"
-import { HomeFaq } from "@/components/home/home-faq"
+import { ContactSection } from "@/components/home/contact-section"
 import { CTA } from "@/components/home/cta"
 
 export const metadata: Metadata = {
@@ -30,10 +30,10 @@ export default function HomePage() {
         <Hero />
         <TemplateRegistration />
         <ProductsGrid />
+        <AboutProductsOverview />
         <Advantages />
-        <CasesPreview />
         <BlogPreview />
-        <HomeFaq />
+        <ContactSection />
         <CTA />
       </main>
       <Footer />
