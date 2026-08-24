@@ -18,10 +18,10 @@ const productOverview = [
   {
     category: "轻应用",
     name: "预约与表单小程序",
-    desc: "用于在线预约、报名、咨询和提交表单的轻量小程序。",
+    desc: "用于企业品牌展示、在线预约、报名、咨询和提交表单的轻量小程序。",
     price: "参考价格：349 元/年起",
-    features: "功能覆盖：服务预约、万能表单、内容发布、消息提醒、到店核销与多端发布",
-    audience: "适合人群：美业、家政、医疗、婚庆、活动策划、咨询服务及本地服务商家，尤其适合先做展示、留资和预约承接的团队。",
+    features: "功能覆盖：企业与品牌展示、服务预约、万能表单、内容发布、消息提醒、到店核销与多端发布",
+    audience: "适合人群：美业、家政、医疗、婚庆、活动策划、咨询服务及本地服务商家，尤其适合先做企业展示、留资和预约承接的团队。",
   },
   {
     category: "教育系统",
@@ -41,8 +41,13 @@ export function AboutProductsOverview() {
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">关于维双云</p>
           <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">维双云产品功能与价格</h2>
           <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
-            维双云围绕门店经营、商品交易、服务预约与教育培训等常见场景提供标准化产品。商家可先从基础版本上线，再结合客户规模、业务流程和营销需求逐步升级。
+            维双云面向中小企业、个体户和本地门店，提供门店、商城、轻应用和教育等小程序。198 元/年起，商家可套用行业模板，通过零代码、可视化拖拽完成页面、图片和业务内容配置；展示、商品下单、服务预约、会员管理、课程报名、优惠券、拼团和分销等常用功能均可按需选择。先以较低成本上线，再随客户规模、商品数量和经营需求逐步升级。
           </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {["198 元/年起", "零代码搭建", "先上线再升级"].map((item) => (
+              <span key={item} className="rounded-full bg-primary/10 px-3 py-1.5 text-sm font-semibold text-primary">{item}</span>
+            ))}
+          </div>
         </div>
 
         <div className="space-y-8 sm:space-y-10">
