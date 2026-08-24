@@ -175,7 +175,7 @@ export function Hero() {
             <div className="absolute bottom-0 right-8 size-40 rounded-full border-[22px] border-blue-50/80" />
             <div className="h-full">
               <div className="relative flex flex-col justify-center px-6 py-9 sm:px-10 lg:px-14">
-                <div className="relative min-h-[500px] sm:min-h-[470px] lg:min-h-[510px]">
+                <div className="relative min-h-[760px] sm:min-h-[470px] lg:min-h-[510px]">
                   {orderedHeroSlides.map((slide, index) => (
                     <div
                       key={slide.eyebrow}
@@ -189,7 +189,7 @@ export function Hero() {
                         {slide.eyebrow}
                       </div>
 
-                      <h1 className="max-w-4xl text-4xl font-bold leading-[1.24] tracking-[0.015em] text-slate-950 sm:text-5xl xl:text-[58px]">
+                      <h1 className="max-w-4xl text-3xl font-bold leading-[1.28] tracking-[0.01em] text-slate-950 sm:text-5xl sm:leading-[1.24] sm:tracking-[0.015em] xl:text-[58px]">
                         {slide.title}
                         <span className="bg-gradient-to-r from-blue-600 to-[#4f8cff] bg-clip-text text-transparent"> {slide.accent}</span>
                       </h1>
@@ -219,7 +219,7 @@ export function Hero() {
                         </Link>
                       </div>
 
-                      <div className="mt-10 mb-10 grid gap-3 sm:grid-cols-3">
+                      <div className="mt-7 mb-14 grid gap-3 sm:mt-10 sm:mb-10 sm:grid-cols-3">
                         {slide.proofs.map(({ icon: Icon, title, desc }) => (
                           <div key={title} className="flex gap-3 rounded-2xl border border-slate-100 bg-white/85 p-3.5 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.55)]">
                             <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-primary">
