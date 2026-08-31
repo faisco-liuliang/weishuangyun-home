@@ -140,7 +140,7 @@ export function Hero() {
             面向中小商家的 198 元/年起高性价比小程序平台
           </span>
         </div>
-        <div className="grid gap-5 lg:grid-cols-[252px_minmax(0,1fr)] lg:items-stretch">
+        <div className="grid gap-5 lg:grid-cols-[252px_minmax(0,1fr)] lg:items-stretch xl:origin-top xl:scale-[1.08] xl:mb-[50px]">
           <aside className="hidden rounded-[26px] bg-slate-950 p-3 text-primary-foreground shadow-[0_24px_70px_-28px_rgba(15,23,42,0.65)] lg:block">
             <div className="rounded-[18px] border border-white/10 bg-white/[0.06] px-4 py-4">
               <p className="text-xs font-medium tracking-[0.16em] text-blue-300">PRODUCT SUITE</p>
