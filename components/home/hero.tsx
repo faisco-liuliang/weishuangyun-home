@@ -59,7 +59,7 @@ const heroSlides = [
     primary: "咨询轻应用方案",
     secondary: "点击注册",
     href: "/contact",
-    secondaryHref: "/products/booking",
+    secondaryHref: "https://qz.fkw.com/model/?_ta=9611",
     proofs: [
       { icon: Calendar, title: "预约表单", desc: "预约报名、咨询留资一次完成" },
       { icon: Layers3, title: "多端发布", desc: "微信、百度、抖音、快手多端覆盖" },
@@ -75,7 +75,7 @@ const heroSlides = [
     primary: "领取 198 元方案",
     secondary: "点击注册",
     href: "/contact",
-    secondaryHref: "/products/store",
+    secondaryHref: "https://yk.fkw.com/model/?_ta=9611",
     proofs: [
       { icon: Calendar, title: "预约表单", desc: "服务预约、报名咨询、线索收集" },
       { icon: Store, title: "门店展示", desc: "项目、地址、活动一页展示" },
@@ -91,7 +91,7 @@ const heroSlides = [
     primary: "咨询教育方案",
     secondary: "点击注册",
     href: "/contact",
-    secondaryHref: "/products/education",
+    secondaryHref: "https://edu.fkw.com/template/tf?_ta=9611",
     proofs: [
       { icon: GraduationCap, title: "课程教务", desc: "课程、班级、学员和排课统一管理" },
       { icon: Users, title: "招生转化", desc: "报名约课、会员和推广员协同招生" },
@@ -107,7 +107,7 @@ const heroSlides = [
     primary: "咨询商城方案",
     secondary: "点击注册",
     href: "/contact",
-    secondaryHref: "/products/mall",
+    secondaryHref: "https://mall.fkw.com/model/1/?_ta=9611",
     proofs: [
       { icon: ShoppingBag, title: "一站多端", desc: "小程序、微商城、PC 统一管理" },
       { icon: Users, title: "会员复购", desc: "积分、储值、等级和优惠券" },
@@ -134,7 +134,7 @@ export function Hero() {
       <div className="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(circle_at_76%_18%,rgba(77,139,255,0.18),transparent_29%),radial-gradient(circle_at_22%_30%,rgba(147,197,253,0.22),transparent_25%)]" />
       <div className="absolute left-1/2 top-24 size-96 -translate-x-1/2 rounded-full bg-blue-200/20 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-7 sm:px-6 lg:py-10">
+      <div className="relative z-10 mx-auto max-w-[1600px] px-4 py-7 sm:px-6 lg:py-10">
         <div className="mb-4 text-center">
           <span className="inline-flex w-full max-w-3xl justify-center rounded-2xl border border-blue-100 bg-white/80 px-6 py-3 text-base font-bold tracking-[0.03em] text-primary shadow-sm backdrop-blur-sm sm:text-lg">
             面向中小商家的 198 元/年起高性价比小程序平台

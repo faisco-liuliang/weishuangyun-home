@@ -48,6 +48,14 @@ export function AboutProductsOverview() {
               <span key={item} className="rounded-full bg-primary/10 px-3 py-1.5 text-sm font-semibold text-primary">{item}</span>
             ))}
           </div>
+          <div className="mt-5 rounded-xl border border-blue-100 bg-blue-50/60 p-4">
+            <p className="text-sm font-semibold text-foreground">适合客户群体</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {["新手创业者和初创团队", "夫妻店、社区店及街边门店", "个人工作室和自由职业者", "轻量电商及私域卖货商家", "教培机构和本地服务团队"].map((group) => (
+                <span key={group} className="rounded-full border border-blue-100 bg-white px-3 py-1.5 text-sm text-slate-700">{group}</span>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="space-y-8 sm:space-y-10">
