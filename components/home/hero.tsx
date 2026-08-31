@@ -134,13 +134,13 @@ export function Hero() {
       <div className="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(circle_at_76%_18%,rgba(77,139,255,0.18),transparent_29%),radial-gradient(circle_at_22%_30%,rgba(147,197,253,0.22),transparent_25%)]" />
       <div className="absolute left-1/2 top-24 size-96 -translate-x-1/2 rounded-full bg-blue-200/20 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-[1600px] px-4 py-7 sm:px-6 lg:py-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-7 sm:px-6 lg:py-10">
         <div className="mb-4 text-center">
           <span className="inline-flex w-full max-w-3xl justify-center rounded-2xl border border-blue-100 bg-white/80 px-6 py-3 text-base font-bold tracking-[0.03em] text-primary shadow-sm backdrop-blur-sm sm:text-lg">
             面向中小商家的 198 元/年起高性价比小程序平台
           </span>
         </div>
-        <div className="grid gap-5 lg:grid-cols-[252px_minmax(0,1fr)] lg:items-stretch xl:origin-top xl:scale-[1.08] xl:mb-[50px]">
+        <div className="grid gap-5 lg:grid-cols-[252px_minmax(0,1fr)] lg:items-stretch xl:origin-top xl:scale-[1.15] xl:mb-[90px]">
           <aside className="hidden rounded-[26px] bg-slate-950 p-3 text-primary-foreground shadow-[0_24px_70px_-28px_rgba(15,23,42,0.65)] lg:block">
             <div className="rounded-[18px] border border-white/10 bg-white/[0.06] px-4 py-4">
               <p className="text-xs font-medium tracking-[0.16em] text-blue-300">PRODUCT SUITE</p>
