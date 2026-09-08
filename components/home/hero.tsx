@@ -197,26 +197,27 @@ export function Hero() {
                       <p className="mt-5 max-w-[680px] text-[15px] leading-7 text-slate-500 sm:text-base">{slide.desc}</p>
 
                       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                        <Link
+                          href={slide.secondaryHref}
+                          className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-xl bg-primary px-9 text-primary-foreground shadow-lg shadow-blue-600/25 hover:bg-primary/90")}
+                        >
+                          <span className="text-base font-bold">{slide.secondary}</span>
+                          <ArrowRight className="ml-2 size-5" />
+                        </Link>
                         {slide.href === "/contact" ? (
-                          <ContactQrButton size="lg" className="h-12 rounded-xl bg-primary px-7 text-primary-foreground shadow-lg shadow-blue-600/20 hover:bg-primary/90">
+                          <ContactQrButton variant="outline" size="lg" className="h-12 rounded-xl border-slate-200 bg-white/80 px-7 text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-primary">
                             {slide.primary}
                             <ArrowRight className="ml-2 size-5" />
                           </ContactQrButton>
                         ) : (
                           <Link
                             href={slide.href}
-                            className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-xl bg-primary px-7 text-primary-foreground shadow-lg shadow-blue-600/20 hover:bg-primary/90")}
+                            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 rounded-xl border-slate-200 bg-white/80 px-7 text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-primary")}
                           >
                             {slide.primary}
                             <ArrowRight className="ml-2 size-5" />
                           </Link>
                         )}
-                        <Link
-                          href={slide.secondaryHref}
-                          className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 rounded-xl border-slate-200 bg-white/80 px-7 text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-primary")}
-                        >
-                          {slide.secondary}
-                        </Link>
                       </div>
 
                       <div className="mt-7 mb-14 grid gap-3 sm:mt-10 sm:mb-10 sm:grid-cols-3">
