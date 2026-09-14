@@ -1,0 +1,28 @@
+/* 为不支持 CSS Cascade Layers 的旧版安卓浏览器提供手机端样式兜底。 */
+@media screen and (max-width: 640px) {
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; min-width: 0; overflow-x: hidden; color: #0f172a; background: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; height: auto; }
+  .hidden { display: none !important; }
+  header { position: fixed; inset: 0 0 auto; z-index: 50; height: 64px; background: #fff; border-bottom: 1px solid #e2e8f0; }
+  header > div { height: 64px; padding: 0 16px; }
+  header > div > div { display: flex; align-items: center; height: 64px; }
+  header button { min-width: 44px; min-height: 44px; }
+  main { padding-top: 64px; }
+  main > section { padding-left: 16px !important; padding-right: 16px !important; }
+  [class*="grid"] { grid-template-columns: minmax(0, 1fr) !important; }
+  [class*="flex-col"] { display: flex; flex-direction: column; }
+  [class*="sm:flex-row"] { flex-direction: column; }
+  [class*="max-w-"] { max-width: 100% !important; }
+  h1 { font-size: 30px !important; line-height: 1.3 !important; letter-spacing: 0 !important; }
+  h2 { font-size: 25px !important; line-height: 1.35 !important; }
+  h3 { font-size: 19px !important; line-height: 1.4 !important; }
+  p { overflow-wrap: anywhere; }
+  [class*="rounded-"] { border-radius: 14px; }
+  [class*="px-7"], [class*="px-8"], [class*="px-9"] { padding-left: 20px !important; padding-right: 20px !important; }
+  [class*="h-12"] { min-height: 48px; }
+  [class*="overflow-x-auto"] { -webkit-overflow-scrolling: touch; }
+  [class*="min-w-["] { min-width: 620px; }
+  [class*="fixed"][class*="bottom"] { z-index: 40; }
+}

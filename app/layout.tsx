@@ -68,6 +68,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" className="bg-background">
+      <head>
+        <link rel="stylesheet" href="/legacy-mobile.css" />
+      </head>
       <body className="font-sans antialiased">
         <OrganizationJsonLd />
         {children}
