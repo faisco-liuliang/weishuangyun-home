@@ -120,11 +120,11 @@ export default function WebsitePage() {
     <>
       <Header />
       <main className="pt-16">
-        <section className="hero-dark-bg py-24 px-4 sm:px-6">
+        <section className="hero-dark-bg px-4 py-14 sm:px-6 sm:py-24">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <Badge className="mb-5 bg-sky-900/60 text-sky-300 border-sky-700/50">10分钟轻松做网站 · AI 建站 + SEO</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
+              <h1 className="text-3xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 10分钟轻松做网站
                 <br />
                 <span className="text-sky-400">让企业官网成为获客入口</span>

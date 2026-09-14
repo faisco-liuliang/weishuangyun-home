@@ -89,11 +89,11 @@ export default function BookingPage() {
     <>
       <Header />
       <main className="pt-16">
-        <section className="hero-dark-bg py-24 px-4 sm:px-6">
+        <section className="hero-dark-bg px-4 py-14 sm:px-6 sm:py-24">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <Badge className="mb-5 bg-emerald-900/60 text-emerald-300 border-emerald-700/50">10分钟轻松做小程序 · AI 表单 + 服务预约</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
+              <h1 className="text-3xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 10分钟轻松做小程序
                 <br />
                 <span className="text-emerald-400">让预约、表单和内容发布更简单</span>

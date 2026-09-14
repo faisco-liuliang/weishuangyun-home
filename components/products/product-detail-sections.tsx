@@ -73,15 +73,15 @@ export function ProductDetailSections({
   const tableTemplate = `minmax(160px, 0.9fr) repeat(${columns.length}, minmax(150px, 1fr))`
 
   return (
-    <section className="border-b border-border bg-white px-4 py-16 sm:px-6">
+    <section className="border-b border-border bg-white px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 grid gap-5 lg:grid-cols-[1fr_360px] lg:items-stretch">
-          <div className="rounded-lg border border-border bg-muted/30 p-6 sm:p-8">
+          <div className="rounded-lg border border-border bg-muted/30 p-5 sm:p-8">
             <Badge className={cn("mb-5 border", toneClass[tone])}>
               <Gift className="size-3" />
               {eyebrow}
             </Badge>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{title}</h2>
+            <h2 className="text-xl font-bold leading-8 text-foreground sm:text-3xl sm:leading-normal">{title}</h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">{description}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <ContactQrButton className="bg-primary text-primary-foreground hover:bg-primary/90">
@@ -94,7 +94,7 @@ export function ProductDetailSections({
             </div>
           </div>
 
-          <div className="rounded-lg border border-primary/15 bg-primary p-6 text-primary-foreground">
+          <div className="rounded-lg border border-primary/15 bg-primary p-5 text-primary-foreground sm:p-6">
             <div className="flex items-center gap-3">
               <div className="flex size-11 items-center justify-center rounded-lg bg-white/15">
                 <BadgeCheck className="size-5" />
@@ -127,7 +127,7 @@ export function ProductDetailSections({
           <div>
             <div className="mb-5">
               <p className="text-sm font-semibold text-primary">核心功能</p>
-              <h3 className="mt-2 text-2xl font-bold text-foreground">把产品能力拆成可落地的经营动作</h3>
+              <h3 className="mt-2 text-xl font-bold leading-8 text-foreground sm:text-2xl sm:leading-normal">把产品能力拆成可落地的经营动作</h3>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {capabilities.map((item) => (
@@ -147,7 +147,7 @@ export function ProductDetailSections({
           <div>
             <div className="mb-5">
               <p className="text-sm font-semibold text-primary">适用场景</p>
-              <h3 className="mt-2 text-2xl font-bold text-foreground">哪些企业适合优先上</h3>
+              <h3 className="mt-2 text-xl font-bold leading-8 text-foreground sm:text-2xl sm:leading-normal">哪些企业适合优先上</h3>
             </div>
             <div className="grid gap-4">
               {scenarios.map((item) => (
@@ -249,7 +249,8 @@ export function ProductDetailSections({
               </div>
             </div>
             <div className="overflow-x-auto rounded-lg border border-border bg-white shadow-sm">
-              <div className="min-w-[760px]">
+              <p className="border-b border-border bg-muted/30 px-4 py-2 text-xs text-muted-foreground sm:hidden">左右滑动查看完整版本规格</p>
+              <div className="min-w-[620px] sm:min-w-[760px]">
                 <div
                   className="grid border-b border-border bg-muted/50 text-sm font-semibold text-foreground"
                   style={{ gridTemplateColumns: tableTemplate }}

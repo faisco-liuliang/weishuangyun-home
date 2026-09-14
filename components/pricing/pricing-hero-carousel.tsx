@@ -101,17 +101,17 @@ export function PricingHeroCarousel() {
     <div className="relative overflow-hidden rounded-[26px] bg-white shadow-[0_24px_65px_-30px_rgba(30,64,175,0.35)] ring-1 ring-slate-200/80">
       <div className="absolute right-0 top-0 h-72 w-2/3 bg-[radial-gradient(ellipse_at_top_right,rgba(219,234,254,0.92),transparent_70%)]" />
       <div className="absolute bottom-0 right-8 size-40 rounded-full border-[22px] border-blue-50/80" />
-      <div className="relative flex min-h-[510px] flex-col justify-center px-6 py-9 sm:px-10 lg:px-14">
-        <Badge className="mb-6 w-fit border-blue-100 bg-blue-50/80 px-3.5 py-2 text-xs text-primary shadow-sm">
+      <div className="relative flex min-h-[unset] flex-col justify-center px-5 py-8 sm:min-h-[510px] sm:px-10 sm:py-9 lg:px-14">
+        <Badge className="mb-5 w-fit border-blue-100 bg-blue-50/80 px-3 py-1.5 text-xs text-primary shadow-sm sm:mb-6 sm:px-3.5 sm:py-2">
           <span className="size-1.5 rounded-full bg-primary shadow-[0_0_0_4px_rgba(37,99,235,0.1)]" />
           {slide.eyebrow}
         </Badge>
-        <h1 className="max-w-4xl text-4xl font-bold leading-[1.24] tracking-[0.015em] text-slate-950 sm:text-5xl xl:text-[58px]">
+        <h1 className="max-w-4xl text-3xl font-bold leading-[1.28] tracking-[0.01em] text-slate-950 sm:text-5xl sm:leading-[1.24] sm:tracking-[0.015em] xl:text-[58px]">
           {slide.title} <span className="bg-gradient-to-r from-blue-600 to-[#4f8cff] bg-clip-text text-transparent">{slide.highlight}</span>
         </h1>
-        <p className="mt-5 text-lg font-semibold leading-[1.4] tracking-[0.01em] text-slate-600 sm:text-xl">{slide.subtitle}</p>
-        <p className="mt-5 max-w-[680px] text-[15px] leading-7 text-slate-500 sm:text-base">{slide.description}</p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <p className="mt-4 text-base font-semibold leading-[1.5] tracking-[0.01em] text-slate-600 sm:mt-5 sm:text-xl sm:leading-[1.4]">{slide.subtitle}</p>
+        <p className="mt-4 max-w-[680px] text-sm leading-6 text-slate-500 sm:mt-5 sm:text-base sm:leading-7">{slide.description}</p>
+        <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
           <Link href={slide.id === "overview" ? "#pricing-quotes" : `#${slide.id}`} className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-xl bg-primary px-7 text-primary-foreground shadow-lg shadow-blue-600/20 hover:bg-primary/90")}>
             下拉查看报价 <ArrowDown className="ml-2 size-4" />
           </Link>
@@ -119,10 +119,10 @@ export function PricingHeroCarousel() {
             免费试用 <ArrowRight className="ml-2 size-4" />
           </a>
         </div>
-        <div className="mt-10 grid gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl border border-slate-100 bg-white/85 p-4 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.55)]"><p className="text-xs text-slate-500">{slide.priceLabel}</p><p className="mt-1 text-sm font-semibold text-slate-900">{slide.price}</p></div>
-          <div className="rounded-2xl border border-slate-100 bg-white/85 p-4 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.55)]"><p className="text-xs text-slate-500">年度活动</p><p className="mt-1 text-sm font-semibold text-slate-900">{slide.promotion}</p></div>
-          <div className="rounded-2xl border border-slate-100 bg-white/85 p-4 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.55)]"><p className="text-xs text-slate-500">顾问服务</p><p className="mt-1 text-sm font-semibold text-slate-900">协助选择合适版本</p></div>
+        <div className="mt-7 grid grid-cols-3 gap-2 sm:mt-10 sm:gap-3">
+          <div className="rounded-xl border border-slate-100 bg-white/85 p-3 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.55)] sm:rounded-2xl sm:p-4"><p className="text-[11px] text-slate-500 sm:text-xs">{slide.priceLabel}</p><p className="mt-1 text-xs font-semibold text-slate-900 sm:text-sm">{slide.price}</p></div>
+          <div className="rounded-xl border border-slate-100 bg-white/85 p-3 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.55)] sm:rounded-2xl sm:p-4"><p className="text-[11px] text-slate-500 sm:text-xs">年度活动</p><p className="mt-1 text-xs font-semibold text-slate-900 sm:text-sm">{slide.promotion}</p></div>
+          <div className="rounded-xl border border-slate-100 bg-white/85 p-3 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.55)] sm:rounded-2xl sm:p-4"><p className="text-[11px] text-slate-500 sm:text-xs">顾问服务</p><p className="mt-1 text-xs font-semibold text-slate-900 sm:text-sm">协助选择版本</p></div>
         </div>
         <div className="mt-8 flex flex-wrap items-center gap-2" aria-label="价格产品横幅切换">
           <span className="mr-2 text-[10px] font-semibold tracking-[0.14em] text-slate-400">PRICE GUIDE</span>

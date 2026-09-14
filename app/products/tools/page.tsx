@@ -56,11 +56,11 @@ export default function ToolsPage() {
     <>
       <Header />
       <main className="pt-16">
-        <section className="hero-dark-bg py-24 px-4 sm:px-6">
+        <section className="hero-dark-bg px-4 py-14 sm:px-6 sm:py-24">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <Badge className="mb-5 bg-rose-900/60 text-rose-300 border-rose-700/50">AI 内容营销工具箱</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
+              <h1 className="text-3xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 AI 营销工具全家桶
                 <br />
                 <span className="text-rose-400">低成本高效营销</span>

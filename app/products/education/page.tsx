@@ -87,11 +87,11 @@ export default function EducationPage() {
     <>
       <Header />
       <main className="pt-16">
-        <section className="hero-dark-bg py-24 px-4 sm:px-6">
+        <section className="hero-dark-bg px-4 py-14 sm:px-6 sm:py-24">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <Badge className="mb-5 bg-violet-900/60 text-violet-300 border-violet-700/50">AI 题库 + 知识付费解决方案</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
+              <h1 className="text-3xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
                 教育系统 / AI 题库
                 <br />
                 <span className="text-violet-400">让教学资产持续变现</span>
