@@ -61,7 +61,7 @@ export function TemplateRegistration() {
               <h3 className="mt-3 text-xl font-bold text-slate-900">选模板或开通有疑问？</h3>
               <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-slate-600">扫码添加客服，获取模板建议、套餐说明和上线协助。</p>
               <div className="mx-auto mt-6 max-w-[720px] overflow-hidden rounded-2xl border border-white bg-white p-3 shadow-lg shadow-blue-950/10">
-                <Image src="/home-service-qr.jpg" alt="客服二维码，扫码咨询详情" width={1030} height={576} className="h-auto w-full" />
+                <Image src="/contact-qr.png" alt="客服二维码，扫码咨询详情" width={480} height={480} className="mx-auto size-64 h-auto w-auto max-w-full" />
               </div>
               <p className="mt-3 text-center text-xs text-slate-500">工作日 9:30–18:00，周末请留言</p>
             </aside>

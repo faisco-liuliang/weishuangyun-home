@@ -212,11 +212,11 @@ export default function AboutPage() {
                 <p className="text-lg font-bold text-foreground">扫码添加企业微信</p>
                 <p className="mt-1 text-sm text-muted-foreground">添加专属顾问，获取产品咨询与解决方案</p>
                 <Image
-                  src="/home-service-qr.jpg"
+                  src="/contact-qr.png"
                   alt="维双云企业微信客服二维码"
-                  width={1030}
-                  height={415}
-                  className="mt-5 h-auto w-full"
+                  width={480}
+                  height={480}
+                  className="mx-auto mt-5 size-72 h-auto w-auto max-w-full"
                   priority
                 />
                 <p className="mt-4 text-xs text-muted-foreground">工作日 9:30–18:00，周末请留言，我们会尽快回复</p>
