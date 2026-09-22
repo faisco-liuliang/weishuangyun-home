@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { buttonVariants } from "@/components/ui/button"
 import { ContactQrButton } from "@/components/contact/contact-qr-button"
 import { cn } from "@/lib/utils"
-import { defaultRegisterUrl } from "@/lib/product-links"
+import { defaultRegisterUrl, productRegisterUrls } from "@/lib/product-links"
 import { ArrowDown, ArrowRight, BadgeCheck, CheckCircle, Clock3, Gift } from "lucide-react"
 
 type SpecRow = {
@@ -192,7 +192,7 @@ export function ProductDetailSections({
                           <span className="pb-1 text-sm text-muted-foreground">/年</span>
                         </div>
                         <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
-                          <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">{plan.priceLabel ?? "优惠价"}</span>
+                          <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">{plan.priceLabel ?? "买二送二活动价"}</span>
                           {plan.originalPrice && plan.originalPrice !== "0" ? (
                             <span className="text-muted-foreground">
                               原价 <span className="line-through">¥{plan.originalPrice}/年</span>
@@ -213,18 +213,30 @@ export function ProductDetailSections({
                           </li>
                         ))}
                       </ul>
-                      <a
-                        href={registerUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn(
-                          buttonVariants({ variant: emphasized ? "default" : "outline" }),
-                          "mt-2 w-full"
-                        )}
-                      >
-                        立即试用
-                        <ArrowRight className="ml-2 size-4" />
-                      </a>
+                      {registerUrl === productRegisterUrls.store && plan.name === "门店入门版" ? (
+                        <ContactQrButton
+                          variant="outline"
+                          qrSrc="/qr-198.png"
+                          description="198元小程序为内测入门版本，无法直接购买，请添加客服咨询开通"
+                          className={cn(buttonVariants({ variant: "outline" }), "mt-2 w-full")}
+                        >
+                          立即试用
+                          <ArrowRight className="ml-2 size-4" />
+                        </ContactQrButton>
+                      ) : (
+                        <a
+                          href={registerUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cn(
+                            buttonVariants({ variant: emphasized ? "default" : "outline" }),
+                            "mt-2 w-full"
+                          )}
+                        >
+                          立即试用
+                          <ArrowRight className="ml-2 size-4" />
+                        </a>
+                      )}
                     </CardContent>
                   </Card>
                 )

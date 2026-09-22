@@ -57,15 +57,6 @@ const features = [
 
 const plans = [
   {
-    name: "商城特惠版",
-    price: "998",
-    priceLabel: "标准年价",
-    priceNote: "不参与买2年送2年",
-    promoBanner: "标准年价 · 不参与买2年送2年",
-    note: "适合低成本试水电商，不参与买2年送2年",
-    features: ["小程序商城", "会员体系", "订单处理", "常用营销玩法"],
-  },
-  {
     name: "商城基础版",
     originalPrice: "1,998",
     price: "999",

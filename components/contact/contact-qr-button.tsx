@@ -10,9 +10,11 @@ type ContactQrButtonProps = {
   className?: string
   variant?: "default" | "outline" | "secondary" | "ghost" | "destructive" | "link"
   size?: "default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg"
+  qrSrc?: string
+  description?: string
 }
 
-export function ContactQrButton({ children, className, variant = "default", size = "default" }: ContactQrButtonProps) {
+export function ContactQrButton({ children, className, variant = "default", size = "default", qrSrc = "/contact-qr.png", description = "添加企业微信顾问，获取产品试用、购买和报价支持。" }: ContactQrButtonProps) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -32,9 +34,9 @@ export function ContactQrButton({ children, className, variant = "default", size
               <X className="size-4" />
             </button>
             <p className="text-lg font-bold text-slate-950">扫码添加客服</p>
-            <p className="mt-2 text-sm leading-6 text-slate-500">添加企业微信顾问，获取产品试用、购买和报价支持。</p>
+            <p className="mt-2 text-sm leading-6 text-slate-500">{description}</p>
             <div className="mx-auto mt-5 size-56 rounded-lg border border-slate-200 bg-white p-2 shadow-sm">
-              <img src="/contact-qr.png" alt="企业微信客服二维码" className="h-full w-full rounded-md object-contain" />
+              <img src={qrSrc} alt="企业微信客服二维码" className="h-full w-full rounded-md object-contain" />
             </div>
             <button
               type="button"

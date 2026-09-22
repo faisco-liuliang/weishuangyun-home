@@ -98,13 +98,6 @@ const products = [
     source: "渠道特惠价可叠加",
     plans: [
       {
-        name: "商城特惠版",
-        originalPrice: "",
-        price: "998",
-        note: "适合低成本试水电商",
-        features: ["小程序商城", "会员体系", "订单处理", "常用营销玩法", "不参与买2年送2年"],
-      },
-      {
         name: "商城基础版",
         originalPrice: "1,998",
         price: "999",
@@ -399,23 +392,23 @@ export default function PricingPage() {
                           </CardHeader>
                           <CardContent className="flex flex-1 flex-col gap-3.5 p-4 pt-0">
                             <div>
-                              <div className="flex items-end gap-1">
-                                <span className="text-3xl font-bold tracking-tight text-foreground">¥{plan.price}</span>
-                                <span className="pb-1 text-sm text-muted-foreground">/年</span>
-                              </div>
-                              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
-                                <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">{plan.originalPrice ? "活动折算价" : "标准年价"}</span>
-                                {plan.originalPrice ? (
-                                  <span className="text-muted-foreground">
-                                    参考原价 <span className="line-through">¥{plan.originalPrice}/年</span>
-                                  </span>
-                                ) : (
-                                  <span className="text-muted-foreground">不参与买2年送2年</span>
-                                )}
-                              </div>
-                              <p className="mt-2.5 rounded-md bg-blue-50 px-3 py-1.5 text-xs font-medium leading-5 text-primary">
-                                {product.id === "mall" && !plan.originalPrice ? "不参与买2年送2年" : product.promo} · {product.source}
-                              </p>
+                                <div className="flex items-end gap-1">
+                                  <span className="text-3xl font-bold tracking-tight text-foreground">¥{plan.price}</span>
+                                  <span className="pb-1 text-sm text-muted-foreground">/年</span>
+                                </div>
+                                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                                  <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">买二送二活动价</span>
+                                  {plan.originalPrice ? (
+                                    <span className="text-muted-foreground">
+                                      参考原价 <span className="line-through">¥{plan.originalPrice}/年</span>
+                                    </span>
+                                  ) : (
+                                    <span className="text-muted-foreground">不参与买2年送2年</span>
+                                  )}
+                                </div>
+                                <p className="mt-2.5 rounded-md bg-blue-50 px-3 py-1.5 text-xs font-medium leading-5 text-primary">
+                                  {product.id === "mall" && !plan.originalPrice ? "不参与买2年送2年" : product.promo} · {product.source}
+                                </p>
                             </div>
                             <Separator />
                             <ul className="flex flex-col gap-2">
@@ -426,17 +419,28 @@ export default function PricingPage() {
                                 </li>
                               ))}
                             </ul>
-                            <a
-                              href={productRegisterUrls[product.id as keyof typeof productRegisterUrls] ?? productRegisterUrls.website}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={cn(
-                                buttonVariants({ variant: plan.popular ? "default" : "outline" }),
-                                "mt-auto w-full"
-                              )}
-                            >
-                              立即购买
-                            </a>
+                            {product.id === "store" && plan.name === "门店入门版" ? (
+                              <ContactQrButton
+                                variant="outline"
+                                qrSrc="/qr-198.png"
+                                description="198元小程序为内测入门版本，无法直接购买，请添加客服咨询开通"
+                                className={cn(buttonVariants({ variant: "outline" }), "mt-auto w-full")}
+                              >
+                                立即试用
+                              </ContactQrButton>
+                            ) : (
+                              <a
+                                href={productRegisterUrls[product.id as keyof typeof productRegisterUrls] ?? productRegisterUrls.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={cn(
+                                  buttonVariants({ variant: plan.popular ? "default" : "outline" }),
+                                  "mt-auto w-full"
+                                )}
+                              >
+                                立即购买
+                              </a>
+                            )}
                           </CardContent>
                         </Card>
                       ))}

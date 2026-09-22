@@ -205,7 +205,7 @@ export function Hero() {
                           <ArrowRight className="ml-2 size-5" />
                         </Link>
                         {slide.href === "/contact" ? (
-                          <ContactQrButton variant="outline" size="lg" className="h-12 rounded-xl border-slate-200 bg-white/80 px-7 text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-primary">
+                          <ContactQrButton variant="outline" size="lg" qrSrc={slide.primary === "领取 198 元方案" ? "/qr-198.png" : undefined} description={slide.primary === "领取 198 元方案" ? "198元小程序为内测入门版本，无法直接购买，请添加客服咨询开通" : undefined} className="h-12 rounded-xl border-slate-200 bg-white/80 px-7 text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-primary">
                             {slide.primary}
                             <ArrowRight className="ml-2 size-5" />
                           </ContactQrButton>
