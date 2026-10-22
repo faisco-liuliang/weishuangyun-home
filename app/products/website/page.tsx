@@ -56,7 +56,7 @@ const plans = [
     originalPrice: "2,998",
     price: "1,499",
     note: "适合外贸展示和跨境询盘",
-    features: ["皇冠版全部功能", "全球 CDN 动态加速", "50 种语言版本", "AI 翻译 10 万 AI 豆", "PayPal 支付/产品询盘", "保证谷歌收录"],
+    features: ["皇冠版全部功能", "全球 CDN 动态加速", "多语言版本（以版本说明为准）", "AI 翻译额度（以版本说明为准）", "PayPal 支付/产品询盘", "按搜索平台规则配置与提交，不承诺固定收录"],
   },
   {
     name: "网站海外旗舰版",
@@ -68,7 +68,7 @@ const plans = [
 ]
 
 const detailCapabilities = [
-  { title: "10分钟轻松搭建，3天快速上线", desc: "先搭好首页、栏目、产品案例、表单和基础 SEO，让企业官网更快成为可访问、可咨询的线上入口。" },
+  { title: "快速搭建，按资料与版本安排上线", desc: "先搭好首页、栏目、产品案例、表单和基础 SEO，具体上线节奏取决于资料准备、版本选择和服务安排。" },
   { title: "AI 建站与全站 TDK", desc: "围绕行业、产品和关键词生成页面结构、文章标题描述和产品 TDK，降低内容初始化成本。" },
   { title: "PC + 手机 + 微网站", desc: "官网一次搭建，多端自适应，适合企业展示、案例沉淀、服务介绍和线索收集。" },
   { title: "SEO 内容增长", desc: "围绕百度收录、关键词布局、问答内容和案例素材，持续提升官网的搜索表现。" },
@@ -95,7 +95,7 @@ const websiteSpecs = [
   { name: "图册数量", values: ["约 500 个", "约 1000 个", "约 1 万个", "约 1 万个"] },
   { name: "电脑网站栏目", values: ["约 500 个", "约 1000 个", "约 1 万个", "约 1 万个"] },
   { name: "手机网站页面", values: ["约 500 个", "约 1000 个", "约 1 万个", "约 1 万个"] },
-  { name: "自定义模块", values: ["约 1000 个", "约 5000 个", "约 5 万个", "约 5 万个"] },
+  { name: "自定义模块", values: ["以版本说明为准", "以版本说明为准", "以版本说明为准", "以版本说明为准"] },
   { name: "产品系统", values: [], section: true },
   { name: "产品数量", values: ["约 5000 个", "约 1 万个", "约 20 万个", "约 20 万个"] },
   { name: "产品咨询/评论", values: ["支持", "支持", "支持", "支持"] },
@@ -123,9 +123,9 @@ export default function WebsitePage() {
         <section className="hero-dark-bg px-4 py-14 sm:px-6 sm:py-24">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
-              <Badge className="mb-5 bg-sky-900/60 text-sky-300 border-sky-700/50">10分钟轻松做网站 · AI 建站 + SEO</Badge>
+              <Badge className="mb-5 bg-sky-900/60 text-sky-300 border-sky-700/50">轻量建站 · AI 辅助 + SEO 配置</Badge>
               <h1 className="text-3xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
-                10分钟轻松做网站
+                快速搭建企业官网
                 <br />
                 <span className="text-sky-400">让企业官网成为获客入口</span>
               </h1>
@@ -147,7 +147,7 @@ export default function WebsitePage() {
         <ProductDetailSections
           tone="sky"
           eyebrow="官网建站活动"
-          title="10分钟轻松做网站，先把官网做成获客入口"
+          title="先把官网做成可访问、可咨询的入口"
           description="官网产品页不只讲建站，而是把页面结构、内容生产、搜索收录、AI 引用和线索转化连起来。基础版本适合快速上线企业网站，推广/商务版本更适合持续做内容和搜索获客。"
           capabilities={detailCapabilities}
           scenarios={detailScenarios}

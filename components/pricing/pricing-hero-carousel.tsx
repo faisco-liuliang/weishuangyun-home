@@ -67,7 +67,7 @@ const slides: PricingHeroSlide[] = [
     eyebrow: "轻应用小程序 · 多端发布、预约表单更灵活",
     title: "轻应用",
     highlight: "快速上线",
-    subtitle: "10分钟做小程序，服务预约和内容发布一次完成",
+    subtitle: "快速搭建小程序，服务预约和内容发布按版本配置",
     description: "适合美业、家政、医疗、活动和本地服务等场景，支持表单、预约、到店核销及微信、抖音等多端发布。",
     price: "¥349/年起",
     priceLabel: "小程序标准版",

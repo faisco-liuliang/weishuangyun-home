@@ -158,7 +158,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© 2024 维双云. 保留所有权利.</p>
+          <p>© 2024 维双云. 广州凡科互联网科技股份有限公司旗下轻量子品牌。保留所有权利.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-slate-300 transition-colors">
               隐私政策

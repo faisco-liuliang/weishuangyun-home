@@ -54,7 +54,7 @@ const heroSlides = [
     eyebrow: "轻应用小程序 · 预约、表单、内容发布多端同步",
     title: "轻应用",
     accent: "服务更好成交",
-    subtitle: "10分钟做小程序，把预约、留资和服务展示放在一起",
+    subtitle: "快速搭建小程序，把预约、留资和服务展示放在一起",
     desc: "适合美业、家政、医疗、活动和本地服务商家，支持服务预约、万能表单、到店核销及微信、抖音等多端发布。",
     primary: "咨询轻应用方案",
     secondary: "点击注册",
@@ -70,8 +70,8 @@ const heroSlides = [
     eyebrow: "198 元/年做小程序 · 买2年送2年",
     title: "198 元/年做小程序",
     accent: "低成本上线",
-    subtitle: "10分钟轻松做小程序，门店、预约、表单、会员都能低成本上线",
-    desc: "适合先把门店展示、预约留资、服务项目和基础会员沉淀起来。入门版 198 元/年起，支持买2年送2年，再叠加渠道特惠更划算。",
+    subtitle: "低成本搭建小程序，门店、预约、表单、会员等功能按版本配置",
+    desc: "适合先把门店展示、预约留资、服务项目和基础会员沉淀起来。入门版 198 元/年起，活动权益和渠道优惠以当期方案为准。",
     primary: "领取 198 元方案",
     secondary: "点击注册",
     href: "/contact",
@@ -137,7 +137,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-7 sm:px-6 lg:py-10">
         <div className="mb-4 text-center">
           <span className="inline-flex w-full max-w-3xl justify-center rounded-2xl border border-blue-100 bg-white/80 px-6 py-3 text-base font-bold tracking-[0.03em] text-primary shadow-sm backdrop-blur-sm sm:text-lg">
-            面向中小商家的 198 元/年起高性价比小程序平台
+            面向本地商家的轻量小程序平台
           </span>
         </div>
         <div className="grid gap-5 lg:grid-cols-[252px_minmax(0,1fr)] lg:items-stretch xl:origin-top xl:scale-[1.15] xl:mb-[90px]">

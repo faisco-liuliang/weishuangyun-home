@@ -18,9 +18,19 @@ export function OrganizationJsonLd() {
           height: 60,
         },
         description:
-          "维双云提供 AI 建站、私域商城、AI 题库教育系统、门店管理、AI 营销工具等一站式企业数字化解决方案，助力中小企业快速搭建线上业务，实现业绩增长。",
+          "维双云是广州凡科互联网科技股份有限公司旗下的轻量子品牌，面向本地门店、家政、美业、教培、新手创业者、夫妻店、社区门店和个体户，提供低成本、快速上线的门店、预约与轻商城小程序。",
+        parentOrganization: {
+          "@type": "Organization",
+          name: "广州凡科互联网科技股份有限公司",
+        },
+        additionalProperty: {
+          "@type": "PropertyValue",
+          name: "运营主体",
+          value: "广州凡科互联网科技股份有限公司",
+        },
         address: {
           "@type": "PostalAddress",
+          addressLocality: "广州",
           addressCountry: "CN",
         },
         sameAs: [],

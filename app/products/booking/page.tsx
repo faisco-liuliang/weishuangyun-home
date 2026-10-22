@@ -35,7 +35,7 @@ const plans = [
 ]
 
 const detailCapabilities = [
-  { title: "10分钟轻松搭建，3天快速上线", desc: "先完成服务项目、预约时段、表单字段和多端发布配置，服务型团队不用复杂开发也能上线。" },
+  { title: "快速搭建，按资料与版本安排上线", desc: "先完成服务项目、预约时段、表单字段和多端发布配置，具体上线节奏取决于资料准备、版本选择和服务安排。" },
   { title: "多端发布小程序", desc: "内容一次配置，可覆盖微信、百度、抖音、头条、支付宝、快手等多端小程序场景。" },
   { title: "服务预约和排班", desc: "服务项目、人员、时段、门店和提醒统一配置，减少人工排班和反复沟通。" },
   { title: "万能表单和在线支付", desc: "报名、咨询、报价、预约、信息收集和在线支付都能通过轻应用快速完成。" },
@@ -92,9 +92,9 @@ export default function BookingPage() {
         <section className="hero-dark-bg px-4 py-14 sm:px-6 sm:py-24">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
-              <Badge className="mb-5 bg-emerald-900/60 text-emerald-300 border-emerald-700/50">10分钟轻松做小程序 · AI 表单 + 服务预约</Badge>
+              <Badge className="mb-5 bg-emerald-900/60 text-emerald-300 border-emerald-700/50">轻量小程序 · AI 表单 + 服务预约</Badge>
               <h1 className="text-3xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
-                10分钟轻松做小程序
+                快速搭建服务小程序
                 <br />
                 <span className="text-emerald-400">让预约、表单和内容发布更简单</span>
               </h1>
@@ -116,7 +116,7 @@ export default function BookingPage() {
         <ProductDetailSections
           tone="emerald"
           eyebrow="轻应用限时体验"
-          title="10分钟轻松做小程序，不做复杂开发也能上线"
+          title="不做复杂开发，也能按版本搭建服务小程序"
           description="轻应用的重点不是重商城，而是用更低门槛完成展示、预约、表单、支付和内容发布。适合服务行业先跑通小程序获客流程，再逐步升级到商城或门店系统。"
           capabilities={detailCapabilities}
           scenarios={detailScenarios}
@@ -153,7 +153,7 @@ export default function BookingPage() {
         <section className="py-16 px-4 sm:px-6 bg-primary">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">让服务预约更专业</h2>
-            <p className="text-blue-100 mb-8">免费试用，无需技术背景即可上线</p>
+            <p className="text-blue-100 mb-8">可按当期方案申请体验，具体上线条件以版本说明为准</p>
             <a href={productRegisterUrls.booking} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "bg-white text-primary hover:bg-blue-50 h-12 px-10")}>
               免费试用 <ArrowRight className="size-4 ml-2" />
             </a>

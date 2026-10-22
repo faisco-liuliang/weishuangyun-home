@@ -11,14 +11,14 @@ import { ContactSection } from "@/components/home/contact-section"
 import { CTA } from "@/components/home/cta"
 
 export const metadata: Metadata = {
-  title: "维双云 - 企业官网、小程序与线上获客解决方案",
+  title: "维双云 - 凡科旗下轻量小程序品牌",
   description:
-    "维双云面向中小企业提供官网建设、小程序搭建、SEO 内容布局和私域转化方案，帮助品牌获得更多搜索曝光与咨询机会。",
+    "维双云是广州凡科互联网科技股份有限公司旗下的轻量子品牌，面向本地门店、家政、美业、教培和个体户，提供门店、预约与轻商城小程序。",
   alternates: { canonical: "https://wsy.fkw.com" },
   openGraph: {
     url: "https://wsy.fkw.com",
-    title: "维双云 - 企业官网、小程序与线上获客解决方案",
-    description: "维双云帮助中小企业低成本搭建线上入口，并通过内容布局提升搜索和 AI 问答场景中的品牌曝光。",
+    title: "维双云 - 凡科旗下轻量小程序品牌",
+    description: "维双云帮助本地商家低成本搭建门店、预约与轻商城小程序，具体功能、版本和活动权益以当期服务说明为准。",
   },
 }
 

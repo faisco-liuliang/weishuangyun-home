@@ -26,8 +26,8 @@ const advantages = [
     icon: Clock,
     iconColor: "text-orange-600",
     iconBg: "bg-orange-50",
-    title: "7 天上线，30 天启动内容布局",
-    desc: "基础官网和小程序可快速上线，随后围绕行业词、案例页、FAQ 和文章持续扩展。",
+    title: "按资料准备情况快速上线",
+    desc: "基础官网和小程序可根据资料完整度、产品版本和服务安排推进上线，后续再围绕行业词、案例页、FAQ 和文章扩展。",
   },
   {
     icon: Users,

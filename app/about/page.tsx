@@ -11,30 +11,30 @@ import { defaultRegisterUrl } from "@/lib/product-links"
 import { ArrowRight, Users, Target, Heart, Award } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "关于维双云 - 专注企业数字化增长的 SaaS 服务商",
+  title: "关于维双云 - 凡科旗下轻量小程序品牌",
   description:
-    "维双云深耕企业数字化领域，为 5 万+ 中小企业提供私域商城、企业官网、教育系统等一站式 SaaS 服务，专属顾问一对一服务，助力企业实现持续增长。",
+    "维双云是广州凡科互联网科技股份有限公司旗下的轻量子品牌，面向本地门店、家政、美业、教培和新手创业者，提供低成本、快速上线的门店、预约与轻商城小程序。",
   keywords: ["维双云", "关于我们", "企业介绍", "SaaS 服务商", "企业数字化"],
   alternates: { canonical: "https://wsy.fkw.com/about" },
   openGraph: {
     url: "https://wsy.fkw.com/about",
-    title: "关于维双云 - 专注企业数字化增长的 SaaS 服务商",
-    description: "5 万+ 企业信赖，专属顾问一对一服务，助力企业实现数字化转型。",
+    title: "关于维双云 - 凡科旗下轻量小程序品牌",
+    description: "维双云是广州凡科互联网科技股份有限公司旗下的轻量子品牌，具体服务范围和版本权益以当期说明为准。",
   },
 }
 
 const values = [
-  { icon: Target, title: "结果导向", desc: "我们以客户业务增长为最终目标，不卖功能，卖结果。每一个方案都基于客户的实际业务需求量身定制。" },
-  { icon: Heart, title: "长期陪伴", desc: "我们不是卖软件就消失的供应商，而是与客户同行的长期合作伙伴，从建设到运营全程支持。" },
+  { icon: Target, title: "按场景规划", desc: "围绕客户的经营场景和当前阶段配置产品，具体方案以实际需求、版本和服务约定为准。" },
+  { icon: Heart, title: "持续支持", desc: "提供产品使用和上线过程中的相应支持，具体服务范围、时段和方式以当期说明及双方约定为准。" },
   { icon: Users, title: "以人为本", desc: "关注每一位用户的真实体验，产品简单易用，服务温暖专业，让每个人都能驾驭数字化工具。" },
-  { icon: Award, title: "追求卓越", desc: "基于成熟 SaaS 技术积累，持续迭代产品，跟进最新技术趋势，确保客户始终使用稳定易用的工具。" },
+  { icon: Award, title: "持续迭代", desc: "根据产品版本和服务安排持续优化功能，具体能力和稳定性以当期版本说明与运行记录为准。" },
 ]
 
 const team = [
   { name: "张总监", role: "创始人 & CEO", bg: "bg-blue-100 text-blue-700", initial: "张", desc: "10 年互联网从业经验，专注中小企业数字化转型。" },
   { name: "李老师", role: "首席产品官", bg: "bg-violet-100 text-violet-700", initial: "李", desc: "前知名 SaaS 产品总监，深耕 B 端产品设计。" },
-  { name: "王经理", role: "客户成功负责人", bg: "bg-emerald-100 text-emerald-700", initial: "王", desc: "服务 3,000+ 企业客户，客户满意度常年 98% 以上。" },
-  { name: "陈工", role: "技术总监", bg: "bg-orange-100 text-orange-700", initial: "陈", desc: "10 年云计算架构经验，保障系统 99.9% 可用性。" },
+  { name: "王经理", role: "客户成功负责人", bg: "bg-emerald-100 text-emerald-700", initial: "王", desc: "负责客户沟通与服务跟进，具体服务规模和满意度以当期统计与实际记录为准。" },
+  { name: "陈工", role: "技术总监", bg: "bg-orange-100 text-orange-700", initial: "陈", desc: "负责系统架构与稳定性维护，具体可用性以当期服务说明和运行记录为准。" },
 ]
 
 const productOverview = [
@@ -87,17 +87,17 @@ export default function AboutPage() {
                 <span className="mt-2 block text-blue-400 sm:mt-3">线上经营服务品牌</span>
               </h1>
               <p className="max-w-2xl text-lg leading-relaxed text-slate-300 text-pretty">
-                维双云是面向中小商家的 198 元/年起高性价比小程序平台，提供门店、商城、预约和教育等线上经营工具，让商家以更低门槛开启数字化经营。
+                维双云是广州凡科互联网科技股份有限公司旗下的轻量子品牌，主打低成本、快速上线的门店、预约和轻商城小程序，重点服务本地门店、家政、美业、教培、夫妻店、社区门店和个体户。
               </p>
             </div>
 
             {/* Stats */}
             <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6">
               {[
-                { value: "50,000+", label: "服务企业客户" },
-                { value: "6 年", label: "专注领域深耕" },
-                { value: "98%", label: "客户满意度" },
-                { value: "30+", label: "覆盖城市" },
+                { value: "轻量", label: "品牌定位" },
+                { value: "本地", label: "主要服务场景" },
+                { value: "低门槛", label: "上线方式" },
+                { value: "可升级", label: "产品路径" },
               ].map((s) => (
                 <div key={s.label} className="text-center p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
                   <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{s.value}</div>
@@ -153,7 +153,7 @@ export default function AboutPage() {
                   用更低门槛，搭建线上经营入口
                 </h2>
                 <div className="space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  <p>维双云是广州本地的小程序与线上经营服务品牌，主要面向中小企业、个体户、本地门店、教培机构和轻量电商商家，提供商城小程序、门店小程序、教育小程序、餐饮小程序、企业展示小程序、网站建设以及 H5 营销工具等产品。</p>
+                  <p>维双云是广州凡科互联网科技股份有限公司旗下的轻量子品牌，也是广州本地的小程序与线上经营服务品牌。维双云主要面向本地门店、家政、美业、教培、新手创业者、夫妻店、社区门店和个体户，提供门店、预约与轻商城小程序。</p>
                   <p>维双云小程序价格 198 元/年起，平台可提供品牌与产品展示、商品管理、在线下单、订单处理、服务预约、点餐、到店核销、会员管理、课程展示、报名约课、优惠券、拼团、分销等功能。</p>
                   <p>用户可以套用行业模板，通过零代码、可视化拖拽方式修改页面、图片、文字和业务内容，不需要从头进行开发。商家可先根据展示、下单或预约等实际需求选择基础版本，再随业务发展逐步升级或增加相应功能。</p>
                   <p>维双云不是一开始投入高成本搭建复杂系统，而是先上线、先经营、先验证，再按业务发展逐步升级。具体价格和功能以实际选择的产品版本及服务说明为准。</p>
@@ -227,7 +227,7 @@ export default function AboutPage() {
 
         <section className="py-16 px-4 sm:px-6 hero-dark-bg">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">加入 5 万+ 企业，开启数字化增长</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">从低成本方案开始上线</h2>
             <p className="text-slate-300 mb-8">免费试用，专属顾问陪您全程</p>
             <a href={defaultRegisterUrl} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-10")}>
               免费试用 <ArrowRight className="size-4 ml-2" />

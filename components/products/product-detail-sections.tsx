@@ -3,6 +3,8 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { buttonVariants } from "@/components/ui/button"
 import { ContactQrButton } from "@/components/contact/contact-qr-button"
+import { FaqJsonLd } from "@/components/seo/json-ld"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { cn } from "@/lib/utils"
 import { defaultRegisterUrl, productRegisterUrls } from "@/lib/product-links"
 import { ArrowDown, ArrowRight, BadgeCheck, CheckCircle, Clock3, Gift } from "lucide-react"
@@ -42,6 +44,37 @@ type ProductDetailSectionsProps = {
   plans?: ProductPlan[]
   registerUrl?: string
 }
+
+const commonProductFaqs = [
+  {
+    question: "这个产品适合单店、连锁还是多商户业务？",
+    answer: "当前页面先按常见版本和场景展示。单店、连锁、多门店或多商户的功能范围、账号权限、数据隔离和费用可能不同，购买前应让顾问按真实业务流程确认具体版本。",
+  },
+  {
+    question: "年费通常包含哪些内容？",
+    answer: "年费对应所选版本的平台使用权和页面列明的功能范围。页面设计、内容录入、主体认证、支付申请、迁移、培训、托管运营和复杂定制是否包含，应以当期价格页、报价单和服务协议为准。",
+  },
+  {
+    question: "认证、支付、短信、地图和物流费用怎么算？",
+    answer: "这些能力可能涉及微信或其他第三方平台的主体认证、支付通道、短信、地图、物流、存储等费用。平台功能费与第三方费用应分开确认，具体承担方式和收费标准以当期规则及服务约定为准。",
+  },
+  {
+    question: "是否包含源码、私有化部署或复杂定制？",
+    answer: "标准版本按 SaaS 方式提供，默认不等同于源码交付、私有化部署或复杂定制开发。特殊权限、复杂分账、独立部署、深度系统对接和特殊履约流程需要单独评估。",
+  },
+  {
+    question: "商品、订单、会员或课程数据能否导出？",
+    answer: "不同产品和版本的数据导出范围、格式、频率和权限可能不同。签约或购买前应明确商品、订单、会员、课程、报名和经营报表等数据是否可导出，以及迁移时由谁负责。",
+  },
+  {
+    question: "支付、退款、分账、核销和售后由谁负责？",
+    answer: "平台提供相应的配置入口或流程支持，但实际支付结算、退款规则、分账责任、门店核销和售后履约仍取决于主体资质、第三方平台规则、产品版本和商家自身业务安排。上线前应逐项测试。",
+  },
+  {
+    question: "上线前应该如何验收？",
+    answer: "建议用真实或脱敏资料走一遍完整流程：注册或认证、浏览、预约或下单、支付、后台接单、退款、核销、通知、数据查询和导出。发现功能依赖版本、资质或第三方接口时，应在上线前记录清楚。",
+  },
+]
 
 const toneClass = {
   blue: "text-blue-600 bg-blue-50 border-blue-100",
@@ -107,7 +140,7 @@ export function ProductDetailSections({
             <p className="mt-5 text-sm leading-6 text-white/78">{promoNote}</p>
             <div className="mt-5 grid gap-3">
               {[
-                ["7 天体验", "先试用，再决定版本"],
+                ["可先体验", "具体体验期限以当期活动和版本说明为准"],
                 ["顾问陪跑", "从资料整理到上线配置"],
                 ["价格透明", "功能、活动和第三方成本提前说明"],
               ].map(([label, text]) => (
@@ -298,6 +331,27 @@ export function ProductDetailSections({
             </div>
           </div>
         )}
+
+        <section className="mt-12 rounded-xl border border-border bg-muted/20 p-5 sm:p-8">
+          <div className="mb-5">
+            <p className="text-sm font-semibold text-primary">FAQ 与服务边界</p>
+            <h3 className="mt-2 text-2xl font-bold text-foreground">购买前先确认版本、费用和交付范围</h3>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
+              以下口径沿用凡科子品牌的产品说明原则，具体能力、活动权益、第三方费用和服务内容以当期版本说明、报价单和服务协议为准。
+            </p>
+          </div>
+          <Accordion className="rounded-lg border border-border bg-white px-4" defaultValue={[]}>
+            {commonProductFaqs.map((faq, index) => (
+              <AccordionItem key={faq.question} value={`faq-${index}`}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent>
+                  <p className="pb-2 leading-6 text-muted-foreground">{faq.answer}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <FaqJsonLd faqs={commonProductFaqs} />
+        </section>
       </div>
     </section>
   )

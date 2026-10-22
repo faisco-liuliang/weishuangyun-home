@@ -10,15 +10,15 @@ import { defaultRegisterUrl } from "@/lib/product-links"
 import { ArrowRight, Quote } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "成功案例 - 5 万+ 企业客户的数字化增长故事",
+  title: "成功案例 - 维双云客户实践与场景参考",
   description:
-    "查看维双云服务的真实客户案例，涵盖餐饮连锁、在线教育、电商零售、专业服务等行业，了解企业如何借助维双云实现数字化转型与业绩增长。",
+    "查看维双云公开展示的客户实践与场景参考，具体项目范围、周期和效果以案例资料及双方约定为准。",
   keywords: ["维双云案例", "建站案例", "私域商城案例", "企业官网案例", "客户案例"],
   alternates: { canonical: "https://wsy.fkw.com/cases" },
   openGraph: {
     url: "https://wsy.fkw.com/cases",
-    title: "成功案例 - 维双云 5 万+ 企业客户的数字化增长故事",
-    description: "餐饮、教育、零售、服务业真实案例，看企业如何通过维双云实现业绩增长。",
+    title: "成功案例 - 维双云客户实践与场景参考",
+    description: "餐饮、教育、零售、服务业客户实践与场景参考，具体项目范围和效果以公开案例资料为准。",
   },
 }
 
@@ -45,11 +45,11 @@ const cases = [
     industry: "在线教育",
     product: "教育系统",
     result: "上线首月学员报名突破 2,000 人",
-    duration: "5 天上线",
-    quote: "从决定做在线课程到正式招生只用了 5 天，直播功能非常稳定，家长和老师都很满意，第一个月就回本了。",
+    duration: "周期以项目资料为准",
+    quote: "从决定做在线课程到正式招生，具体周期取决于资料准备、版本选择和上线流程；实际效果以项目记录为准。",
     metrics: [
       { label: "报名学员", value: "2,000+" },
-      { label: "上线周期", value: "5 天" },
+      { label: "上线周期", value: "以项目安排为准" },
       { label: "首月回本", value: "100%" },
     ],
     logo: "教",
@@ -61,7 +61,7 @@ const cases = [
     product: "私域商城",
     result: "私域月 GMV 突破 80 万元",
     duration: "6 个月",
-    quote: "微商城的分销功能让我们的老客带新客效果非常好，裂变速度超出预期，6 个月内粉丝从 3000 增长到 5 万。",
+    quote: "微商城的分销功能可用于老客带新客，实际传播效果取决于商品、活动、客群和运营投入。",
     metrics: [
       { label: "月 GMV", value: "80 万+" },
       { label: "粉丝增长", value: "16 倍" },
@@ -112,7 +112,7 @@ export default function CasesPage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">成功案例</p>
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
-              5 万+ 企业的增长故事
+              客户实践与场景参考
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto text-pretty leading-relaxed">
               从餐饮连锁到在线教育，从电商零售到专业服务，各行业企业都在用维双云实现数字化增长。

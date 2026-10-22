@@ -43,7 +43,7 @@ const products = [
     id: "website",
     name: "企业官网",
     icon: LayoutTemplate,
-    summary: "10分钟轻松做网站，AI 建站与 SEO 优化。",
+    summary: "快速搭建网站，AI 辅助与 SEO 配置以版本说明为准。",
     startPrice: "¥349/年起",
     bestFor: "品牌展示 / 百度收录 / 表单获客",
     promo: "买三年送三年",
@@ -76,7 +76,7 @@ const products = [
         originalPrice: "2,998",
         price: "1,499",
         note: "适合外贸展示和跨境询盘",
-        features: ["皇冠版全部功能", "全球 CDN 动态加速", "50 种语言版本", "AI 翻译 10 万 AI 豆", "PayPal 支付/产品询盘", "保证谷歌收录"],
+        features: ["皇冠版全部功能", "全球 CDN 动态加速", "多语言版本（以版本说明为准）", "AI 翻译额度（以版本说明为准）", "PayPal 支付/产品询盘", "按搜索平台规则配置与提交，不承诺固定收录"],
       },
       {
         name: "网站海外旗舰版",
@@ -146,7 +146,7 @@ const products = [
     id: "store",
     name: "门店系统",
     icon: Store,
-    summary: "10分钟轻松做小程序，门店会员、预约、收银一体化。",
+    summary: "搭建门店小程序，门店会员、预约、收银能力以版本说明为准。",
     startPrice: "¥99/年起",
     bestFor: "门店收银 / 会员储值 / 连锁管理",
     promo: "买2年送2年",
@@ -228,7 +228,7 @@ const products = [
     id: "booking",
     name: "轻应用",
     icon: CalendarDays,
-    summary: "10分钟轻松做小程序，微信/百度/抖音/快手多端发布。",
+    summary: "搭建多端小程序，支持平台和发布范围以版本说明为准。",
     startPrice: "¥349/年起",
     bestFor: "预约排班 / 到店核销 / 服务订单",
     promo: "买2年送2年",
@@ -487,7 +487,7 @@ export default function PricingPage() {
         <section className="px-4 py-16 sm:px-6">
           <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
             {[
-              { icon: ShieldCheck, title: "无隐藏收费", text: "套餐内功能清晰列出，支付、短信、域名等第三方成本会提前说明。" },
+              { icon: ShieldCheck, title: "费用边界说明", text: "套餐内功能、第三方成本和增值服务以当期价格页、报价单及服务约定为准。" },
               { icon: Clock3, title: "上线有人带", text: "从资料整理、页面搭建到基础配置，顾问按步骤陪跑，不让你自己摸索。" },
               { icon: BadgeCheck, title: "可升级可续费", text: "业务增长后可升级版本，已付年限和活动权益会由顾问协助核算。" },
             ].map(({ icon: Icon, title, text }) => (

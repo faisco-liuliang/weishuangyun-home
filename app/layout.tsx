@@ -7,12 +7,12 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://wsy.fkw.com'),
   title: {
-    default: '维双云 - AI 时代企业数字化建站与营销工具平台',
+    default: '维双云 - 凡科旗下轻量小程序品牌',
     template: '%s | 维双云',
   },
   description:
-    '维双云提供 AI 建站、私域商城、AI 题库教育系统、门店管理、服务预约、AI 营销工具等一站式企业数字化解决方案。',
-  keywords: ['维双云', 'AI建站', '企业建站', '私域商城', '小程序建站', 'SEO建站', 'AI题库', '门店管理系统', '企业数字化'],
+    '维双云是广州凡科互联网科技股份有限公司旗下的轻量子品牌，面向本地门店、家政、美业、教培和个体户，提供低成本、快速上线的门店、预约与轻商城小程序。',
+  keywords: ['维双云', '凡科旗下轻量子品牌', '门店小程序', '预约小程序', '轻商城小程序', '本地商家小程序', '家政小程序', '美业小程序', '教培小程序'],
   authors: [{ name: '维双云', url: 'https://wsy.fkw.com' }],
   creator: '维双云',
   publisher: '维双云',
@@ -31,21 +31,21 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     url: 'https://wsy.fkw.com',
     siteName: '维双云',
-    title: '维双云 - AI 时代企业数字化建站与营销工具平台',
-    description: '一站式 AI 企业数字化解决方案，AI 建站、私域商城、教育系统、门店管理，助力中小企业高速增长。',
+    title: '维双云 - 凡科旗下轻量小程序品牌',
+    description: '维双云面向本地门店、家政、美业、教培和个体户，提供低成本、快速上线的门店、预约与轻商城小程序。',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: '维双云 - AI 企业数字化首选平台',
+        alt: '维双云 - 凡科旗下轻量小程序品牌',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '维双云 - AI 时代企业数字化建站与营销工具平台',
-    description: '一站式 AI 企业数字化解决方案，助力中小企业快速上线。',
+    title: '维双云 - 凡科旗下轻量小程序品牌',
+    description: '维双云提供门店、预约与轻商城小程序，具体功能、版本和活动权益以当期服务说明为准。',
     images: ['/og-image.png'],
   },
   robots: {

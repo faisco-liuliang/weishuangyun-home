@@ -18,7 +18,7 @@ const cases = [
     industry: "K12 教育",
     product: "教育系统",
     result: "上线首月学员报名突破 2,000 人",
-    quote: "从搭建到招生只用了 5 天，直播功能稳定，家长和老师都很满意。",
+    quote: "从搭建到招生的周期取决于资料准备、版本选择和上线安排，实际效果以项目记录为准。",
     logo: "教",
     logoColor: "bg-violet-100 text-violet-600",
   },
@@ -52,7 +52,7 @@ export function CasesPreview() {
               成功案例
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-balance">
-              5 万+ 企业的共同选择
+              服务规模与案例以当期公开资料为准
             </h2>
           </div>
           <Link

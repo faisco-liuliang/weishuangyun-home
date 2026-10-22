@@ -35,7 +35,7 @@ const plans = [
 ]
 
 const detailCapabilities = [
-  { title: "10分钟轻松搭建，3天快速上线", desc: "先上线门店展示、预约留资、会员档案和基础活动，帮助门店快速拥有自己的小程序入口。" },
+  { title: "快速搭建，按资料与版本安排上线", desc: "先上线门店展示、预约留资、会员档案和基础活动，具体上线节奏取决于资料准备、版本选择和服务安排。" },
   { title: "多门店统一管理", desc: "总部统一商品、员工、会员和活动配置，各门店独立运营，总部实时看数据。" },
   { title: "会员储值和跨店核销", desc: "储值卡、次卡、积分、优惠券和跨店核销，帮助门店把客户沉淀到自己的会员体系。" },
   { title: "经营报表和 AI 分析", desc: "围绕营收、客单价、复购率、会员增长和商品销量做经营解读，帮助老板更快决策。" },
@@ -142,7 +142,7 @@ export default function StorePage() {
         <section className="py-16 px-4 sm:px-6 bg-primary">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">开始管理您的连锁门店</h2>
-            <p className="text-blue-100 mb-8">免费数据迁移，7 天快速上线</p>
+            <p className="text-blue-100 mb-8">数据迁移和上线安排以版本说明及服务方案为准</p>
             <a href={productRegisterUrls.store} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "bg-white text-primary hover:bg-blue-50 h-12 px-10")}>
               免费试用 <ArrowRight className="size-4 ml-2" />
             </a>
