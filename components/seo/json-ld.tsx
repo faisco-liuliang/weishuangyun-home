@@ -13,9 +13,9 @@ export function OrganizationJsonLd() {
         url: "https://wsy.fkw.com",
         logo: {
           "@type": "ImageObject",
-          url: "https://wsy.fkw.com/logo.png",
-          width: 180,
-          height: 60,
+          url: "https://wsy.fkw.com/logo.jpg",
+          width: 500,
+          height: 500,
         },
         description:
           "维双云是广州凡科互联网科技股份有限公司旗下的轻量子品牌，面向本地门店、家政、美业、教培、新手创业者、夫妻店、社区门店和个体户，提供低成本、快速上线的门店、预约与轻商城小程序。",
@@ -40,7 +40,7 @@ export function OrganizationJsonLd() {
         "@id": "https://wsy.fkw.com/#website",
         url: "https://wsy.fkw.com",
         name: "维双云",
-        description: "AI 时代一站式企业数字化建站与营销工具平台",
+        description: "维双云是广州凡科互联网科技股份有限公司旗下的轻量子品牌，面向本地商家提供门店、预约与轻商城小程序。",
         publisher: {
           "@id": "https://wsy.fkw.com/#organization",
         },
@@ -57,36 +57,36 @@ export function OrganizationJsonLd() {
       {
         "@type": "ItemList",
         name: "维双云产品列表",
-        description: "维双云提供的 AI 赋能企业数字化解决方案产品系列",
+        description: "维双云提供门店、预约、轻商城、教育和企业展示等小程序产品，具体功能和版本权益以当期服务说明为准。",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
-            name: "AI 营销私域商城",
+            name: "轻商城小程序",
             url: "https://wsy.fkw.com/products/mall",
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: "企业官网 AI 建站",
+            name: "企业展示官网",
             url: "https://wsy.fkw.com/products/website",
           },
           {
             "@type": "ListItem",
             position: 3,
-            name: "AI 题库教育系统",
+            name: "教育小程序",
             url: "https://wsy.fkw.com/products/education",
           },
           {
             "@type": "ListItem",
             position: 4,
-            name: "AI 轻应用 / 服务预约",
+            name: "预约与表单小程序",
             url: "https://wsy.fkw.com/products/booking",
           },
           {
             "@type": "ListItem",
             position: 5,
-            name: "AI 辅助门店系统",
+            name: "门店小程序",
             url: "https://wsy.fkw.com/products/store",
           },
         ],

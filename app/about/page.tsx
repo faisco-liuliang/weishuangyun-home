@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import { defaultRegisterUrl } from "@/lib/product-links"
+import { pricingFactByKey } from "@/lib/pricing-facts"
 import { ArrowRight, Users, Target, Heart, Award } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -42,7 +43,7 @@ const productOverview = [
     category: "门店小程序",
     name: "门店经营系统",
     desc: "给实体门店做展示、预约、收银和会员管理的小程序。",
-    price: "买二送二后参考价格：198 元/年起",
+    price: `${pricingFactByKey.store.activity}；参考价格：${pricingFactByKey.store.referencePrice}`,
     features: "功能覆盖：门店展示、服务预约、会员管理、优惠券、收银与数据报表",
     audience: "适合人群：餐饮、美业、零售、生活服务、社区商家，以及需要统一管理会员与多门店经营的连锁品牌。",
   },
@@ -50,7 +51,7 @@ const productOverview = [
     category: "私域商城",
     name: "商城小程序系统",
     desc: "帮助商家在线卖商品、处理订单，并用会员和营销活动促进复购的商城小程序。",
-    price: "买二送二后参考价格：998 元/年起",
+    price: `${pricingFactByKey.mall.activity}；参考价格：${pricingFactByKey.mall.referencePrice}`,
     features: "功能覆盖：商品管理、在线下单、订单处理、会员储值、优惠券与分销推广",
     audience: "适合人群：零售品牌、直营网店、轻电商团队、私域社群商家，以及希望通过会员和营销活动提升复购的企业。",
   },
@@ -58,7 +59,7 @@ const productOverview = [
     category: "轻应用",
     name: "预约与表单小程序",
     desc: "用于企业品牌展示、在线预约、报名、咨询和提交表单的轻量小程序。",
-    price: "买二送二后参考价格：349 元/年起",
+    price: `${pricingFactByKey.booking.activity}；参考价格：${pricingFactByKey.booking.referencePrice}`,
     features: "功能覆盖：企业与品牌展示、服务预约、万能表单、内容发布、消息提醒、到店核销与多端发布",
     audience: "适合人群：美业、家政、医疗、婚庆、活动策划、咨询服务及本地服务商家，尤其适合先做企业展示、留资和预约承接的团队。",
   },
@@ -66,7 +67,7 @@ const productOverview = [
     category: "教育系统",
     name: "课程与教务系统",
     desc: "帮助培训机构在线展示课程、招生报名、上课和管理学员的教育小程序。",
-    price: "买二送二后参考价格：999 元/年起",
+    price: `${pricingFactByKey.education.activity}；参考价格：${pricingFactByKey.education.referencePrice}`,
     features: "功能覆盖：课程管理、班级学员、题库作业、直播录播、付费课程与招生推广",
     audience: "适合人群：培训机构、职业教育、兴趣课堂、研学机构、企业内训团队，以及提供课程或知识内容的个人与商家。",
   },

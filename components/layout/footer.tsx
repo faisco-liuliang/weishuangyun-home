@@ -19,7 +19,6 @@ const productLinks = [
 const supportLinks = [
   { name: "价格中心", href: "/pricing" },
   { name: "成功案例", href: "/cases" },
-  { name: "帮助文档", href: "/docs" },
   { name: "博客资讯", href: "/blog" },
 ]
 
@@ -160,12 +159,6 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© 2024 维双云. 广州凡科互联网科技股份有限公司旗下轻量子品牌。保留所有权利.</p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-slate-300 transition-colors">
-              隐私政策
-            </Link>
-            <Link href="/terms" className="hover:text-slate-300 transition-colors">
-              服务条款
-            </Link>
             <Link href="/sitemap.xml" className="hover:text-slate-300 transition-colors">
               网站地图
             </Link>
