@@ -5,6 +5,7 @@ export type PricingFact = {
   activity: string
   scope: string
   boundary: string
+  specialOffer?: string
 }
 
 /**
@@ -14,10 +15,11 @@ export const pricingFacts: PricingFact[] = [
   {
     key: "store",
     name: "门店小程序",
-    referencePrice: "998 元/年起（基础版）",
+    referencePrice: "998 元/年起（官方基础版）",
     activity: "免费版可免费开通，基础版及以上买二送二",
     scope: "门店展示、预约、会员、收银、核销和基础经营管理",
     boundary: "多门店、复杂权限、深度库存、特殊履约和系统对接需按版本或方案确认",
+    specialOffer: "198 元/年：维双云专属门店通内测版，仅限顾问确认资格的客户开通",
   },
   {
     key: "mall",

@@ -50,6 +50,15 @@ const products = [
     source: "渠道特惠价可叠加",
     plans: [
       {
+        name: "维双云门店通内测版",
+        originalPrice: "0",
+        price: "198",
+        priceLabel: "维双云专属内测版",
+        priceNote: "仅限顾问确认资格的客户开通",
+        note: "适合预算有限、先验证门店经营链路的客户",
+        features: ["基础门店展示", "线上预约", "简单会员信息记录", "开单收银", "员工业绩统计", "不支持在线支付和多门店升级"],
+      },
+      {
         name: "网站标准版",
         originalPrice: "698",
         price: "698",
