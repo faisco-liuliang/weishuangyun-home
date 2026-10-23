@@ -86,6 +86,13 @@ const toneClass = {
   rose: "text-rose-600 bg-rose-50 border-rose-100",
 }
 
+function getPromoAnnualizedPrice(promoTitle: string, price: string) {
+  const years = promoTitle.includes("买三年送三年") ? 3 : promoTitle.includes("买2年送2年") ? 2 : 0
+  const amount = Number(price.replace(/,/g, ""))
+  if (!years || !amount) return null
+  return Math.round(amount / 2).toLocaleString()
+}
+
 export function ProductDetailSections({
   tone = "blue",
   eyebrow,
@@ -234,6 +241,11 @@ export function ProductDetailSections({
                             <span className="text-muted-foreground">{plan.priceNote ?? "免费起步"}</span>
                           )}
                         </div>
+                        {getPromoAnnualizedPrice(promoTitle, plan.price) && (
+                          <div className="mt-2 rounded-md bg-blue-50 px-3 py-1.5 text-xs font-medium leading-5 text-primary">
+                            {promoTitle} · 折算约 ¥{getPromoAnnualizedPrice(promoTitle, plan.price)}/年
+                          </div>
+                        )}
                       </div>
                       <div className="rounded-md bg-blue-50 px-3 py-2 text-xs font-medium leading-5 text-primary">
                         {plan.promoBanner ?? `${promoTitle} · 渠道特惠可叠加`}

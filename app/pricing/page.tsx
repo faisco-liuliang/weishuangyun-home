@@ -147,7 +147,7 @@ const products = [
     plans: [
       {
         name: "维双云门店通内测版",
-        originalPrice: "0",
+        originalPrice: "",
         price: "198",
         priceLabel: "维双云专属内测版",
         priceNote: "仅限顾问确认资格的客户开通",
@@ -263,6 +263,13 @@ const products = [
 ]
 
 const productDisplayOrder = ["store", "mall", "booking", "education", "website"]
+
+function getPromoAnnualizedPrice(promo: string, price: string) {
+  const years = promo.includes("买三年送三年") ? 3 : promo.includes("买2年送2年") ? 2 : 0
+  const amount = Number(price.replace(/,/g, ""))
+  if (!years || !amount) return null
+  return Math.round(amount / 2).toLocaleString()
+}
 const orderedProducts = productDisplayOrder.map((id) => products.find((product) => product.id === id)!)
 const primaryPricingProducts = orderedProducts.slice(0, 4)
 
@@ -392,17 +399,23 @@ export default function PricingPage() {
                                   <span className="pb-1 text-sm text-muted-foreground">/年</span>
                                 </div>
                                 <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
-                                  <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">买二送二活动价</span>
+                                  <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary">
+                                    {"priceLabel" in plan && plan.priceLabel ? plan.priceLabel : "活动价"}
+                                  </span>
                                   {plan.originalPrice ? (
                                     <span className="text-muted-foreground">
                                       参考原价 <span className="line-through">¥{plan.originalPrice}/年</span>
                                     </span>
                                   ) : (
-                                    <span className="text-muted-foreground">不参与买2年送2年</span>
+                                    <span className="text-muted-foreground">仅限专属资格客户开通</span>
                                   )}
                                 </div>
                                 <p className="mt-2.5 rounded-md bg-blue-50 px-3 py-1.5 text-xs font-medium leading-5 text-primary">
-                                  {product.id === "mall" && !plan.originalPrice ? "不参与买2年送2年" : product.promo} · {product.source}
+                                  {getPromoAnnualizedPrice(product.promo, plan.price)
+                                    ? `${product.promo} · 折算约 ¥${getPromoAnnualizedPrice(product.promo, plan.price)}/年`
+                                    : product.id === "store" && !plan.originalPrice
+                                      ? "维双云专属内测版 · 资格和开通条件以顾问确认"
+                                      : `${product.promo} · ${product.source}`}
                                 </p>
                             </div>
                             <Separator />
