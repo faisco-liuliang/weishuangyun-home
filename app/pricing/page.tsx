@@ -140,7 +140,7 @@ const products = [
     name: "门店系统",
     icon: Store,
     summary: "搭建门店小程序，门店会员、预约、收银能力以版本说明为准。",
-    startPrice: "¥998/年起",
+    startPrice: "¥198/年起",
     bestFor: "门店收银 / 会员储值 / 连锁管理",
     promo: "买2年送2年",
     source: "渠道特惠价可叠加",

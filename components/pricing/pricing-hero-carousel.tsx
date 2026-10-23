@@ -25,10 +25,10 @@ const slides: PricingHeroSlide[] = [
   {
     id: "overview",
     label: "总览",
-    eyebrow: "门店基础版 998 元/年起 · 多产品线按版本计费",
+    eyebrow: "维双云门店通内测版 198 元/年 · 多产品线按版本计费",
     title: "价格中心",
     highlight: "透明可选",
-    subtitle: "门店基础版 998 元/年起，基础版及以上买二送二",
+    subtitle: "维双云门店通内测版 198 元/年，专属资格客户可开通",
     description: "多年优惠、渠道特惠价和顾问服务可叠加享受。按企业官网、商城小程序、门店系统、教育系统和轻应用拆分报价，版本功能清晰透明。",
     price: "¥198/年起",
     priceLabel: "维双云门店通内测版",

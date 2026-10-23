@@ -5,7 +5,7 @@ const productOverview = [
     category: "门店小程序",
     name: "门店经营系统",
     desc: "给实体门店做展示、预约、收银和会员管理的小程序。",
-    price: `${pricingFactByKey.store.activity}；参考价格：${pricingFactByKey.store.referencePrice}`,
+    price: "维双云专属内测版 198 元/年；官方基础版价格按版本说明执行",
     features: "功能覆盖：门店展示、服务预约、会员管理、优惠券、收银与数据报表",
     audience: "适合人群：餐饮、美业、零售、生活服务、社区商家，以及需要统一管理会员与多门店经营的连锁品牌。",
   },
