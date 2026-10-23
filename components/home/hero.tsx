@@ -67,12 +67,12 @@ const heroSlides = [
     ],
   },
   {
-    eyebrow: "198 元/年做小程序 · 买2年送2年",
-    title: "198 元/年做小程序",
+    eyebrow: "门店小程序 998 元/年起 · 买2年送2年",
+    title: "低成本做门店小程序",
     accent: "低成本上线",
     subtitle: "低成本搭建小程序，门店、预约、表单、会员等功能按版本配置",
-    desc: "适合先把门店展示、预约留资、服务项目和基础会员沉淀起来。入门版 198 元/年起，活动权益和渠道优惠以当期方案为准。",
-    primary: "领取 198 元方案",
+    desc: "适合先把门店展示、预约留资、服务项目和基础会员沉淀起来。门店基础版 998 元/年起，活动权益和渠道优惠以当期方案为准。",
+    primary: "领取门店方案",
     secondary: "点击注册",
     href: "/contact",
     secondaryHref: "https://yk.fkw.com/model/?_ta=9611",
@@ -205,7 +205,7 @@ export function Hero() {
                           <ArrowRight className="ml-2 size-5" />
                         </Link>
                         {slide.href === "/contact" ? (
-                          <ContactQrButton variant="outline" size="lg" qrSrc={slide.primary === "领取 198 元方案" ? "/qr-198.png" : undefined} description={slide.primary === "领取 198 元方案" ? "198元小程序为内测入门版本，无法直接购买，请添加客服咨询开通" : undefined} className="h-12 rounded-xl border-slate-200 bg-white/80 px-7 text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-primary">
+                          <ContactQrButton variant="outline" size="lg" qrSrc={slide.primary === "领取门店方案" ? "/qr-198.png" : undefined} description={slide.primary === "领取门店方案" ? "门店方案具体版本、价格和开通条件以当前官方价格表及顾问方案为准" : undefined} className="h-12 rounded-xl border-slate-200 bg-white/80 px-7 text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-primary">
                             {slide.primary}
                             <ArrowRight className="ml-2 size-5" />
                           </ContactQrButton>
