@@ -24,7 +24,7 @@ export const pricingFacts: PricingFact[] = [
   {
     key: "mall",
     name: "商城小程序",
-    referencePrice: "1998 元/年起（商城特惠版）",
+    referencePrice: "1998 元/年起（商城基础版）",
     activity: "官网版本从 3998 元/年起，部分版本买二送二",
     scope: "商品、订单、支付、会员、优惠券、分销和配送等商城能力",
     boundary: "复杂分账、多商户结算、特殊配送和独立部署需单独评估",
