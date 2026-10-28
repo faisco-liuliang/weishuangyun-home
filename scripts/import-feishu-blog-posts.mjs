@@ -22,6 +22,7 @@ const sheetId =
   "28f2dd"
 const range = getArg("--range") ?? process.env.FEISHU_SHEET_RANGE ?? "A1:T500"
 const siteBaseUrl = (process.env.SITE_BASE_URL ?? "https://wsy.fkw.com").replace(/\/$/, "")
+const targetBrand = "维双云"
 
 if (!process.env.FEISHU_APP_ID || !process.env.FEISHU_APP_SECRET) {
   fail("Missing FEISHU_APP_ID or FEISHU_APP_SECRET.")
@@ -40,6 +41,10 @@ if (values.length < 2) {
 }
 
 const headers = values[0].map((value) => normalizeHeader(value))
+const brandColumnIndex = optionalColumn(headers, ["品牌"])
+if (brandColumnIndex === -1) {
+  fail('The sheet range must include a "品牌" column. Only rows branded "维双云" may be imported.')
+}
 const rows = values
   .slice(1)
   .map((cells, index) => ({ cells, rowNumber: index + 2 }))
@@ -50,10 +55,17 @@ const incomingSlugs = new Set()
 const publicSlugOwners = new Map(currentPosts.map((post) => [getPublicSlug(post), post.slug]))
 const skippedEntries = []
 const candidates = []
+let brandFilteredCount = 0
 
 for (const { cells, rowNumber } of rows) {
   const docLink = cell(headers, cells, ["文章链接"])
   if (!docLink) continue
+
+  const brand = text(cells[brandColumnIndex])
+  if (brand !== targetBrand) {
+    brandFilteredCount += 1
+    continue
+  }
 
   const slug = rowToSlug(headers, cells, rowNumber)
   const title = cell(headers, cells, ["关键词标题", "标题"], slug)
@@ -85,7 +97,10 @@ for (const { cells, rowNumber } of rows) {
   existingSlugs.add(slug)
 }
 
-console.log(`Found ${rows.length} row(s), ${candidates.length} importable, ${skippedEntries.length} skipped.`)
+console.log(
+  `Found ${rows.length} row(s), ${candidates.length} importable for ${targetBrand}, ` +
+    `${skippedEntries.length} duplicate/existing skipped, ${brandFilteredCount} other-brand/blank skipped.`
+)
 
 if (scanOnly) {
   console.log("Scan only. No document bodies or images were downloaded, and no files were changed.")
@@ -126,7 +141,10 @@ if (!writeMode) {
     writeBlogData(mergedPosts)
   }
 
-  console.log(`Imported ${incomingPosts.length} new post(s), skipped ${skippedEntries.length} existing post(s).`)
+  console.log(
+    `Imported ${incomingPosts.length} new ${targetBrand} post(s), ` +
+      `skipped ${skippedEntries.length} duplicate/existing and ${brandFilteredCount} other-brand/blank row(s).`
+  )
 }
 }
 
