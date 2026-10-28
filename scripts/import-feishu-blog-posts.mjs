@@ -23,6 +23,11 @@ const sheetId =
 const range = getArg("--range") ?? process.env.FEISHU_SHEET_RANGE ?? "A1:T500"
 const siteBaseUrl = (process.env.SITE_BASE_URL ?? "https://wsy.fkw.com").replace(/\/$/, "")
 const targetBrand = "维双云"
+const dateFrom = getArg("--date-from") || process.env.FEISHU_DATE_FROM || "2026-10-26"
+
+if (!/^\d{4}-\d{2}-\d{2}$/.test(dateFrom) || !parseDateValue(dateFrom)) {
+  fail(`Invalid --date-from value: ${dateFrom}. Use YYYY-MM-DD.`)
+}
 
 if (!process.env.FEISHU_APP_ID || !process.env.FEISHU_APP_SECRET) {
   fail("Missing FEISHU_APP_ID or FEISHU_APP_SECRET.")
@@ -45,6 +50,10 @@ const brandColumnIndex = optionalColumn(headers, ["品牌"])
 if (brandColumnIndex === -1) {
   fail('The sheet range must include a "品牌" column. Only rows branded "维双云" may be imported.')
 }
+const dateColumnIndex = optionalColumn(headers, ["文章上传日期", "发布日期", "日期"])
+if (dateColumnIndex === -1) {
+  fail('The sheet range must include an "文章上传日期", "发布日期", or "日期" column.')
+}
 const rows = values
   .slice(1)
   .map((cells, index) => ({ cells, rowNumber: index + 2 }))
@@ -56,6 +65,7 @@ const publicSlugOwners = new Map(currentPosts.map((post) => [getPublicSlug(post)
 const skippedEntries = []
 const candidates = []
 let brandFilteredCount = 0
+let dateFilteredCount = 0
 
 for (const { cells, rowNumber } of rows) {
   const docLink = cell(headers, cells, ["文章链接"])
@@ -64,6 +74,12 @@ for (const { cells, rowNumber } of rows) {
   const brand = text(cells[brandColumnIndex])
   if (brand !== targetBrand) {
     brandFilteredCount += 1
+    continue
+  }
+
+  const articleDate = parseDateValue(text(cells[dateColumnIndex]))
+  if (!articleDate || articleDate < dateFrom) {
+    dateFilteredCount += 1
     continue
   }
 
@@ -99,7 +115,8 @@ for (const { cells, rowNumber } of rows) {
 
 console.log(
   `Found ${rows.length} row(s), ${candidates.length} importable for ${targetBrand}, ` +
-    `${skippedEntries.length} duplicate/existing skipped, ${brandFilteredCount} other-brand/blank skipped.`
+    `${skippedEntries.length} duplicate/existing skipped, ${brandFilteredCount} other-brand/blank skipped, ` +
+    `${dateFilteredCount} before ${dateFrom}/invalid-date skipped.`
 )
 
 if (scanOnly) {
@@ -143,7 +160,8 @@ if (!writeMode) {
 
   console.log(
     `Imported ${incomingPosts.length} new ${targetBrand} post(s), ` +
-      `skipped ${skippedEntries.length} duplicate/existing and ${brandFilteredCount} other-brand/blank row(s).`
+      `skipped ${skippedEntries.length} duplicate/existing, ${brandFilteredCount} other-brand/blank, ` +
+      `and ${dateFilteredCount} before ${dateFrom}/invalid-date row(s).`
   )
 }
 }
@@ -241,17 +259,33 @@ function isExpired(tokenStore) {
 }
 
 async function feishuRequest(accessToken, url) {
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      "Content-Type": "application/json; charset=utf-8",
-    },
-  })
-  const payload = await response.json()
-  if (!response.ok || (payload.code !== 0 && payload.code !== "0")) {
-    fail(`Feishu API error for ${url}: ${payload.msg ?? response.status}`)
+  let lastStatus = 0
+  let lastMessage = "Unknown error"
+
+  for (let attempt = 1; attempt <= 5; attempt += 1) {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json; charset=utf-8",
+      },
+    })
+    const payload = await response.json()
+    if (response.ok && (payload.code === 0 || payload.code === "0")) return payload
+
+    lastStatus = response.status
+    lastMessage = String(payload.msg ?? response.status)
+    const rateLimited = response.status === 429 || /frequency|rate.?limit|too many/i.test(lastMessage)
+    if (!rateLimited || attempt === 5) break
+
+    const retryAfterSeconds = Number(response.headers.get("retry-after"))
+    const waitMs = Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0
+      ? retryAfterSeconds * 1000
+      : 750 * 2 ** (attempt - 1)
+    console.warn(`Feishu rate limit for ${url}. Retrying in ${waitMs}ms (${attempt}/5).`)
+    await delay(waitMs)
   }
-  return payload
+
+  fail(`Feishu API error for ${url}: ${lastMessage || lastStatus}`)
 }
 
 async function readSheetValues(accessToken, currentSpreadsheetToken, currentSheetId, currentRange) {
@@ -507,8 +541,12 @@ function makeExcerpt(content) {
 }
 
 function normalizeDate(value) {
+  return parseDateValue(value) || new Date().toISOString().slice(0, 10)
+}
+
+function parseDateValue(value) {
   const textValue = String(value || "").trim()
-  if (!textValue) return new Date().toISOString().slice(0, 10)
+  if (!textValue) return ""
   if (/^\d+(?:\.\d+)?$/.test(textValue)) {
     const numericValue = Number(textValue)
     if (numericValue > 1_000_000_000_000) return new Date(numericValue).toISOString().slice(0, 10)
@@ -518,7 +556,7 @@ function normalizeDate(value) {
     }
   }
   const parsed = Date.parse(textValue)
-  if (Number.isNaN(parsed)) return new Date().toISOString().slice(0, 10)
+  if (Number.isNaN(parsed)) return ""
   return new Date(parsed).toISOString().slice(0, 10)
 }
 
