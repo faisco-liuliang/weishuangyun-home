@@ -2,6 +2,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { createHash } from "node:crypto"
+import { normalizeBlogContent, stripPlatformPrefix } from "./blog-content-normalization.mjs"
 
 const rootDir = process.cwd()
 const blogDataPath = resolve(rootDir, "lib", "blog-data.ts")
@@ -84,7 +85,7 @@ for (const { cells, rowNumber } of rows) {
   }
 
   const slug = rowToSlug(headers, cells, rowNumber)
-  const title = cell(headers, cells, ["关键词标题", "标题"], slug)
+  const title = stripPlatformPrefix(cell(headers, cells, ["关键词标题", "标题"], slug))
 
   if (incomingSlugs.has(slug)) {
     skippedEntries.push({
@@ -344,7 +345,7 @@ function rowToSlug(headers, cells, rowNumber) {
 }
 
 async function rowToPost(accessToken, headers, cells, rowNumber) {
-  const title = cell(headers, cells, ["关键词标题", "标题"])
+  const title = stripPlatformPrefix(cell(headers, cells, ["关键词标题", "标题"]))
   if (!title) fail(`Row ${rowNumber} is missing title.`)
 
   const docLink = cell(headers, cells, ["文章链接"])
@@ -352,7 +353,7 @@ async function rowToPost(accessToken, headers, cells, rowNumber) {
 
   const slug = rowToSlug(headers, cells, rowNumber)
   const docToken = parseDocToken(docLink)
-  const content = await fetchDocMarkdown(accessToken, docToken, slug, title)
+  const content = normalizeBlogContent(await fetchDocMarkdown(accessToken, docToken, slug, title))
   if (!content) fail(`Row ${rowNumber} returned empty content from document.`)
 
   const industry = cell(headers, cells, ["行业（文本）"], "")
