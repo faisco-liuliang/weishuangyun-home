@@ -55,9 +55,7 @@ export function Footer() {
           <div className="flex flex-col gap-5">
             <div>
               <Link href="/" className="flex items-center gap-2 mb-3">
-                <div className="size-8 rounded-lg bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">立</span>
-                </div>
+                <img src="/icon.svg" alt="" className="size-9 shrink-0" />
                 <span className="font-bold text-lg text-white">维双云</span>
               </Link>
               <p className="text-sm text-slate-400 leading-relaxed">

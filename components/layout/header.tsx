@@ -108,9 +108,7 @@ export function Header() {
         <div className="relative flex items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="size-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">维</span>
-            </div>
+            <img src="/icon.svg" alt="" className="size-9 shrink-0 drop-shadow-sm" />
             <span className="font-bold text-lg text-foreground tracking-tight">
               维双云
             </span>

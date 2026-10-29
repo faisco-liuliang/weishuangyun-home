@@ -1,11 +1,28 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="180" height="180" rx="42" fill="#2563EB"/>
-  <rect x="12" y="12" width="156" height="156" rx="34" fill="url(#shine)" opacity="0.18"/>
-  <text x="90" y="118" text-anchor="middle" font-size="92" font-weight="800" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="white">维</text>
+  <rect width="180" height="180" rx="46" fill="url(#brand-gradient)"/>
+  <rect x="9" y="9" width="162" height="162" rx="39" stroke="white" stroke-opacity="0.16" stroke-width="2"/>
+  <path
+    d="M44 91C44 73.8 57.8 60 75 60C78.7 60 82.3 60.7 85.6 61.9C92.7 49.1 106.4 41 121.8 41C144.7 41 163.2 59.5 163.2 82.4C163.2 83.7 163.1 85 163 86.3C173.2 91.2 180 101.6 180 113.5C180 130.4 166.4 144 149.5 144H46.5C29.7 144 16 130.4 16 113.5C16 99.3 25.7 87.4 38.8 84C40.5 86.4 42.3 88.8 44 91Z"
+    fill="white"
+    fill-opacity="0.16"
+    transform="translate(-8 -4) scale(1.08)"
+  />
+  <path
+    d="M39 91C39 75.5 51.5 63 67 63C71.8 63 76.4 64.2 80.4 66.3C87.1 53.2 100.7 44.3 116.4 44.3C138.7 44.3 156.8 62.4 156.8 84.7C156.8 86.7 156.6 88.6 156.4 90.5C167.2 94.5 175 104.9 175 117.2C175 132.9 162.3 145.6 146.6 145.6H45.4C29.7 145.6 17 132.9 17 117.2C17 102.9 27.6 91 41.4 89.1"
+    stroke="white"
+    stroke-width="11"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(-6 -5) scale(1.02)"
+  />
+  <path d="M45 101L67 126L91 91L115 126L137 101" stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="45" cy="101" r="6.5" fill="#93C5FD"/>
+  <circle cx="137" cy="101" r="6.5" fill="#93C5FD"/>
   <defs>
-    <linearGradient id="shine" x1="26" y1="16" x2="160" y2="170" gradientUnits="userSpaceOnUse">
-      <stop stop-color="white"/>
-      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    <linearGradient id="brand-gradient" x1="18" y1="12" x2="164" y2="174" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D4ED8"/>
+      <stop offset="0.55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#60A5FA"/>
     </linearGradient>
   </defs>
 </svg>
