@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { getBlogPosts, getBlogUrlSlug } from "@/lib/blog-data"
+import { industrySolutions } from "@/lib/industry-solutions"
 
 const BASE_URL = "https://wsy.fkw.com"
 
@@ -79,7 +80,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/solutions`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
   ]
+
+  const solutionPages: MetadataRoute.Sitemap = industrySolutions.map((solution) => ({
+    url: `${BASE_URL}/solutions/${solution.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))
 
   const blogPages: MetadataRoute.Sitemap = getBlogPosts().map((post) => ({
     url: `${BASE_URL}/blog/${getBlogUrlSlug(post)}`,
@@ -88,5 +102,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }))
 
-  return [...staticPages, ...blogPages]
+  return [...staticPages, ...solutionPages, ...blogPages]
 }

@@ -205,3 +205,8 @@ export function FaqJsonLd({
     />
   )
 }
+
+export function ServiceJsonLd({ name, description, url }: { name: string; description: string; url: string }) {
+  const jsonLd = { "@context": "https://schema.org", "@type": "Service", name, description, url, provider: { "@id": "https://wsy.fkw.com/#organization" }, inLanguage: "zh-CN" }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+}

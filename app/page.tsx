@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Hero } from "@/components/home/hero"
 import { ProductsGrid } from "@/components/home/products-grid"
+import { IndustrySolutions } from "@/components/home/industry-solutions"
 import { TemplateRegistration } from "@/components/home/template-registration"
 import { Advantages } from "@/components/home/advantages"
 import { AboutProductsOverview } from "@/components/home/about-products-overview"
@@ -30,6 +31,7 @@ export default function HomePage() {
         <Hero />
         <TemplateRegistration />
         <ProductsGrid />
+        <IndustrySolutions />
         <AboutProductsOverview />
         <Advantages />
         <BlogPreview />

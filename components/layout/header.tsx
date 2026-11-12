@@ -61,6 +61,7 @@ const products = [
 const navLinks = [
   { name: "首页", href: "/" },
   { name: "产品中心", href: "/products", hasDropdown: true },
+  { name: "行业方案", href: "/solutions" },
   { name: "价格中心", href: "/pricing" },
   { name: "成功案例", href: "/cases" },
   { name: "博客", href: "/blog" },
@@ -173,7 +174,7 @@ export function Header() {
                   href={link.href}
                   className={cn(
                     "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                    pathname === link.href
+                    pathname === link.href || (link.href === "/solutions" && pathname.startsWith("/solutions"))
                       ? "text-primary bg-accent"
                       : "text-foreground hover:text-primary hover:bg-accent"
                   )}
@@ -205,7 +206,7 @@ export function Header() {
                 href={link.href}
                 className={cn(
                   "px-3 py-2.5 rounded-md text-sm font-medium transition-colors",
-                  pathname === link.href || (link.hasDropdown && pathname.startsWith("/products"))
+                  pathname === link.href || (link.hasDropdown && pathname.startsWith("/products")) || (link.href === "/solutions" && pathname.startsWith("/solutions"))
                     ? "text-primary bg-accent"
                     : "text-foreground hover:text-primary hover:bg-accent"
                 )}
