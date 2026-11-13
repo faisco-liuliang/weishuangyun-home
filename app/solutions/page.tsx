@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, LayoutTemplate } from "lucide-react"
 import { industrySolutions } from "@/lib/industry-solutions"
 
 const BASE_URL = "https://wsy.fkw.com"
@@ -44,6 +44,15 @@ export default function SolutionsPage() {
                   </div>
                 </Link>
               ))}
+              <a href="https://yk.fkw.com/model/?_ta=9611" target="_blank" rel="noopener noreferrer" className="group flex min-h-[360px] flex-col justify-between rounded-2xl border border-dashed border-primary/35 bg-gradient-to-br from-blue-50 via-card to-violet-50 p-7 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg">
+                <div>
+                  <div className="mb-8 flex size-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm"><LayoutTemplate className="size-7" /></div>
+                  <p className="mb-3 text-sm font-semibold text-primary">门店通模板库</p>
+                  <h2 className="mb-3 text-2xl font-bold text-foreground">更多行业模板</h2>
+                  <p className="leading-7 text-muted-foreground">餐饮、美业、健身瑜伽、生活服务等更多行业模板，按经营场景挑选并免费试用。</p>
+                </div>
+                <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">免费试用更多模板 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" /></span>
+              </a>
             </div>
           </div>
         </section>
