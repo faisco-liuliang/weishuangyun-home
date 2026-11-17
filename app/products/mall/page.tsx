@@ -11,9 +11,9 @@ import { productRegisterUrls } from "@/lib/product-links"
 import { ArrowRight, ShoppingCart, Users, TrendingUp, Smartphone, Share2, BarChart3, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "私域商城 - AI 营销商城，小程序+微商城一体化解决方案",
+  title: "维双云小程序商城｜商品、订单、会员营销与私域复购",
   description:
-    "维双云 AI 私域商城系统，集小程序、微商城、AI 商品文案、智能活动建议、分销裂变、直播带货于一体，帮助企业搭建私域电商闭环。",
+    "维双云小程序商城面向零售、门店和私域商家，提供商品展示、在线下单、订单管理、会员运营和营销活动等标准化 SaaS 能力。",
   keywords: ["私域商城", "AI 商城", "小程序商城", "微商城", "分销系统", "私域电商"],
 }
 
@@ -176,12 +176,12 @@ export default function MallPage() {
                 私域电商解决方案
               </Badge>
               <h1 className="text-3xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-white mb-6 text-balance">
-                AI 私域商城系统
+                维双云小程序商城
                 <br />
-                <span className="text-blue-400">从获客到复购</span>
+                <span className="text-blue-400">商品、订单、会员营销与私域复购</span>
               </h1>
               <p className="text-lg text-slate-300 mb-8 leading-[1.8] tracking-[0.01em] max-w-xl text-pretty">
-                整合 AI 商品文案、小程序商城、会员运营、分销裂变和直播带货，打造属于企业自己的私域电商阵地，让每一位用户都成为增长引擎。
+                维双云小程序商城是一套面向零售、门店和私域商家的标准化 SaaS 商城系统，支持商品展示、在线下单、订单管理、会员运营和营销活动。不同版本的支付、分销、多商户和多端经营能力，以价格中心及当前版本说明为准。
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href={productRegisterUrls.mall} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-8")}>

@@ -247,9 +247,6 @@ export function ProductDetailSections({
                           </div>
                         )}
                       </div>
-                      <div className="rounded-md bg-blue-50 px-3 py-2 text-xs font-medium leading-5 text-primary">
-                        {plan.promoBanner ?? `${promoTitle} · 渠道特惠可叠加`}
-                      </div>
                       <ul className="mt-auto grid gap-2">
                         {plan.features.slice(0, 6).map((feature) => (
                           <li key={feature} className="flex gap-2 text-sm leading-5 text-foreground">

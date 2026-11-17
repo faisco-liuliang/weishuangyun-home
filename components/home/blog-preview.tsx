@@ -27,7 +27,7 @@ export function BlogPreview() {
               AI 企业数字化增长实战指南
             </h2>
             <p className="text-muted-foreground mt-3 text-base max-w-xl text-pretty">
-              AI 建站、SEO 优化、私域运营、AI 营销工具……每周更新，帮助您掌握最新的数字化增长方法论。
+              小程序搭建、私域运营、门店经营与线上服务……每周更新，帮助您掌握实用的线上经营方法。
             </p>
           </div>
           <Link

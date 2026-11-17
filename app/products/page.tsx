@@ -7,12 +7,12 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { ContactQrButton } from "@/components/contact/contact-qr-button"
 import { cn } from "@/lib/utils"
-import { ArrowRight, ShoppingCart, Globe, GraduationCap, CalendarCheck, Store, Wrench } from "lucide-react"
+import { ArrowRight, ShoppingCart, Globe, GraduationCap, CalendarCheck, Store } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "产品中心 - AI 赋能 6 大产品线，覆盖企业全业务场景",
+  title: "产品中心 - 门店、商城、预约与教育小程序产品",
   description:
-    "维双云产品中心，提供 AI 建站、私域商城、教育系统、轻应用预约、门店管理、AI 营销内容工具等 6 大产品线，一站式满足中小企业数字化增长需求。",
+    "维双云产品中心，提供私域商城、门店系统、轻应用预约、教育系统与企业官网等标准化小程序及线上经营产品。",
   keywords: ["维双云产品", "AI 建站", "私域商城", "企业官网", "教育系统", "门店管理"],
 }
 
@@ -27,7 +27,7 @@ const products = [
     bg: "bg-blue-50",
     badge: "热门",
     highlights: ["1站3端商城", "分销裂变", "直播电商", "拼团砍价"],
-    priceFrom: "998",
+    priceFrom: "1,998",
   },
   {
     name: "企业官网",
@@ -39,7 +39,7 @@ const products = [
     bg: "bg-sky-50",
     badge: "SEO 必备",
     highlights: ["AI 建站", "百度精准收录", "内容运营", "表单线索收集"],
-    priceFrom: "349",
+    priceFrom: "698",
   },
   {
     name: "教育系统",
@@ -51,7 +51,7 @@ const products = [
     bg: "bg-violet-50",
     badge: "新品",
     highlights: ["AI 题库导入", "智能组卷", "直播课堂", "知识付费"],
-    priceFrom: "999",
+    priceFrom: "1,998",
   },
   {
     name: "轻应用",
@@ -63,7 +63,7 @@ const products = [
     bg: "bg-emerald-50",
     badge: "服务行业",
     highlights: ["多端发布", "在线预约", "万能表单", "自动提醒"],
-    priceFrom: "349",
+    priceFrom: "698",
   },
   {
     name: "门店系统",
@@ -75,19 +75,7 @@ const products = [
     bg: "bg-orange-50",
     badge: "连锁推荐",
     highlights: ["AI 经营分析", "多门店管理", "会员体系", "经营报表"],
-    priceFrom: "99",
-  },
-  {
-    name: "营销工具",
-    tagline: "AI 海报、短视频、H5 活动工具",
-    desc: "AI 海报、AI 短视频、H5 活动页、投票抽奖和问卷调查，低成本完成内容获客与活动裂变。",
-    href: "/products/tools",
-    icon: Wrench,
-    color: "text-rose-600",
-    bg: "bg-rose-50",
-    badge: "多合一",
-    highlights: ["AI 海报", "AI 短视频", "H5 活动页", "有奖投票"],
-    priceFrom: "按需购买",
+    priceFrom: "198",
   },
 ]
 
@@ -97,15 +85,35 @@ export default function ProductsPage() {
       <Header />
       <main className="pt-16">
         {/* Hero */}
-        <section className="py-20 px-4 sm:px-6 section-blue-bg border-b border-border">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">产品中心</p>
-            <h1 className="text-4xl sm:text-5xl font-bold leading-[1.24] tracking-[0.015em] text-foreground mb-5 text-balance">
-              AI 赋能 6 大产品线，覆盖企业全业务场景
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-[1.8] tracking-[0.01em]">
-              无论您是实体门店、教育机构、电商品牌还是服务业，维双云都能把 AI 获客、线上交易、会员复购和经营管理串成一套完整体系。
-            </p>
+        <section className="border-b border-border section-blue-bg px-4 py-16 sm:px-6 sm:py-20">
+          <div className="mx-auto max-w-5xl">
+            <div className="text-center">
+              <p className="text-sm font-semibold tracking-[0.14em] text-primary">产品中心</p>
+              <h1 className="mx-auto mt-4 max-w-3xl text-3xl font-bold leading-[1.25] tracking-[0.01em] text-foreground sm:text-5xl">
+                覆盖常见经营场景的<br className="hidden sm:block" />小程序产品
+              </h1>
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
+                从门店经营、商品交易到服务预约与教育培训，按实际业务选择合适的产品版本。
+              </p>
+            </div>
+
+            <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
+              {["门店经营", "私域商城", "服务预约", "教育培训"].map((scene) => (
+                <span key={scene} className="rounded-full border border-blue-100 bg-white/75 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm">
+                  {scene}
+                </span>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-8 grid max-w-4xl gap-5 rounded-2xl border border-blue-100 bg-white/80 p-5 shadow-sm sm:grid-cols-[150px_1fr] sm:p-6">
+              <div>
+                <p className="text-sm font-bold text-primary">标准化搭建</p>
+                <p className="mt-1 text-xs leading-5 text-muted-foreground">模板配置 · 顾问协助</p>
+              </div>
+              <p className="text-sm leading-7 text-muted-foreground">
+                标准版本可通过模板和后台配置完成，适合希望快速上线、后续自行调整的商家。源码交付、私有化部署、复杂接口及特殊业务流程需要单独确认是否支持。
+              </p>
+            </div>
           </div>
         </section>
 

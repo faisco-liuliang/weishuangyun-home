@@ -28,7 +28,7 @@ import {
 export const metadata: Metadata = {
   title: "价格中心 - 维双云 AI 赋能全产品套餐",
   description:
-    "维双云价格中心，覆盖 AI 建站、私域商城、门店系统、AI 题库教育系统、服务预约、AI 营销工具等产品套餐。",
+    "维双云价格中心，覆盖企业官网、私域商城、门店系统、教育系统和服务预约等产品套餐。",
   keywords: ["维双云价格", "AI 建站价格", "商城小程序价格", "企业官网套餐", "门店系统价格"],
   alternates: { canonical: "https://wsy.fkw.com/pricing" },
   openGraph: {

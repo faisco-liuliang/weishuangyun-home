@@ -128,6 +128,16 @@ export default function BookingPage() {
           registerUrl={productRegisterUrls.booking}
         />
 
+        <section className="border-b border-border bg-white px-4 py-16 sm:px-6">
+          <div className="mx-auto max-w-5xl rounded-2xl border border-emerald-100 bg-emerald-50/50 p-6 sm:p-8">
+            <p className="text-sm font-semibold text-emerald-700">平台说明</p>
+            <h2 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl">维双云小程序制作平台是什么？</h2>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
+              维双云轻应用是面向服务型商家的小程序制作平台。商家可通过模板和可视化配置搭建展示、预约、表单和内容发布类小程序，不需要自行编写程序。需要商城交易、复杂门店管理或教育功能时，应选择对应产品版本。
+            </p>
+          </div>
+        </section>
+
         <section className="py-20 px-4 sm:px-6 bg-background">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">

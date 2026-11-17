@@ -11,7 +11,7 @@ import { ArrowRight, Clock, User, Tag, Search } from "lucide-react"
 export const metadata: Metadata = {
   title: "博客 - AI 企业数字化增长干货资讯",
   description:
-    "维双云博客，分享 AI 建站、SEO 优化、私域运营、AI 营销工具、数字化转型案例等实战干货，帮助中小企业掌握增长方法论。",
+    "维双云博客，分享小程序搭建、私域运营、门店经营、数字化转型案例等实战干货，帮助中小企业掌握线上经营方法。",
   keywords: ["AI 建站", "SEO 教程", "私域运营", "企业数字化", "建站教程", "营销干货"],
   alternates: { canonical: "https://wsy.fkw.com/blog" },
   openGraph: {
@@ -38,7 +38,7 @@ export default function BlogPage() {
                 AI 企业数字化增长干货
               </h1>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto text-pretty leading-relaxed">
-                AI 建站、SEO 优化、私域运营、AI 营销工具……每周更新实战干货，助力企业掌握数字化增长方法论。
+                小程序搭建、私域运营、门店经营与线上服务……每周更新实战干货，助力企业掌握线上经营方法。
               </p>
             </div>
 

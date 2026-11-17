@@ -105,6 +105,12 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-6 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-300 sm:grid-cols-2 lg:grid-cols-4">
+              <p><span className="text-slate-400">服务主体：</span>广州凡科互联网科技股份有限公司</p>
+              <p><span className="text-slate-400">服务范围：</span>广州本地商家及线上咨询客户</p>
+              <p><span className="text-slate-400">服务方式：</span>企业微信咨询与顾问协助上线</p>
+              <p><span className="text-slate-400">更新时间：</span>2026 年 11 月</p>
+            </div>
           </div>
         </section>
 

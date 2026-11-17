@@ -124,25 +124,32 @@ export function Header() {
                   className="relative"
                   ref={dropdownRef}
                 >
-                  <button
-                    type="button"
-                    onClick={() => setDropdownOpen((open) => !open)}
-                    aria-expanded={dropdownOpen}
+                  <div
                     className={cn(
-                      "flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                      "flex items-center rounded-md text-sm font-medium transition-colors",
                       pathname.startsWith("/products")
                         ? "text-primary bg-accent"
                         : "text-foreground hover:text-primary hover:bg-accent"
                     )}
                   >
-                    {link.name}
+                    <Link href={link.href} className="px-3 py-2">
+                      {link.name}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setDropdownOpen((open) => !open)}
+                      aria-label={dropdownOpen ? "收起产品菜单" : "展开产品菜单"}
+                      aria-expanded={dropdownOpen}
+                      className="py-2 pl-0 pr-2"
+                    >
                     <ChevronDown
                       className={cn(
                         "size-3.5 transition-transform duration-200",
                         dropdownOpen && "rotate-180"
                       )}
                     />
-                  </button>
+                    </button>
+                  </div>
 
                   {dropdownOpen && (
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[640px] bg-white border border-border rounded-xl shadow-xl p-4 grid grid-cols-2 gap-2">

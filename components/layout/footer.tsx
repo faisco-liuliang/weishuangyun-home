@@ -59,7 +59,7 @@ export function Footer() {
                 <span className="font-bold text-lg text-white">维双云</span>
               </Link>
               <p className="text-sm text-slate-400 leading-relaxed">
-                专注 AI 时代企业数字化建站与营销工具，帮助中小企业快速搭建获客、转化、复购一体化增长体系。
+                专注企业小程序与线上经营服务，帮助中小企业快速搭建展示、交易、预约与会员运营体系。
               </p>
             </div>
           </div>
